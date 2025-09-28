@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Thesis to Overleaf</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+        .step {
+            margin: 20px 0;
+            padding: 15px;
+            background: #ecf0f1;
+            border-left: 5px solid #3498db;
+            border-radius: 5px;
+        }
+        .step h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .button {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+        .button:hover {
+            background: #2980b9;
+        }
+        .highlight {
+            background: #fff3cd;
+            padding: 15px;
+            border: 1px solid #ffc107;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📚 Compile Your Kolmogorov Complexity Thesis</h1>
+
+        <div class="highlight">
+            <strong>✅ Your thesis is ready!</strong><br>
+            File: <code>kolmogorov_thesis_final.tex</code><br>
+            Title: "Can Kolmogorov Complexity Distinguish Between AI-Generated and Human-Written Texts?"
+        </div>
+
+        <h2>Option 1: Overleaf (Recommended - Immediate)</h2>
+        <div class="step">
+            <h3>Step 1: Open Overleaf</h3>
+            <a href="https://www.overleaf.com" target="_blank" class="button">Open Overleaf →</a>
+        </div>
+
+        <div class="step">
+            <h3>Step 2: Create Free Account</h3>
+            <p>Click "Register" and create a free account (takes 30 seconds)</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 3: Upload Your Thesis</h3>
+            <p>1. Click <strong>"New Project"</strong> → <strong>"Upload Project"</strong></p>
+            <p>2. Upload the file: <code>kolmogorov_thesis_final.tex</code></p>
+            <p>3. It will compile automatically!</p>
+        </div>
+
+        <div class="step">
+            <h3>Step 4: Download PDF</h3>
+            <p>Click the PDF button to download your compiled thesis</p>
+        </div>
+
+        <h2>Option 2: Local Compilation</h2>
+        <div class="step">
+            <h3>Quick Install Script</h3>
+            <p>Run in terminal:</p>
+            <code>./quick_compile.sh</code>
+            <p>This will guide you through installing LaTeX and compiling your thesis.</p>
+        </div>
+
+        <h2>Option 3: Alternative Online Compilers</h2>
+        <div class="step">
+            <a href="https://latexbase.com" target="_blank" class="button">LaTeX Base →</a>
+            <a href="https://papeeria.com" target="_blank" class="button">Papeeria →</a>
+            <p>Copy and paste the content from <code>kolmogorov_thesis_final.tex</code></p>
+        </div>
+
+        <div class="highlight" style="background: #d4edda; border-color: #28a745;">
+            <strong>📊 Your Thesis Includes:</strong><br>
+            • 8 comprehensive chapters<br>
+            • Analysis of 60 essays and 106 tales<br>
+            • Statistical results showing 10-36% complexity differences<br>
+            • Complete Python implementation<br>
+            • 32 academic citations<br>
+            • Professional LaTeX formatting
+        </div>
+    </div>
+</body>
+</html>
