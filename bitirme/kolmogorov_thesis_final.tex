@@ -704,6 +704,13 @@ Brotli & Medium & Very good & Medium & Web content \\
 
 We use all six algorithms to get multiple perspectives on text complexity. Each algorithm captures different patterns, making our detection more robust.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/essays_visualizations/03_algorithm_performance.png}
+\caption{Algorithm Performance Comparison}
+\label{fig:algorithm_performance}
+\end{figure}
+
 \chapter{METHODOLOGY FOR AI TEXT DETECTION}
 
 \section{Research Design}
@@ -978,12 +985,27 @@ Brotli & 0.261 ± 0.024 & 0.354 ± 0.027 & 35.6\% & <0.0001 \\
 
 The difference is more pronounced in creative fiction, with human tales showing 32-37\% higher complexity across all algorithms.
 
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/tales_visualizations/01_distribution_comparison.png}
+\caption{Distribution of Compression Ratios - Tales Dataset}
+\label{fig:tales_distribution}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/tales_visualizations/02_box_plot_comparison.png}
+\caption{Box Plot Comparison - Tales Dataset}
+\label{fig:tales_boxplot}
+\end{figure}
+
 \section{Statistical Significance Testing}
 
 \subsection{Hypothesis Test Results}
 
 \begin{figure}[h]
 \centering
+\includegraphics[width=0.8\textwidth]{figures/essays_visualizations/01_distribution_comparison.png}
 \caption{Distribution of Compression Ratios - Essays Dataset}
 \label{fig:essay_distribution}
 \end{figure}
@@ -1018,6 +1040,13 @@ Brotli & 1.52 & 3.61 \\
 \end{table}
 
 Effect sizes > 0.8 are considered large, indicating substantial practical significance.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.9\textwidth]{figures/essays_visualizations/04_statistical_significance.png}
+\caption{Statistical Significance Tests - Essays Dataset}
+\label{fig:significance_essays}
+\end{figure}
 
 \section{Correlation Analysis}
 
@@ -1056,11 +1085,19 @@ PCA reveals the structure of compression features:
 
 \begin{figure}[h]
 \centering
-\caption{PCA Visualization of AI vs Human Texts}
-\label{fig:pca}
+\includegraphics[width=0.8\textwidth]{figures/essays_visualizations/05_correlation_heatmap.png}
+\caption{Algorithm Correlation Matrix}
+\label{fig:correlation}
 \end{figure}
 
 Clear separation in PC1-PC2 space validates our approach.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/tales_visualizations/06_pca_analysis.png}
+\caption{PCA Analysis - Tales Dataset}
+\label{fig:pca_tales}
+\end{figure}
 
 \section{Confidence Intervals}
 
@@ -1086,6 +1123,13 @@ Brotli & [0.023, 0.035] & [0.085, 0.101] \\
 \end{table}
 
 All confidence intervals exclude zero, confirming statistical significance.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/tales_visualizations/08_confidence_intervals.png}
+\caption{95\% Confidence Intervals - Tales Dataset}
+\label{fig:confidence_tales}
+\end{figure}
 
 
 \chapter{DISCUSSION AND IMPLICATIONS}
