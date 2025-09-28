@@ -1,0 +1,268 @@
+I. BASIC PRINCIPLES OF INFORMATION PROTECTION
+A. Considerations Surrounding the Study of Protection
+1) General Observations: As computers become better understood and more economical, every day
+brings new applications. Many of these new applications involve both storing information and
+simultaneous use by several individuals. The key concern in this paper is multiple use. For those
+applications in which all users should not have identical authority, some scheme is needed to ensure that
+the computer system implements the desired authority structure.
+For example, in an airline seat reservation system, a reservation agent might have authority to make
+reservations and to cancel reservations for people whose names he can supply. A flight boarding agent
+might have the additional authority to print out the list of all passengers who hold reservations on the
+flights for which he is responsible. The airline might wish to withhold from the reservation agent the
+authority to print out a list of reservations, so as to be sure that a request for a passenger list from a law
+enforcement agency is reviewed by the correct level of management.
+The airline example is one of protection of corporate information for corporate self-protection (or public
+interest, depending on one’s view). A different kind of example is an online warehouse inventory
+management system that generates reports about the current status of the inventory. These reports not
+only represent corporate information that must be protected from release outside the company, but also
+may indicate the quality of the job being done by the warehouse manager. In order to preserve his
+personal privacy, it may be appropriate to restrict the access to such reports, even within the company, to
+those who have a legitimate reason to be judging the quality of the warehouse manager’s work.
+Many other examples of systems requiring protection of information are encountered every day: credit
+bureau data banks; law enforcement information systems; time-sharing service bureaus; on-line medical
+information systems; and government social service data processing systems. These examples span a
+wide range of needs for organizational and personal privacy. All have in common controlled sharing of
+information among multiple users. All, therefore, require some plan to ensure that the computer system
+helps implement the correct authority structure. Of course, in some applications no special provisions in
+the computer system are necessary. It may be, for instance, that an externally administered code of
+ethics or a lack of knowledge about computers adequately protects the stored information. Although
+there are situations in which the computer need provide no aids to ensure protection of information,
+often it is appropriate to have the computer enforce a desired authority structure.
+The words "privacy," "security," and "protection" are frequently used in connection with
+information-storing systems. Not all authors use these terms in the same way. This paper uses
+definitions commonly encountered in computer science literature.
+The term "privacy" denotes a socially defined ability of an individual (or organization) to determine
+whether, when, and to whom personal (or organizational) information is to be released.
+This paper will not be explicitly concerned with privacy, but instead with the mechanisms used to help
+achieve it.provides a narrow view of information security, and that a narrow view is dangerous. The objective of a
+secure system is to prevent all unauthorized use of information, a negative kind of requirement. It is hard
+to prove that this negative requirement has been achieved, for one must demonstrate that every possible
+threat has been anticipated. Thus an expansive view of the problem is most appropriate to help ensure
+that no gaps appear in the strategy. In contrast, a narrow concentration on protection mechanisms,
+especially those logically impossible to defeat, may lead to false confidence in the system as a whole.4
+2) Functional Levels of Information Protection: Many different designs have been proposed and
+mechanisms implemented for protecting information in computer systems. One reason for differences
+among protection schemes is their different functional properties--the kinds of access control that can be
+expressed naturally and enforced. It is convenient to divide protection schemes according to their
+functional properties. A rough categorization is the following.
+a) Unprotected systems: Some systems have no provision for preventing a determined user from having
+access to every piece of information stored in the system. Although these systems are not directly of
+interest here, they are worth mentioning since, as of 1975, many of the most widely used, commercially
+available batch data processing systems fall into this category--for example, the Disk Operating System
+for the IBM System 370 [9]. Our definition of protection, which excludes features usable only for
+mistake prevention, is important here since it is common for unprotected systems to contain a variety of
+mistake-prevention features. These may provide just enough control that any breach of control is likely
+to be the result of a deliberate act rather than an accident. Nevertheless, it would be a mistake to claim
+that such systems provide any security.5
+b) All-or-nothing systems: These are systems that provide isolation of users, sometimes moderated by
+total sharing of some pieces of information. If only isolation is provided, the user of such a system might
+just as well be using his own private computer, as far as protection and sharing of information are
+concerned. More commonly, such systems also have public libraries to which every user may have
+access. In some cases the public library mechanism may be extended to accept user contributions, but
+still on the basis that all users have equal access. Most of the first generation of commercial timesharing
+systems provide a protection scheme with this level of function. Examples include the Dartmouth
+Time-Sharing System (DTSS) [10] and IBM’s VM/370 system [11]. There are innumerable others.
+c) Controlled sharing: Significantly more complex machinery is required to control explicitly who may
+access each data item stored in the system. For example, such a system might provide each file with a
+list of authorized users and allow an owner to distinguish several common patterns of use, such as
+reading, writing, or executing the contents of the file as a program. Although conceptually
+straightforward, actual implementation is surprisingly intricate, and only a few complete examples exist.
+These include M.l.T.’s Compatible Time-Sharing System (CTSS) [12], Digital Equipment Corporation’s
+DECsystem/10 [13], System Development Corporation’s Advanced Development Prototype (ADEPT)
+System [14], and Bolt, Beranek, and Newman’s TENEX [15]6
+d) User-programmed sharing controls: A user may want to restrict access to a file in a way not provided
+in the standard facilities for controlling sharing. For example, he may wish to permit access only on
+weekdays between 9:00 A.M. and 4:00 P.M. Possibly, he may wish to permit access to only the average
+value of the data in a file. Maybe he wishes to require that a file be modified only if two users agree. For
+such cases, and a myriad of others, a general escape is to provide for user-defined protected objects and
+subsystems. A protected subsystem is a collection of programs and data with the property that only the
+programs of the subsystem have direct access to the data (that is, the protected objects). Access to thoseplastic card, or some other unique and relatively difficult-to-fabricate object. The terminal has an input
+device that examines the object and transmits its unique identifying code to the computer system, which
+treats the code as a password that need not be kept secret. Proposals have been made for fingerprint
+readers and dynamic signature readers in order to increase the effort required for forgery.
+The primary weakness of such schemes is that the hard-to-fabricate object, after being examined by the
+specialized input device, is reduced to a stream of bits to be transmitted to the computer. Unless the
+terminal, its object reader, and its communication lines to the computer are physically secured against
+tampering, it is relatively easy for an intruder to modify the terminal to transmit any sequence of bits he
+chooses. It may be necessary to make the acceptable bit sequences a secret after all. On the other hand,
+the scheme is convenient, resists casual misuse, and provides a conventional form of accountability
+through the physical objects used as keys.
+A problem common to both the password and the unforgeable object approach is that they are
+"one-way" authentication schemes. They authenticate the user to the computer system, but not vice
+versa. An easy way for an intruder to penetrate a password system, for example, is to intercept all
+communications to and from the terminal and direct them to another computer--one that is under the
+interceptor’s control. This computer can be programmed to "masquerade," that is, to act just like the
+system the caller intended to use, up to the point of requesting him to type his password. After receiving
+the password, the masquerader gracefully terminates the communication with some unsurprising error
+message, and the caller may be unaware that his password has been stolen. The same attack can be used
+on the unforgeable object system as well.
+A more powerful authentication technique is sometimes used to protect against masquerading. Suppose
+that a remote terminal is equipped with enciphering circuitry, such as the LUCIFER system [38], that
+scrambles all signals from that terminal. Such devices normally are designed so that the exact
+encipherment is determined by the value of a key, known as the encryption or transformation key. For
+example, the transformation key may consist of a sequence of 1000 binary digits read from a
+magnetically striped plastic card. In order that a recipient of such an enciphered signal may comprehend
+it, he must have a deciphering circuit primed with an exact copy of the transformation key, or else he
+must cryptanalyze the scrambled stream to try to discover the key. The strategy of
+encipherment/decipherment is usually invoked for the purpose of providing communications security on
+an otherwise unprotected communications system. However, it can simultaneously be used for
+authentication, using the following technique, first published in the unclassified literature by Feistel
+[39]. The user, at a terminal, begins bypassing the enciphering equipment. He types his name. This name
+passes, unenciphered, through the communication system to the computer. The computer looks up the
+name, just as with the password system. Associated with each name, instead of a secret password, is a
+secret transformation key. The computer loads this transformation key into its enciphering mechanism,
+turns it on, and attempts to communicate with the user. Meanwhile, the user has loaded his copy of the
+transformation key into his enciphering mechanism and turned it on. Now, if the keys are identical,
+exchange of some standard hand-shaking sequence will succeed. If they are not identical, the exchange
+will fail, and both the user and the computer system will encounter unintelligible streams of bits. If the
+exchange succeeds, the computer system is certain of the identity of the user, and the user is certain of
+the identity of the computer. The secret used for authentication--the transformation key--has not been
+transmitted through the communication system. If communication fails (because the user is
+unauthorized, the system has been replaced by a masquerader, or an error occurred), each party to the
+transaction has immediate warning of a problem.follows. Whenever a user requests that a segment be created, the memory system will actually allocate
+two linked storage areas. One of the storage areas will be used to store the data of the segment as usual,
+and the second will be treated as a special kind of object, which we will call an access controller. An
+access controller contains two pieces of information: an addressing descriptor for the associated segment
+and an access control list, as in Fig. 8. An addressing descriptor for the access controller itself is
+assigned a unique identifier and placed in the map used by the memory system to locate objects. The
+access controller is to be used as a kind of indirect address, as in Fig. 9. In order to access a segment, the
+processor must supply the unique identifier of that segment’s access controller. Since the access
+controller is protected, however, there is no longer any need for these unique identifiers to be protected.
+The former protection descriptor registers can be replaced with unprotected pointer registers, which can
+be loaded from any addressable location with arbitrary bit patterns. (In terms of IBM System 370 and
+Honeywell Multics, the pointer registers contain segment numbers from a universal address space. The
+segment numbers lead to the segment addressing descriptors stored in the access controller.) Of course,
+only bit patterns corresponding to the unique identifier of some segment’s access controller will work. A
+data reference by the processor proceeds in the following steps, keyed to Fig. 9.
+1. The program encounters an instruction that would write in the segment described by pointer
+register 3 at offset k.
+2. The processor uses the unique identifier found in pointer register 3 to address access controller
+AC1. The processor at the same time presents to the memory system the user’s principal identifier,
+a request to write, and the offset k.
+3. The memory system searches the access control list in AC1 to see if this user’s principal identifier
+is recorded there.
+4. If the principal identifier is found, the memory system examines the permission bits associated
+with that entry of the access control list to see if writing is permitted.
+5. If writing is permitted, the addressing descriptor of segment X, stored in AC1, and the original
+offset k are used to generate a write request inside the memory system.
+We need one more mechanism to make this system work. The set of processor registers must be
+augmented with a new protected register that can contain the identifier of the principal currently
+accountable for the activity of the virtual processor, as shown in Fig. 9. (Without that change, one could
+not implement the second and third steps.)
+For example, we may have an organization like that of Fig. 10, which implements essentially the same
+pattern of sharing as did the capability system of Fig. 6. The crucial difference between these two
+figures is that, in Fig. 10, all references to data are made indirectly via access controllers. Overall, the
+organization differs in several ways from the pure capability system described before.
+1. The decision to allow access to segment X has known, auditable consequences. Doe cannot make
+a copy of the addressing descriptor of segment X since he does not have direct access to it,
+eliminating propagation of direct access. The pointer to X’s access controller itself may be freely
+copied and passed to anyone, but every use of the pointer must be via the access controller, which
+prevents access by unauthorized principals.34
+2. The access control list directly implements the sender’s third step of the dynamic sharing
+protocol--verifying that the requester is authorized to use the object. In the capability system,
+verification was done once to decide if the first capability copy should be made; after that, further
+copying was unrestricted. The access control list, on the other hand, is consulted on every access.
+3. Revocation of access has become manageable. A change to an access control list removing a name
+immediately preludes all future attempts by that user to use that segment.
+4. The question of "who may access this segment?" apparently is answered directly by examining the
+access control list in the access controller for the segment. The qualifier "apparently" applies
+because we have not yet postulated any mechanism for controlling who may modify access control
+lists.
+5. All unnecessary association between data organization and authorization has been broken. For
+example, although a catalog may be considered to "belong" to a particular user, the segments
+appearing in that catalog can have different access control lists. It follows that the grouping of
+segments for naming, searching, and archiving purposes can be independent of any desired
+grouping for protection purposes. Thus, in Fig. 10, a library catalog has been introduced.
+It is also apparent that implementation, especially direct hardware implementation, of the access control
+list system could be quite an undertaking. We will later consider some strategies to simplify
+implementation with minimum compromise of functions, but first it will be helpful to introduce one
+more functional property-protection groups.
+2) Protection Groups: Cases often arise where it would be inconvenient to list by name every individual
+who is to have access to a particular segment, either because the list would be awkwardly long or
+because the list would change frequently. To handle this situation, most access control list systems
+implement factoring into protection groups, which are principals that may be used by more than one
+user. If the name of a protection group appears in an access control list, all users who are members of
+that protection group are to be permitted access to that segment.
+Methods of implementation of protection groups vary widely. A simple way to add them to the model of
+Figs. 9 and 10 is to extend the "principal holding" register of the processor so that it can hold two (or
+more) principal identifiers at once, one for a personal principal identifier and one for each protection
+group of which the user is a member. Fig. 10 shows this extension in dashed lines. In addition, we
+upgrade the access control list checker so that it searches for a match between any of the principal
+identifiers and any entries of the access control list.35 Finally, who is allowed to use those principals that
+represent protection group identifiers must also be controlled systematically.
+We might imagine that for each protection group there is a protection group list, that is, a list of the
+personal principal identifiers of all users authorized to use the protection group’s principal identifier.
+(This list is an example of an access control list that is protecting an object--a principal identifier other
+than a segment.) When a user logs in, he can specify the set of principal identifiers he proposes to use.
+His right to use his personal principal identifier is authenticated, for example, by a password. His right to
+use the remaining principal identifiers can then be authenticated by looking up the now-authenticated
+personal identifier on each named protection group list. If everything checks, a virtual processor can
+safely be created and started with the specified list of principal identifiers.36
+3) Implementation Considerations: The model of a complete protection system as developed in Fig. 10
+is one of many possible architectures, most of which have essentially identical functional properties; our
+choices among alternatives have been guided more by pedagogical considerations than by practical
+implementation issues. There are at least three key areas in which a direct implementation of Fig. 10
+might encounter practical problems.
+1. As proposed, every reference to an object in memory requires several steps: reference to a pointer
+register; indirect reference through an access controller including search of an access control list;
+and finally, access to the object itself via addressing descriptors. Not only are these steps serial,
+but several memory references are required, so fast memory access would be needed.
+2. An access control list search with multiple principal identifiers is likely to require a complex
+mechanism, or be slow, or both. (This tradeoff between performance and complexity contrasts
+with the capability system, in which a single comparison is always sufficient.)
+3. Allocation of space for access control lists, which can change in length, can be a formidable
+implementation problem. (Compared to a capability system, the mechanics of changing
+authorization in an access control list system are inherently more cumbersome.)
+The first of these problems is attacked by recognizing that the purpose of the access control list is to
+establish authorization rather than to mediate every detailed access. Mediation of access would be
+handled more efficiently by a capability system. Suppose we provide for each pointer register a
+"shadow" capability register that is invisible to the virtual processor, as in Fig. 11. Whenever a pointer
+register containing the unique identifier of an access controller is first used, the shadow register is
+loaded with a capability consisting of a copy of the addressing descriptor for the segment protected by
+the access controller, together with a copy of the appropriate set of permission bits for this principal.37
+Subsequent references via that pointer register can proceed directly using the shadow register rather than
+indirectly through the access controller. One implication is a minor change in the revocability properties
+of an access control list: changing an access control list does not affect the capabilities already loaded in
+shadow registers of running processors. (One could restore complete revocability by clearing all shadow
+registers of all processors and restarting any current access control list searches. The next attempted use
+of a cleared shadow register would automatically trigger its reloading and a new access contra list
+check.) The result is a highly constrained but very fast capabitity system beneath the access control list
+system. The detailed checking of access control falls on the capability mechanism, which on individual
+memory references exactly enforces the constraints specified by the access control list system.
+The second and third problems, allocation and search of access control lists, appear to require more
+compromise of functional properties. One might, for example, constrain all access control lists to
+contain, say, exactly five entries, to simplify the space allocation problem. One popular implementation
+allows only three entries on each access control list. The first is filled in with the personal principal
+identifier of the user who created the object being protected, the second with the principal identifier of
+the (single) protection group to which he belongs, and the third with the principal identifier of a
+universal protection group of which all users are members. The individual access permissions for these
+three entries are specified by the program creating the segment.38
+A completely different way to provide an access control list system is to implement it in interpretive
+software in the path to the secondary storage or file system. Primary memory protection can be
+accomplished with either base-and-bound registers, or more generally with a capability system in which
+the capabilities cannot be copied into the file system. This approach takes the access control list
+checking mechanisms out of the heavily used primary memory access path, and reduces the pressure to
+compromise its functional properties. Such a mixed strategy, while more complex, typically proves to be
+the most practical compromise. For example, the Multics system [55] uses software-interpreted access
+control lists together with hardware-interpreted tables of descriptors. Similarly, the "guard file" of the
+Burroughs B6700 Master Control Program is an example of an access controller implemented
+interpretively [57]Work in progress is not well represented by published literature. The reader interested in further
+information on some of the current research projects mentioned may find useful the proceedings of two
+panel sessions at the 1974 National Computer Conference [86], [87], a recent workshop [88], and a
+survey paper [89].
+C. Concluding Remarks
+In reviewing the extent to which protection mechanisms are systematically understood (which is not a
+large extent) and the current state of the art, one cannot help but draw a parallel between current
+protection inventions and the first mass produced computers of the 1950’s. At that time, by virtue of
+experience and strongly developed intuition, designers had confidence that the architectures being
+designed were complete enough to be useful. And it turned out that they were. Even so, it was quickly
+established that matching a problem statement to the architecture--programming--was a major effort
+whose magnitude was quite sensitive to the exact architecture. In a parallel way, matching a set of
+protection goals to a particular protection architecture by setting the bits and locations of access control
+lists or capabilities or by devising protected subsystems is a matter of programming the architecture.
+Following the parallel, it is not surprising that users of the current first crop of protection mechanisms
+have found them relatively clumsy to program and not especially well matched to the users’ image of
+the problem to be solved, even though the mechanisms may be sufficient. As in the case of all
+programming systems, it will be necessary for protection systems to be used and analyzed and for their
+users to propose different, better views of the necessary and sufficient semantics to support information
+protection.

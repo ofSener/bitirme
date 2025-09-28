@@ -1,0 +1,246 @@
+E. W. Dijkstra, in his Foreword to [94] writes:
+When concurrency confronted the computing community about a
+quarter of a century ago, it caused an endless confusion .... The
+disentanglement of that confusion required the hard work of a mature
+and devoted scientist who, with luck, would clarify the situation. Tony
+Hoare has devoted a major part of his scientific endeavours to that
+challenge, and we have every reason to be grateful for that.
+CSP is the culmination of his language design work to harness parallelism.
+Monitors (cf. Chapter 12) had shown that the confusion coming from shared
+store could be avoided but the problems caused by the need to suspend an
+execution which could not complete still betray machine-level origins such as
+interrupts. The boldest step in the design of CSP is to base the Whole
+interaction between processes on unbuffered communication. Add to this a
+clear approach to nondeterminacy (though some would argue with the
+treatment of 'fairness') and a clear notation and the result is a language which
+dramatically simplifies the problem of constructing (correct) parallel systems.
+Hoare had liked the communicating process model of concurrency since
+1967-68 when he left Elliott. His first attempt to describe a guarded-
+command type of construct was disliked by Edsger W. Dijkstra because of the
+cumbersome notation. Hoare's study of Simula put him onto the track which
+led to Monitors and Pascal-Plus.
+Hoare's ideas on parallelism had been evolving since he presented [58] at
+the 1975 Marktoberdorf Summer School. In discussions there, Dijkstra again
+objected to the cumbersome notations and the semantics based on complex
+nested copying. In addition, Hoare recalls that his teaching at Belfast showed
+him that students kept confusing input/output with parameter passing. A
+Science Research Council Senior Fellowship in 1976-77 gave him the chance
+to work on the details of the CSP paper which was submitted in March 1977,
+revised in August of the same year and published ([66]) in August 1978. Thisis one of the most widely cited papers on parallelism and it has been reprinted
+several times.
+This paper did not, of course, solve all of the problems. It concedes that
+'The most serious [problem] is that it fails to suggest any proof method to
+assist in the development and verification of correct programs.' But the work
+on both models and proof rules was already underway before actual
+publication and soon led to a large body of research material, the easiest
+access to which is certainly Hoare's book [94].
+The CSP language itself also evolved and, amongst other derivatives
+OccamXM (see Jones 1987) is particularly important. This language is one fruit
+of Hoare's collaboration with INMOS. The development of the related
+transputer chip is another major development. Hoare had expected even in
+1976 that such machine architectures would come quickly.
+Abstract
+This paper suggests that input and output are basic primitives of programming and that
+parallel composition of communicating sequential processes is a fundamental program
+structuring method. When combined with a development of Dijkstra's guarded
+command, these concepts are surprisingly versatile. Their use is illustrated by sample
+solutions of a variety of familiar programming exercises.
+16.1 Introduction
+A mong the primitive concepts of computer programming, and of the
+high-level languages in which programs are expressed, the action
+of assignment is familiar and well understood. In fact, any change of the
+internal state of a machine executing a program can be modelled as an
+assignment of a new value to some variable part of that machine. However,
+the operations of input and output, which affect the external environment
+of a machine, are not nearly so well understood. They are often added to a
+programming language only as an afterthought.
+Among the structuring methods for computer programs, three basic
+constructs have received widespread recognition and use: A repetitive
+construct (e.g. the while loop), an alternative construct (e.g. the conditional
+if..then..else), and normal sequential program composition (often denoted
+by a semicolon). Less agreement has been reached about the design of other
+important program structures, and many suggestions have been made.
+Subroutines (FORTRAN), procedures (ALGOL 60 (Naur 1960)), entries
+(PL/I), coroutines (UNIX (Thompson 1976)), classes (Simula 67 (Dahl et
+al. 1967)), processes and monitors (Concurrent Pascal (Brinch Hansen
+1975)), clusters (CLU (Liskov 1974)), forms ( A L P H A R D (Wulf et al.
+1976)), actors (Atkinson and Hewitt 1976)The traditional stored-program digital computer has been designed
+primarily for deterministic execution of a single sequential program. Where
+the desire for greater speed has led to the introduction of parallelism, every
+attempt has been made to disguise this fact from the programmer, either by
+hardware itself (as in the multiple function units of CDC 6600) or by the
+software (as in an I/O control package, or a multiprogrammed operating
+system). However, developments of processor technology suggest that
+a multiprocessor machine, constructed from a number of similar self-
+contained processors (each with its own store), may become more powerful,
+capacious, reliable, and economical than a machine which is disguised as a
+monoprocessor.
+In order to use such a machine effectively on a single task, the component
+processors must be able to communicate and tO synchronize with each
+other. Many methods of achieving this have been proposed. A widely
+adopted method of communication is by inspection and updating of a
+common store (as in ALGOL 68 (van Wijngaarden 1969), PL/I, and many
+machine codes). However, this can create severe problems in the construc-
+tion of correct programs and it may lead to expense (e.g. crossbar switches)
+and unreliability (e.g. glitches) in some technologies of hardware implemen-
+tation. A greater variety of methods has been proposed for synchroniza-
+tion: semaphores (Dijkstra 1968b), events (PL/I), conditional critical
+regions (Hoare [22]), monitors and queues (Concurrent Pascal (Brinch
+Hansen 1975)), and path expressions. Most of these are demonstrably
+adequate for their purpose, but there is no widely recognized criterion for
+choosing between them.
+This paper makes an ambitious attempt to find a single simple solution to
+all these problems. The essential proposals are:
+(1) Dijkstra's guarded commands (1975a) are adopted (with a slight change
+of notation) as sequential control structures, and as the sole means of
+introducing and controlling nondeterminism.
+(2) A parallel command, based on Dijkstra's parbegin (1968b), specifies
+concurrent execution of its constituent sequential commands (pro-
+cesses). All the processes start simultaneously, and the parallel com-
+mand ends only when they are all finished. They may not communicate
+with each other by updating global variables.
+(3) Simple forms of input and output command are introduced. They are
+used for communication between concurrent processes.
+(4) Such communication occurs when one process names another as
+destination for output and the second process names the first as source
+for input. In this case, the value to be output is copied from the first
+process to the second. There is no automatic buffering" In general, an
+input or output command is delayed until the other process is ready with
+the corresponding output or input. Such delay is invisible to the delayed
+process(5)
+(6)
+(7)
+Input commands may appear in guards. A guarded command with an
+input guard is selected for execution only if and when the source named
+in the input command is ready to execute the corresponding output
+command. If several input guards of a set of alternatives have ready
+destinations, only one is selected and the others have n o effect; but the
+choice between them is arbitrary. In an efficient implementation, an
+output command which has been ready for a long time should be
+favoured; but the definition of a language cannot specify this since the
+relative speed of execution of the processes is undefined.
+A repetitive command may have input guards. If all the sources named
+by them have terminated, then the repetitive command also terminates.
+A simple pattern-matching feature, similar to that of Reynolds (1965),
+is used to discriminate the structure of an input message, and to access
+its components in a secure fashion. This feature is used to inhibit input
+of messages that do not match the specified pattern.
+The programs expressed in the proposed language are intended to be
+implementable both by a conventional machine with a single main store,
+and by a fixed network of processors connected by input/output channels
+(although very different optimizations are appropriate in the different
+cases). It is consequently a rather static language: The text of a program
+determines a fixed upper bound on the number of processes operating
+concurrently; there is no recursion and no facility for process-valued
+variables. In other respects also, the language has been stripped to the
+barest minimum necessary for explanation of its more novel features.
+The concept of a communicating sequential process is shown in Sections
+16.3-16.5 to provide a method of expressing solutions to many simple
+programming exercises which have previously been employed to illustrate
+the use of various proposed programming-language features. This suggests
+that the process may constitute a synthesis of a number of familar and new
+programming ideas. The reader is invited to skip the examples which do not
+interest him.
+However, this paper also ignores many serious problems. The most
+serious is that it fails to suggest any proof method to assist in the
+development and verification of correct programs. Secondly, it pays no
+attention to the problems of efficient implementation, which may be
+particularly serious on a traditional sequential computer. It is probable that
+a solution to these problems will require (1) imposition of restrictions in the
+use of the proposed features; (2) re-introduction of distinctive notations for
+the most common and useful special cases; (3) development of automatic
+optimization techniques; and (4) the design of appropriate hardware.
+Thus the concepts and notations introduced in this paper (although
+described in the next section in the form of a programming language
+fragment) should not be regarded as suitable for use as a programminglanguage, either for abstract or for concrete programming. They are at best
+only a partial solution to the problems tackled. Further discussion of these
+and other points will be found in Section 16.7.
+16.2 Concepts and notations
+The style of the following description is borrowed from A L G O L 60 (Naur,
+1960). Types, declarations, and expressions have not been treated; in the
+examples, a Pascal-like notation (Wirth 1971c) has usually been adopted.
+The curly braces { } have been introduced into BNF to denote none or more
+repetitions of the enclosed material. (Sentences in parentheses refer to an
+implementation: they are not strictly part of a language definition.)
+(command) ::= (simple command) l (structured command)
+(simple command)::= (null command) ](assignment command)
+t (input command)]<output command)
+<structured command)::= <alternative command)
+[<repetitive command) [(parallel command)
+<null command) ::= skip
+( command list) ::= {( declaration ); [(command); }(command)
+A command specifies the behaviour of a device executing the command.
+It may succeed or fail. Execution of a simple command, if successful, may
+have an effect on the internal state of the executing device (in the case of
+assignment), or on its external environment (in the case of output), or on
+both (in the case of input). Execution of a structured c o m m a n d involves
+execution of some or all of its constituent commands, and if any of these
+fail, so does the structured command. (In this case, whenever possible, an
+implementation should provide some kind of comprehensible error diag-
+nostic message.)
+A null c o m m a n d has no effect and never fails.
+A c o m m a n d list specifies sequential execution of its constituent com-
+mands in the order written. Each declaration introduces a fresh variable
+with a scope which extends from its declaration to the end of the command
+list16.2.2 Assignment commands
+(assignment command)':= (target variable)"= (expression)
+(expression) ::= (simple expression) I (structured expression)
+(structured expression ) ::= (constructor) ((expression list) )
+(constructor) ::= (identifier) [(empty)
+(expression list ) ::= (empty) [(expression) [,(expression) }
+(target variable)::= (simple variable) [(structured target)
+(structured target) ::= (constructor)((target variable list))
+(target variable list) ::= (empty) [(target variable)
+{,( target variable) }
+An expression denotes a value which is computed by an executing device
+by application of its constituent operators to the specified operands. The
+value of an expression is undefined if any of these operations are undefined.
+The value denoted by a simple expression may be simple or structured. The
+value denoted by a structured expression is structured; its constructor is that
+of the expression, and its components are the list of values denoted by the
+constituent expressions of the expression list.
+An assignment command specifies evaluation of its expression, and
+assignment of the denoted value to the target variable. A simple target
+variable may have assigned to it a simple or a structured value. A structured
+target variable may have assigned to it a structured value, with the same
+constructor. The effect of such assignment is to assign to each constituent
+simpler variable of the structured target the value of the corresponding
+component of the structured value. Consequently, the value denoted by the
+target variable, if evaluated after a successful assignment, is the same as the
+value denoted by the expression, as evaluated before the assignment.
+An assignment fails if the value of its expression is undefined, or if that
+value does not match the target variable, in the following sense: A simple
+target variable matches any value of its type. A structured target variable
+matches a structured value, provided that: (1) they have the same con-
+structor, (2) the target variable list is the same length as the list of
+components of the value, (3) each target variable of the list matches the
+corresponding component of the value list. A structured value with no
+components is known as a 'signal'.Examples
+(1) x : = x + l the value of x after the assignment is the
+same as the value of x + 1 before.(2) ( x , y ) : = (y,x)
+(3) x := cons(left, right)
+(4) cons(left, right):= x
+(5) insert(n) := insert(2, x + 1)
+(6) c := P ( )
+(7) P( ):= c
+(8) insert (n) := has (n)
+exchanges the value of x and y.
+constructs a structured value and ass-
+igns it to x.
+fails if x does not have the form
+cons(y,x); but if it does, then y is
+assigned to left, and z is assigned to
+right.
+equivalent to n := 2 , x + 1.
+assigns to c a 'signal' with constructor
+P, and no components.
+fails if the value of c is not PO; other-
+wise has no effect.
+fails, due to mismatch.
+Note: Successful execution of both (3) and (4) ensures the truth of the
+postcondition x = cons(left, right); but (3) does so by changing x and (4)
+does so by changing left and right. Example (4) will fail if there is no value
+of left and right which satisfies the postcondition.
+16.2.3 Input and output commands
+(input command) ::= (source) ?( target variable)
+( output command) ::= (destination) !(expression )

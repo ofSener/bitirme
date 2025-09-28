@@ -1,0 +1,4886 @@
+{
+  "summary": {
+    "ai_files": 40,
+    "human_files": 66,
+    "ai_avg_complexity": 0.5897983840960075,
+    "human_avg_complexity": 0.7268231512329076
+  },
+  "files": [
+    {
+      "filename": "ash_prophet.txt",
+      "source": "AI",
+      "original_size": 788,
+      "word_count": 118,
+      "char_count": 788,
+      "compression": {
+        "original": {
+          "size": 788,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 536,
+          "ratio": 0.6802030456852792,
+          "reduction": 31.979695431472084
+        },
+        "bz2": {
+          "size": 459,
+          "ratio": 0.5824873096446701,
+          "reduction": 41.75126903553299
+        },
+        "gzip": {
+          "size": 440,
+          "ratio": 0.5583756345177665,
+          "reduction": 44.16243654822335
+        },
+        "zlib": {
+          "size": 428,
+          "ratio": 0.5431472081218274,
+          "reduction": 45.68527918781726
+        },
+        "zstd": {
+          "size": 437,
+          "ratio": 0.5545685279187818,
+          "reduction": 44.54314720812182
+        },
+        "brotli": {
+          "size": 306,
+          "ratio": 0.3883248730964467,
+          "reduction": 61.16751269035533
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5511844331641286
+    },
+    {
+      "filename": "bone_singer.txt",
+      "source": "AI",
+      "original_size": 777,
+      "word_count": 114,
+      "char_count": 777,
+      "compression": {
+        "original": {
+          "size": 779,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 552,
+          "ratio": 0.7086007702182285,
+          "reduction": 29.13992297817715
+        },
+        "bz2": {
+          "size": 478,
+          "ratio": 0.613607188703466,
+          "reduction": 38.639281129653405
+        },
+        "gzip": {
+          "size": 455,
+          "ratio": 0.5840821566110398,
+          "reduction": 41.59178433889602
+        },
+        "zlib": {
+          "size": 443,
+          "ratio": 0.5686777920410783,
+          "reduction": 43.13222079589217
+        },
+        "zstd": {
+          "size": 454,
+          "ratio": 0.582798459563543,
+          "reduction": 41.7201540436457
+        },
+        "brotli": {
+          "size": 373,
+          "ratio": 0.47881899871630296,
+          "reduction": 52.118100128369704
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5894308943089431
+    },
+    {
+      "filename": "breath_merchant.txt",
+      "source": "AI",
+      "original_size": 792,
+      "word_count": 112,
+      "char_count": 792,
+      "compression": {
+        "original": {
+          "size": 796,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 544,
+          "ratio": 0.6834170854271356,
+          "reduction": 31.65829145728643
+        },
+        "bz2": {
+          "size": 472,
+          "ratio": 0.592964824120603,
+          "reduction": 40.7035175879397
+        },
+        "gzip": {
+          "size": 449,
+          "ratio": 0.5640703517587939,
+          "reduction": 43.5929648241206
+        },
+        "zlib": {
+          "size": 437,
+          "ratio": 0.5489949748743719,
+          "reduction": 45.10050251256281
+        },
+        "zstd": {
+          "size": 452,
+          "ratio": 0.5678391959798995,
+          "reduction": 43.21608040201005
+        },
+        "brotli": {
+          "size": 365,
+          "ratio": 0.4585427135678392,
+          "reduction": 54.14572864321608
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5693048576214406
+    },
+    {
+      "filename": "candle_timer.txt",
+      "source": "AI",
+      "original_size": 803,
+      "word_count": 116,
+      "char_count": 803,
+      "compression": {
+        "original": {
+          "size": 809,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 560,
+          "ratio": 0.69221260815822,
+          "reduction": 30.778739184178
+        },
+        "bz2": {
+          "size": 482,
+          "ratio": 0.595797280593325,
+          "reduction": 40.42027194066749
+        },
+        "gzip": {
+          "size": 462,
+          "ratio": 0.5710754017305315,
+          "reduction": 42.89245982694685
+        },
+        "zlib": {
+          "size": 450,
+          "ratio": 0.5562422744128553,
+          "reduction": 44.37577255871446
+        },
+        "zstd": {
+          "size": 468,
+          "ratio": 0.5784919653893696,
+          "reduction": 42.15080346106304
+        },
+        "brotli": {
+          "size": 355,
+          "ratio": 0.4388133498145859,
+          "reduction": 56.118665018541414
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5721054800164812
+    },
+    {
+      "filename": "clock_whisperer.txt",
+      "source": "AI",
+      "original_size": 801,
+      "word_count": 114,
+      "char_count": 801,
+      "compression": {
+        "original": {
+          "size": 805,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 556,
+          "ratio": 0.6906832298136646,
+          "reduction": 30.93167701863354
+        },
+        "bz2": {
+          "size": 499,
+          "ratio": 0.6198757763975156,
+          "reduction": 38.01242236024845
+        },
+        "gzip": {
+          "size": 462,
+          "ratio": 0.5739130434782609,
+          "reduction": 42.608695652173914
+        },
+        "zlib": {
+          "size": 450,
+          "ratio": 0.5590062111801242,
+          "reduction": 44.099378881987576
+        },
+        "zstd": {
+          "size": 461,
+          "ratio": 0.5726708074534161,
+          "reduction": 42.732919254658384
+        },
+        "brotli": {
+          "size": 342,
+          "ratio": 0.4248447204968944,
+          "reduction": 57.51552795031056
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5734989648033126
+    },
+    {
+      "filename": "cloud_shepherd.txt",
+      "source": "AI",
+      "original_size": 733,
+      "word_count": 121,
+      "char_count": 733,
+      "compression": {
+        "original": {
+          "size": 735,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 536,
+          "ratio": 0.7292517006802721,
+          "reduction": 27.074829931972786
+        },
+        "bz2": {
+          "size": 465,
+          "ratio": 0.6326530612244898,
+          "reduction": 36.734693877551024
+        },
+        "gzip": {
+          "size": 438,
+          "ratio": 0.5959183673469388,
+          "reduction": 40.40816326530612
+        },
+        "zlib": {
+          "size": 426,
+          "ratio": 0.5795918367346938,
+          "reduction": 42.04081632653061
+        },
+        "zstd": {
+          "size": 438,
+          "ratio": 0.5959183673469388,
+          "reduction": 40.40816326530612
+        },
+        "brotli": {
+          "size": 350,
+          "ratio": 0.47619047619047616,
+          "reduction": 52.38095238095239
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6015873015873016
+    },
+    {
+      "filename": "color_thief.txt",
+      "source": "AI",
+      "original_size": 714,
+      "word_count": 115,
+      "char_count": 714,
+      "compression": {
+        "original": {
+          "size": 714,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 520,
+          "ratio": 0.7282913165266106,
+          "reduction": 27.170868347338935
+        },
+        "bz2": {
+          "size": 440,
+          "ratio": 0.6162464985994398,
+          "reduction": 38.37535014005603
+        },
+        "gzip": {
+          "size": 420,
+          "ratio": 0.5882352941176471,
+          "reduction": 41.17647058823529
+        },
+        "zlib": {
+          "size": 408,
+          "ratio": 0.5714285714285714,
+          "reduction": 42.857142857142854
+        },
+        "zstd": {
+          "size": 419,
+          "ratio": 0.5868347338935574,
+          "reduction": 41.31652661064425
+        },
+        "brotli": {
+          "size": 327,
+          "ratio": 0.4579831932773109,
+          "reduction": 54.20168067226891
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5915032679738562
+    },
+    {
+      "filename": "compass_heart.txt",
+      "source": "AI",
+      "original_size": 750,
+      "word_count": 119,
+      "char_count": 750,
+      "compression": {
+        "original": {
+          "size": 752,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 516,
+          "ratio": 0.6861702127659575,
+          "reduction": 31.382978723404253
+        },
+        "bz2": {
+          "size": 456,
+          "ratio": 0.6063829787234043,
+          "reduction": 39.361702127659576
+        },
+        "gzip": {
+          "size": 424,
+          "ratio": 0.5638297872340425,
+          "reduction": 43.61702127659575
+        },
+        "zlib": {
+          "size": 412,
+          "ratio": 0.5478723404255319,
+          "reduction": 45.21276595744681
+        },
+        "zstd": {
+          "size": 428,
+          "ratio": 0.5691489361702128,
+          "reduction": 43.08510638297872
+        },
+        "brotli": {
+          "size": 349,
+          "ratio": 0.4640957446808511,
+          "reduction": 53.590425531914896
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5729166666666666
+    },
+    {
+      "filename": "digital_phoenix.txt",
+      "source": "AI",
+      "original_size": 796,
+      "word_count": 117,
+      "char_count": 796,
+      "compression": {
+        "original": {
+          "size": 798,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 600,
+          "ratio": 0.7518796992481203,
+          "reduction": 24.81203007518797
+        },
+        "bz2": {
+          "size": 530,
+          "ratio": 0.6641604010025063,
+          "reduction": 33.583959899749374
+        },
+        "gzip": {
+          "size": 496,
+          "ratio": 0.6215538847117794,
+          "reduction": 37.84461152882205
+        },
+        "zlib": {
+          "size": 484,
+          "ratio": 0.606516290726817,
+          "reduction": 39.34837092731829
+        },
+        "zstd": {
+          "size": 495,
+          "ratio": 0.6203007518796992,
+          "reduction": 37.96992481203007
+        },
+        "brotli": {
+          "size": 371,
+          "ratio": 0.4649122807017544,
+          "reduction": 53.50877192982456
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6215538847117794
+    },
+    {
+      "filename": "door_whisperer.txt",
+      "source": "AI",
+      "original_size": 755,
+      "word_count": 113,
+      "char_count": 755,
+      "compression": {
+        "original": {
+          "size": 757,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 544,
+          "ratio": 0.7186261558784677,
+          "reduction": 28.13738441215324
+        },
+        "bz2": {
+          "size": 479,
+          "ratio": 0.6327608982826949,
+          "reduction": 36.723910171730516
+        },
+        "gzip": {
+          "size": 445,
+          "ratio": 0.5878467635402906,
+          "reduction": 41.21532364597093
+        },
+        "zlib": {
+          "size": 433,
+          "ratio": 0.571994715984148,
+          "reduction": 42.800528401585204
+        },
+        "zstd": {
+          "size": 444,
+          "ratio": 0.5865257595772787,
+          "reduction": 41.34742404227213
+        },
+        "brotli": {
+          "size": 328,
+          "ratio": 0.4332892998678996,
+          "reduction": 56.671070013210034
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5885072655217966
+    },
+    {
+      "filename": "dream_librarian.txt",
+      "source": "AI",
+      "original_size": 786,
+      "word_count": 114,
+      "char_count": 786,
+      "compression": {
+        "original": {
+          "size": 788,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 556,
+          "ratio": 0.7055837563451777,
+          "reduction": 29.441624365482234
+        },
+        "bz2": {
+          "size": 485,
+          "ratio": 0.6154822335025381,
+          "reduction": 38.45177664974619
+        },
+        "gzip": {
+          "size": 463,
+          "ratio": 0.5875634517766497,
+          "reduction": 41.243654822335024
+        },
+        "zlib": {
+          "size": 451,
+          "ratio": 0.5723350253807107,
+          "reduction": 42.766497461928935
+        },
+        "zstd": {
+          "size": 460,
+          "ratio": 0.583756345177665,
+          "reduction": 41.62436548223351
+        },
+        "brotli": {
+          "size": 358,
+          "ratio": 0.4543147208121827,
+          "reduction": 54.568527918781726
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5865059221658206
+    },
+    {
+      "filename": "dust_historian.txt",
+      "source": "AI",
+      "original_size": 783,
+      "word_count": 115,
+      "char_count": 783,
+      "compression": {
+        "original": {
+          "size": 787,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 552,
+          "ratio": 0.7013977128335451,
+          "reduction": 29.860228716645487
+        },
+        "bz2": {
+          "size": 488,
+          "ratio": 0.6200762388818297,
+          "reduction": 37.99237611181703
+        },
+        "gzip": {
+          "size": 452,
+          "ratio": 0.5743329097839899,
+          "reduction": 42.56670902160102
+        },
+        "zlib": {
+          "size": 440,
+          "ratio": 0.5590851334180432,
+          "reduction": 44.09148665819568
+        },
+        "zstd": {
+          "size": 453,
+          "ratio": 0.5756035578144854,
+          "reduction": 42.43964421855146
+        },
+        "brotli": {
+          "size": 347,
+          "ratio": 0.4409148665819568,
+          "reduction": 55.90851334180432
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5785684032189751
+    },
+    {
+      "filename": "echo_keeper.txt",
+      "source": "AI",
+      "original_size": 769,
+      "word_count": 115,
+      "char_count": 769,
+      "compression": {
+        "original": {
+          "size": 771,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 548,
+          "ratio": 0.7107652399481194,
+          "reduction": 28.92347600518807
+        },
+        "bz2": {
+          "size": 487,
+          "ratio": 0.6316472114137484,
+          "reduction": 36.835278858625166
+        },
+        "gzip": {
+          "size": 458,
+          "ratio": 0.5940337224383917,
+          "reduction": 40.59662775616083
+        },
+        "zlib": {
+          "size": 446,
+          "ratio": 0.5784695201037614,
+          "reduction": 42.153047989623865
+        },
+        "zstd": {
+          "size": 456,
+          "ratio": 0.5914396887159533,
+          "reduction": 40.856031128404666
+        },
+        "brotli": {
+          "size": 367,
+          "ratio": 0.47600518806744485,
+          "reduction": 52.39948119325552
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5970600951145698
+    },
+    {
+      "filename": "emotion_garden.txt",
+      "source": "AI",
+      "original_size": 809,
+      "word_count": 118,
+      "char_count": 809,
+      "compression": {
+        "original": {
+          "size": 811,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 576,
+          "ratio": 0.7102342786683107,
+          "reduction": 28.976572133168926
+        },
+        "bz2": {
+          "size": 508,
+          "ratio": 0.6263871763255241,
+          "reduction": 37.36128236744759
+        },
+        "gzip": {
+          "size": 478,
+          "ratio": 0.5893958076448829,
+          "reduction": 41.060419235511716
+        },
+        "zlib": {
+          "size": 466,
+          "ratio": 0.5745992601726264,
+          "reduction": 42.54007398273736
+        },
+        "zstd": {
+          "size": 479,
+          "ratio": 0.5906288532675709,
+          "reduction": 40.93711467324291
+        },
+        "brotli": {
+          "size": 388,
+          "ratio": 0.4784217016029593,
+          "reduction": 52.15782983970407
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.594944512946979
+    },
+    {
+      "filename": "fever_dreamer.txt",
+      "source": "AI",
+      "original_size": 763,
+      "word_count": 118,
+      "char_count": 763,
+      "compression": {
+        "original": {
+          "size": 767,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 552,
+          "ratio": 0.7196870925684485,
+          "reduction": 28.03129074315515
+        },
+        "bz2": {
+          "size": 484,
+          "ratio": 0.6310299869621904,
+          "reduction": 36.89700130378096
+        },
+        "gzip": {
+          "size": 459,
+          "ratio": 0.5984354628422425,
+          "reduction": 40.15645371577575
+        },
+        "zlib": {
+          "size": 447,
+          "ratio": 0.5827900912646675,
+          "reduction": 41.720990873533246
+        },
+        "zstd": {
+          "size": 458,
+          "ratio": 0.5971316818774446,
+          "reduction": 40.28683181225554
+        },
+        "brotli": {
+          "size": 351,
+          "ratio": 0.4576271186440678,
+          "reduction": 54.23728813559322
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5977835723598436
+    },
+    {
+      "filename": "footprint_reader.txt",
+      "source": "AI",
+      "original_size": 751,
+      "word_count": 117,
+      "char_count": 751,
+      "compression": {
+        "original": {
+          "size": 755,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 540,
+          "ratio": 0.7152317880794702,
+          "reduction": 28.47682119205298
+        },
+        "bz2": {
+          "size": 475,
+          "ratio": 0.6291390728476821,
+          "reduction": 37.086092715231786
+        },
+        "gzip": {
+          "size": 447,
+          "ratio": 0.5920529801324503,
+          "reduction": 40.794701986754966
+        },
+        "zlib": {
+          "size": 435,
+          "ratio": 0.5761589403973509,
+          "reduction": 42.384105960264904
+        },
+        "zstd": {
+          "size": 443,
+          "ratio": 0.5867549668874172,
+          "reduction": 41.324503311258276
+        },
+        "brotli": {
+          "size": 355,
+          "ratio": 0.47019867549668876,
+          "reduction": 52.980132450331126
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5949227373068433
+    },
+    {
+      "filename": "frost_writer.txt",
+      "source": "AI",
+      "original_size": 810,
+      "word_count": 118,
+      "char_count": 810,
+      "compression": {
+        "original": {
+          "size": 814,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 568,
+          "ratio": 0.6977886977886978,
+          "reduction": 30.22113022113022
+        },
+        "bz2": {
+          "size": 499,
+          "ratio": 0.6130221130221131,
+          "reduction": 38.697788697788695
+        },
+        "gzip": {
+          "size": 472,
+          "ratio": 0.5798525798525799,
+          "reduction": 42.01474201474201
+        },
+        "zlib": {
+          "size": 460,
+          "ratio": 0.5651105651105651,
+          "reduction": 43.48894348894349
+        },
+        "zstd": {
+          "size": 468,
+          "ratio": 0.5749385749385749,
+          "reduction": 42.50614250614251
+        },
+        "brotli": {
+          "size": 344,
+          "ratio": 0.4226044226044226,
+          "reduction": 57.73955773955773
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5755528255528256
+    },
+    {
+      "filename": "gravity_dancer.txt",
+      "source": "AI",
+      "original_size": 766,
+      "word_count": 110,
+      "char_count": 766,
+      "compression": {
+        "original": {
+          "size": 770,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 560,
+          "ratio": 0.7272727272727273,
+          "reduction": 27.27272727272727
+        },
+        "bz2": {
+          "size": 492,
+          "ratio": 0.638961038961039,
+          "reduction": 36.103896103896105
+        },
+        "gzip": {
+          "size": 461,
+          "ratio": 0.5987012987012987,
+          "reduction": 40.129870129870135
+        },
+        "zlib": {
+          "size": 449,
+          "ratio": 0.5831168831168831,
+          "reduction": 41.688311688311686
+        },
+        "zstd": {
+          "size": 465,
+          "ratio": 0.6038961038961039,
+          "reduction": 39.61038961038961
+        },
+        "brotli": {
+          "size": 332,
+          "ratio": 0.43116883116883115,
+          "reduction": 56.88311688311688
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5971861471861472
+    },
+    {
+      "filename": "light_sculptor.txt",
+      "source": "AI",
+      "original_size": 826,
+      "word_count": 116,
+      "char_count": 826,
+      "compression": {
+        "original": {
+          "size": 830,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 588,
+          "ratio": 0.708433734939759,
+          "reduction": 29.156626506024097
+        },
+        "bz2": {
+          "size": 526,
+          "ratio": 0.6337349397590362,
+          "reduction": 36.626506024096386
+        },
+        "gzip": {
+          "size": 489,
+          "ratio": 0.5891566265060241,
+          "reduction": 41.08433734939759
+        },
+        "zlib": {
+          "size": 477,
+          "ratio": 0.5746987951807229,
+          "reduction": 42.53012048192771
+        },
+        "zstd": {
+          "size": 489,
+          "ratio": 0.5891566265060241,
+          "reduction": 41.08433734939759
+        },
+        "brotli": {
+          "size": 356,
+          "ratio": 0.42891566265060244,
+          "reduction": 57.10843373493976
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5873493975903614
+    },
+    {
+      "filename": "memory_photographer.txt",
+      "source": "AI",
+      "original_size": 822,
+      "word_count": 118,
+      "char_count": 822,
+      "compression": {
+        "original": {
+          "size": 824,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 564,
+          "ratio": 0.6844660194174758,
+          "reduction": 31.55339805825243
+        },
+        "bz2": {
+          "size": 491,
+          "ratio": 0.595873786407767,
+          "reduction": 40.4126213592233
+        },
+        "gzip": {
+          "size": 468,
+          "ratio": 0.5679611650485437,
+          "reduction": 43.203883495145625
+        },
+        "zlib": {
+          "size": 456,
+          "ratio": 0.5533980582524272,
+          "reduction": 44.66019417475729
+        },
+        "zstd": {
+          "size": 468,
+          "ratio": 0.5679611650485437,
+          "reduction": 43.203883495145625
+        },
+        "brotli": {
+          "size": 366,
+          "ratio": 0.4441747572815534,
+          "reduction": 55.582524271844655
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5689724919093851
+    },
+    {
+      "filename": "mirror_merchant.txt",
+      "source": "AI",
+      "original_size": 760,
+      "word_count": 128,
+      "char_count": 760,
+      "compression": {
+        "original": {
+          "size": 762,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 564,
+          "ratio": 0.7401574803149606,
+          "reduction": 25.984251968503933
+        },
+        "bz2": {
+          "size": 499,
+          "ratio": 0.6548556430446194,
+          "reduction": 34.51443569553806
+        },
+        "gzip": {
+          "size": 461,
+          "ratio": 0.60498687664042,
+          "reduction": 39.501312335958005
+        },
+        "zlib": {
+          "size": 449,
+          "ratio": 0.589238845144357,
+          "reduction": 41.0761154855643
+        },
+        "zstd": {
+          "size": 459,
+          "ratio": 0.6023622047244095,
+          "reduction": 39.76377952755906
+        },
+        "brotli": {
+          "size": 360,
+          "ratio": 0.47244094488188976,
+          "reduction": 52.75590551181102
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6106736657917761
+    },
+    {
+      "filename": "moon_shepherd.txt",
+      "source": "AI",
+      "original_size": 751,
+      "word_count": 114,
+      "char_count": 751,
+      "compression": {
+        "original": {
+          "size": 753,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 548,
+          "ratio": 0.7277556440903055,
+          "reduction": 27.224435590969453
+        },
+        "bz2": {
+          "size": 465,
+          "ratio": 0.6175298804780877,
+          "reduction": 38.24701195219124
+        },
+        "gzip": {
+          "size": 442,
+          "ratio": 0.5869853917662683,
+          "reduction": 41.301460823373176
+        },
+        "zlib": {
+          "size": 430,
+          "ratio": 0.5710491367861886,
+          "reduction": 42.89508632138114
+        },
+        "zstd": {
+          "size": 441,
+          "ratio": 0.5856573705179283,
+          "reduction": 41.43426294820717
+        },
+        "brotli": {
+          "size": 346,
+          "ratio": 0.4594953519256308,
+          "reduction": 54.05046480743692
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5914121292607348
+    },
+    {
+      "filename": "pattern_breaker.txt",
+      "source": "AI",
+      "original_size": 784,
+      "word_count": 112,
+      "char_count": 784,
+      "compression": {
+        "original": {
+          "size": 786,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 532,
+          "ratio": 0.6768447837150128,
+          "reduction": 32.31552162849873
+        },
+        "bz2": {
+          "size": 464,
+          "ratio": 0.5903307888040712,
+          "reduction": 40.966921119592875
+        },
+        "gzip": {
+          "size": 439,
+          "ratio": 0.5585241730279898,
+          "reduction": 44.14758269720102
+        },
+        "zlib": {
+          "size": 427,
+          "ratio": 0.5432569974554707,
+          "reduction": 45.67430025445292
+        },
+        "zstd": {
+          "size": 435,
+          "ratio": 0.5534351145038168,
+          "reduction": 44.656488549618324
+        },
+        "brotli": {
+          "size": 320,
+          "ratio": 0.4071246819338422,
+          "reduction": 59.28753180661578
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.554919423240034
+    },
+    {
+      "filename": "question_farmer.txt",
+      "source": "AI",
+      "original_size": 784,
+      "word_count": 113,
+      "char_count": 784,
+      "compression": {
+        "original": {
+          "size": 788,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 556,
+          "ratio": 0.7055837563451777,
+          "reduction": 29.441624365482234
+        },
+        "bz2": {
+          "size": 488,
+          "ratio": 0.6192893401015228,
+          "reduction": 38.07106598984771
+        },
+        "gzip": {
+          "size": 455,
+          "ratio": 0.5774111675126904,
+          "reduction": 42.25888324873097
+        },
+        "zlib": {
+          "size": 443,
+          "ratio": 0.5621827411167513,
+          "reduction": 43.78172588832487
+        },
+        "zstd": {
+          "size": 458,
+          "ratio": 0.5812182741116751,
+          "reduction": 41.878172588832484
+        },
+        "brotli": {
+          "size": 362,
+          "ratio": 0.4593908629441624,
+          "reduction": 54.06091370558376
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5841793570219966
+    },
+    {
+      "filename": "rain_composer.txt",
+      "source": "AI",
+      "original_size": 803,
+      "word_count": 112,
+      "char_count": 803,
+      "compression": {
+        "original": {
+          "size": 807,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 588,
+          "ratio": 0.7286245353159851,
+          "reduction": 27.137546468401485
+        },
+        "bz2": {
+          "size": 520,
+          "ratio": 0.644361833952912,
+          "reduction": 35.5638166047088
+        },
+        "gzip": {
+          "size": 485,
+          "ratio": 0.6009913258983891,
+          "reduction": 39.90086741016109
+        },
+        "zlib": {
+          "size": 473,
+          "ratio": 0.5861214374225526,
+          "reduction": 41.38785625774473
+        },
+        "zstd": {
+          "size": 490,
+          "ratio": 0.6071871127633209,
+          "reduction": 39.281288723667906
+        },
+        "brotli": {
+          "size": 372,
+          "ratio": 0.46096654275092935,
+          "reduction": 53.90334572490706
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6047087980173482
+    },
+    {
+      "filename": "ridge_walker.txt",
+      "source": "AI",
+      "original_size": 732,
+      "word_count": 115,
+      "char_count": 732,
+      "compression": {
+        "original": {
+          "size": 734,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 512,
+          "ratio": 0.6975476839237057,
+          "reduction": 30.24523160762943
+        },
+        "bz2": {
+          "size": 444,
+          "ratio": 0.6049046321525886,
+          "reduction": 39.509536784741144
+        },
+        "gzip": {
+          "size": 422,
+          "ratio": 0.5749318801089919,
+          "reduction": 42.50681198910082
+        },
+        "zlib": {
+          "size": 410,
+          "ratio": 0.55858310626703,
+          "reduction": 44.141689373297005
+        },
+        "zstd": {
+          "size": 424,
+          "ratio": 0.5776566757493188,
+          "reduction": 42.234332425068125
+        },
+        "brotli": {
+          "size": 342,
+          "ratio": 0.4659400544959128,
+          "reduction": 53.40599455040872
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5799273387829247
+    },
+    {
+      "filename": "root_singer.txt",
+      "source": "AI",
+      "original_size": 748,
+      "word_count": 119,
+      "char_count": 748,
+      "compression": {
+        "original": {
+          "size": 750,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 556,
+          "ratio": 0.7413333333333333,
+          "reduction": 25.866666666666667
+        },
+        "bz2": {
+          "size": 474,
+          "ratio": 0.632,
+          "reduction": 36.8
+        },
+        "gzip": {
+          "size": 451,
+          "ratio": 0.6013333333333334,
+          "reduction": 39.86666666666667
+        },
+        "zlib": {
+          "size": 439,
+          "ratio": 0.5853333333333334,
+          "reduction": 41.46666666666667
+        },
+        "zstd": {
+          "size": 449,
+          "ratio": 0.5986666666666667,
+          "reduction": 40.13333333333333
+        },
+        "brotli": {
+          "size": 334,
+          "ratio": 0.44533333333333336,
+          "reduction": 55.46666666666666
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6006666666666667
+    },
+    {
+      "filename": "salt_keeper.txt",
+      "source": "AI",
+      "original_size": 709,
+      "word_count": 115,
+      "char_count": 709,
+      "compression": {
+        "original": {
+          "size": 713,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 520,
+          "ratio": 0.729312762973352,
+          "reduction": 27.068723702664798
+        },
+        "bz2": {
+          "size": 466,
+          "ratio": 0.6535764375876578,
+          "reduction": 34.642356241234225
+        },
+        "gzip": {
+          "size": 427,
+          "ratio": 0.5988779803646563,
+          "reduction": 40.11220196353436
+        },
+        "zlib": {
+          "size": 415,
+          "ratio": 0.5820476858345021,
+          "reduction": 41.79523141654979
+        },
+        "zstd": {
+          "size": 423,
+          "ratio": 0.5932678821879382,
+          "reduction": 40.67321178120617
+        },
+        "brotli": {
+          "size": 341,
+          "ratio": 0.4782608695652174,
+          "reduction": 52.17391304347826
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.605890603085554
+    },
+    {
+      "filename": "scar_reader.txt",
+      "source": "AI",
+      "original_size": 720,
+      "word_count": 112,
+      "char_count": 720,
+      "compression": {
+        "original": {
+          "size": 724,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 528,
+          "ratio": 0.7292817679558011,
+          "reduction": 27.071823204419886
+        },
+        "bz2": {
+          "size": 463,
+          "ratio": 0.6395027624309392,
+          "reduction": 36.049723756906076
+        },
+        "gzip": {
+          "size": 432,
+          "ratio": 0.5966850828729282,
+          "reduction": 40.331491712707184
+        },
+        "zlib": {
+          "size": 420,
+          "ratio": 0.580110497237569,
+          "reduction": 41.988950276243095
+        },
+        "zstd": {
+          "size": 436,
+          "ratio": 0.6022099447513812,
+          "reduction": 39.77900552486188
+        },
+        "brotli": {
+          "size": 342,
+          "ratio": 0.4723756906077348,
+          "reduction": 52.762430939226526
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6033609576427256
+    },
+    {
+      "filename": "shadow_painter.txt",
+      "source": "AI",
+      "original_size": 771,
+      "word_count": 120,
+      "char_count": 771,
+      "compression": {
+        "original": {
+          "size": 775,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 564,
+          "ratio": 0.727741935483871,
+          "reduction": 27.225806451612904
+        },
+        "bz2": {
+          "size": 497,
+          "ratio": 0.6412903225806451,
+          "reduction": 35.87096774193548
+        },
+        "gzip": {
+          "size": 467,
+          "ratio": 0.6025806451612903,
+          "reduction": 39.74193548387097
+        },
+        "zlib": {
+          "size": 455,
+          "ratio": 0.5870967741935483,
+          "reduction": 41.29032258064516
+        },
+        "zstd": {
+          "size": 464,
+          "ratio": 0.5987096774193549,
+          "reduction": 40.12903225806452
+        },
+        "brotli": {
+          "size": 344,
+          "ratio": 0.44387096774193546,
+          "reduction": 55.612903225806456
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6002150537634409
+    },
+    {
+      "filename": "silence_merchant.txt",
+      "source": "AI",
+      "original_size": 727,
+      "word_count": 113,
+      "char_count": 727,
+      "compression": {
+        "original": {
+          "size": 733,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 540,
+          "ratio": 0.7366984993178718,
+          "reduction": 26.330150068212827
+        },
+        "bz2": {
+          "size": 472,
+          "ratio": 0.6439290586630286,
+          "reduction": 35.60709413369714
+        },
+        "gzip": {
+          "size": 440,
+          "ratio": 0.6002728512960437,
+          "reduction": 39.972714870395635
+        },
+        "zlib": {
+          "size": 428,
+          "ratio": 0.5839017735334243,
+          "reduction": 41.60982264665758
+        },
+        "zstd": {
+          "size": 443,
+          "ratio": 0.6043656207366985,
+          "reduction": 39.56343792633015
+        },
+        "brotli": {
+          "size": 333,
+          "ratio": 0.4542974079126876,
+          "reduction": 54.570259208731244
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6039108685766258
+    },
+    {
+      "filename": "smoke_translator.txt",
+      "source": "AI",
+      "original_size": 787,
+      "word_count": 115,
+      "char_count": 787,
+      "compression": {
+        "original": {
+          "size": 791,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 564,
+          "ratio": 0.7130214917825537,
+          "reduction": 28.697850821744623
+        },
+        "bz2": {
+          "size": 492,
+          "ratio": 0.6219974715549936,
+          "reduction": 37.80025284450063
+        },
+        "gzip": {
+          "size": 466,
+          "ratio": 0.5891276864728192,
+          "reduction": 41.08723135271808
+        },
+        "zlib": {
+          "size": 454,
+          "ratio": 0.5739570164348925,
+          "reduction": 42.604298356510746
+        },
+        "zstd": {
+          "size": 468,
+          "ratio": 0.5916561314791403,
+          "reduction": 40.83438685208597
+        },
+        "brotli": {
+          "size": 378,
+          "ratio": 0.4778761061946903,
+          "reduction": 52.21238938053098
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.594605983986515
+    },
+    {
+      "filename": "song_collector.txt",
+      "source": "AI",
+      "original_size": 737,
+      "word_count": 120,
+      "char_count": 737,
+      "compression": {
+        "original": {
+          "size": 741,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 532,
+          "ratio": 0.717948717948718,
+          "reduction": 28.205128205128204
+        },
+        "bz2": {
+          "size": 462,
+          "ratio": 0.6234817813765182,
+          "reduction": 37.65182186234818
+        },
+        "gzip": {
+          "size": 434,
+          "ratio": 0.5856950067476383,
+          "reduction": 41.43049932523617
+        },
+        "zlib": {
+          "size": 422,
+          "ratio": 0.5695006747638327,
+          "reduction": 43.04993252361673
+        },
+        "zstd": {
+          "size": 436,
+          "ratio": 0.5883940620782726,
+          "reduction": 41.16059379217274
+        },
+        "brotli": {
+          "size": 339,
+          "ratio": 0.4574898785425101,
+          "reduction": 54.25101214574899
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5904183535762483
+    },
+    {
+      "filename": "star_fisherman.txt",
+      "source": "AI",
+      "original_size": 729,
+      "word_count": 115,
+      "char_count": 729,
+      "compression": {
+        "original": {
+          "size": 731,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 500,
+          "ratio": 0.6839945280437757,
+          "reduction": 31.600547195622436
+        },
+        "bz2": {
+          "size": 441,
+          "ratio": 0.6032831737346102,
+          "reduction": 39.67168262653899
+        },
+        "gzip": {
+          "size": 410,
+          "ratio": 0.560875512995896,
+          "reduction": 43.912448700410394
+        },
+        "zlib": {
+          "size": 398,
+          "ratio": 0.5444596443228454,
+          "reduction": 45.55403556771546
+        },
+        "zstd": {
+          "size": 409,
+          "ratio": 0.5595075239398085,
+          "reduction": 44.04924760601915
+        },
+        "brotli": {
+          "size": 329,
+          "ratio": 0.45006839945280436,
+          "reduction": 54.99316005471956
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.56703146374829
+    },
+    {
+      "filename": "tear_collector.txt",
+      "source": "AI",
+      "original_size": 722,
+      "word_count": 112,
+      "char_count": 722,
+      "compression": {
+        "original": {
+          "size": 726,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 528,
+          "ratio": 0.7272727272727273,
+          "reduction": 27.27272727272727
+        },
+        "bz2": {
+          "size": 472,
+          "ratio": 0.650137741046832,
+          "reduction": 34.9862258953168
+        },
+        "gzip": {
+          "size": 433,
+          "ratio": 0.5964187327823691,
+          "reduction": 40.358126721763085
+        },
+        "zlib": {
+          "size": 421,
+          "ratio": 0.5798898071625345,
+          "reduction": 42.011019283746556
+        },
+        "zstd": {
+          "size": 430,
+          "ratio": 0.5922865013774105,
+          "reduction": 40.77134986225895
+        },
+        "brotli": {
+          "size": 364,
+          "ratio": 0.5013774104683195,
+          "reduction": 49.862258953168045
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6078971533516988
+    },
+    {
+      "filename": "thread_walker.txt",
+      "source": "AI",
+      "original_size": 738,
+      "word_count": 113,
+      "char_count": 738,
+      "compression": {
+        "original": {
+          "size": 740,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 516,
+          "ratio": 0.6972972972972973,
+          "reduction": 30.270270270270274
+        },
+        "bz2": {
+          "size": 451,
+          "ratio": 0.6094594594594595,
+          "reduction": 39.054054054054056
+        },
+        "gzip": {
+          "size": 425,
+          "ratio": 0.5743243243243243,
+          "reduction": 42.567567567567565
+        },
+        "zlib": {
+          "size": 413,
+          "ratio": 0.5581081081081081,
+          "reduction": 44.189189189189186
+        },
+        "zstd": {
+          "size": 426,
+          "ratio": 0.5756756756756757,
+          "reduction": 42.432432432432435
+        },
+        "brotli": {
+          "size": 326,
+          "ratio": 0.44054054054054054,
+          "reduction": 55.945945945945944
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5759009009009008
+    },
+    {
+      "filename": "time_weaver.txt",
+      "source": "AI",
+      "original_size": 713,
+      "word_count": 119,
+      "char_count": 713,
+      "compression": {
+        "original": {
+          "size": 715,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 532,
+          "ratio": 0.7440559440559441,
+          "reduction": 25.594405594405593
+        },
+        "bz2": {
+          "size": 455,
+          "ratio": 0.6363636363636364,
+          "reduction": 36.36363636363637
+        },
+        "gzip": {
+          "size": 435,
+          "ratio": 0.6083916083916084,
+          "reduction": 39.16083916083916
+        },
+        "zlib": {
+          "size": 423,
+          "ratio": 0.5916083916083916,
+          "reduction": 40.83916083916084
+        },
+        "zstd": {
+          "size": 429,
+          "ratio": 0.6,
+          "reduction": 40.0
+        },
+        "brotli": {
+          "size": 339,
+          "ratio": 0.47412587412587415,
+          "reduction": 52.58741258741259
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6090909090909091
+    },
+    {
+      "filename": "truth_baker.txt",
+      "source": "AI",
+      "original_size": 771,
+      "word_count": 114,
+      "char_count": 771,
+      "compression": {
+        "original": {
+          "size": 773,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 536,
+          "ratio": 0.6934023285899095,
+          "reduction": 30.659767141009052
+        },
+        "bz2": {
+          "size": 479,
+          "ratio": 0.6196636481241915,
+          "reduction": 38.033635187580856
+        },
+        "gzip": {
+          "size": 447,
+          "ratio": 0.5782664941785253,
+          "reduction": 42.17335058214748
+        },
+        "zlib": {
+          "size": 435,
+          "ratio": 0.5627425614489003,
+          "reduction": 43.72574385510996
+        },
+        "zstd": {
+          "size": 446,
+          "ratio": 0.5769728331177232,
+          "reduction": 42.30271668822768
+        },
+        "brotli": {
+          "size": 354,
+          "ratio": 0.4579560155239327,
+          "reduction": 54.20439844760673
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5815006468305304
+    },
+    {
+      "filename": "wind_reader.txt",
+      "source": "AI",
+      "original_size": 726,
+      "word_count": 120,
+      "char_count": 726,
+      "compression": {
+        "original": {
+          "size": 728,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 540,
+          "ratio": 0.7417582417582418,
+          "reduction": 25.82417582417583
+        },
+        "bz2": {
+          "size": 470,
+          "ratio": 0.6456043956043956,
+          "reduction": 35.43956043956044
+        },
+        "gzip": {
+          "size": 445,
+          "ratio": 0.6112637362637363,
+          "reduction": 38.87362637362637
+        },
+        "zlib": {
+          "size": 433,
+          "ratio": 0.5947802197802198,
+          "reduction": 40.52197802197802
+        },
+        "zstd": {
+          "size": 440,
+          "ratio": 0.6043956043956044,
+          "reduction": 39.56043956043956
+        },
+        "brotli": {
+          "size": 345,
+          "ratio": 0.4739010989010989,
+          "reduction": 52.60989010989011
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6119505494505495
+    },
+    {
+      "filename": "word_archaeologist.txt",
+      "source": "AI",
+      "original_size": 779,
+      "word_count": 117,
+      "char_count": 779,
+      "compression": {
+        "original": {
+          "size": 783,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 568,
+          "ratio": 0.7254150702426565,
+          "reduction": 27.458492975734355
+        },
+        "bz2": {
+          "size": 504,
+          "ratio": 0.6436781609195402,
+          "reduction": 35.63218390804598
+        },
+        "gzip": {
+          "size": 468,
+          "ratio": 0.5977011494252874,
+          "reduction": 40.229885057471265
+        },
+        "zlib": {
+          "size": 456,
+          "ratio": 0.5823754789272031,
+          "reduction": 41.7624521072797
+        },
+        "zstd": {
+          "size": 471,
+          "ratio": 0.6015325670498084,
+          "reduction": 39.84674329501915
+        },
+        "brotli": {
+          "size": 367,
+          "ratio": 0.46871008939974457,
+          "reduction": 53.12899106002554
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6032354193273733
+    },
+    {
+      "filename": "001_fox_and_grapes.txt",
+      "source": "Human",
+      "original_size": 168,
+      "word_count": 31,
+      "char_count": 168,
+      "compression": {
+        "original": {
+          "size": 168,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 212,
+          "ratio": 1.2619047619047619,
+          "reduction": -26.190476190476193
+        },
+        "bz2": {
+          "size": 156,
+          "ratio": 0.9285714285714286,
+          "reduction": 7.142857142857142
+        },
+        "gzip": {
+          "size": 147,
+          "ratio": 0.875,
+          "reduction": 12.5
+        },
+        "zlib": {
+          "size": 135,
+          "ratio": 0.8035714285714286,
+          "reduction": 19.642857142857142
+        },
+        "zstd": {
+          "size": 134,
+          "ratio": 0.7976190476190477,
+          "reduction": 20.238095238095237
+        },
+        "brotli": {
+          "size": 121,
+          "ratio": 0.7202380952380952,
+          "reduction": 27.976190476190478
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.8978174603174603
+    },
+    {
+      "filename": "002_goose_golden_eggs.txt",
+      "source": "Human",
+      "original_size": 216,
+      "word_count": 43,
+      "char_count": 216,
+      "compression": {
+        "original": {
+          "size": 216,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 236,
+          "ratio": 1.0925925925925926,
+          "reduction": -9.25925925925926
+        },
+        "bz2": {
+          "size": 193,
+          "ratio": 0.8935185185185185,
+          "reduction": 10.648148148148149
+        },
+        "gzip": {
+          "size": 167,
+          "ratio": 0.7731481481481481,
+          "reduction": 22.685185185185187
+        },
+        "zlib": {
+          "size": 155,
+          "ratio": 0.7175925925925926,
+          "reduction": 28.240740740740737
+        },
+        "zstd": {
+          "size": 155,
+          "ratio": 0.7175925925925926,
+          "reduction": 28.240740740740737
+        },
+        "brotli": {
+          "size": 120,
+          "ratio": 0.5555555555555556,
+          "reduction": 44.44444444444444
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.7916666666666666
+    },
+    {
+      "filename": "003_cat_and_mice.txt",
+      "source": "Human",
+      "original_size": 202,
+      "word_count": 42,
+      "char_count": 202,
+      "compression": {
+        "original": {
+          "size": 202,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 220,
+          "ratio": 1.0891089108910892,
+          "reduction": -8.91089108910891
+        },
+        "bz2": {
+          "size": 163,
+          "ratio": 0.806930693069307,
+          "reduction": 19.306930693069308
+        },
+        "gzip": {
+          "size": 156,
+          "ratio": 0.7722772277227723,
+          "reduction": 22.772277227722775
+        },
+        "zlib": {
+          "size": 144,
+          "ratio": 0.7128712871287128,
+          "reduction": 28.71287128712871
+        },
+        "zstd": {
+          "size": 147,
+          "ratio": 0.7277227722772277,
+          "reduction": 27.22772277227723
+        },
+        "brotli": {
+          "size": 132,
+          "ratio": 0.6534653465346535,
+          "reduction": 34.65346534653465
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.7937293729372937
+    },
+    {
+      "filename": "004_mischievous_dog.txt",
+      "source": "Human",
+      "original_size": 197,
+      "word_count": 39,
+      "char_count": 197,
+      "compression": {
+        "original": {
+          "size": 197,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 224,
+          "ratio": 1.1370558375634519,
+          "reduction": -13.705583756345177
+        },
+        "bz2": {
+          "size": 168,
+          "ratio": 0.8527918781725888,
+          "reduction": 14.720812182741117
+        },
+        "gzip": {
+          "size": 155,
+          "ratio": 0.7868020304568528,
+          "reduction": 21.31979695431472
+        },
+        "zlib": {
+          "size": 143,
+          "ratio": 0.7258883248730964,
+          "reduction": 27.411167512690355
+        },
+        "zstd": {
+          "size": 140,
+          "ratio": 0.7106598984771574,
+          "reduction": 28.934010152284262
+        },
+        "brotli": {
+          "size": 137,
+          "ratio": 0.6954314720812182,
+          "reduction": 30.456852791878177
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.8181049069373942
+    },
+    {
+      "filename": "005_mice_in_council.txt",
+      "source": "Human",
+      "original_size": 178,
+      "word_count": 32,
+      "char_count": 178,
+      "compression": {
+        "original": {
+          "size": 178,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 208,
+          "ratio": 1.1685393258426966,
+          "reduction": -16.853932584269664
+        },
+        "bz2": {
+          "size": 160,
+          "ratio": 0.898876404494382,
+          "reduction": 10.112359550561797
+        },
+        "gzip": {
+          "size": 145,
+          "ratio": 0.8146067415730337,
+          "reduction": 18.53932584269663
+        },
+        "zlib": {
+          "size": 133,
+          "ratio": 0.7471910112359551,
+          "reduction": 25.280898876404496
+        },
+        "zstd": {
+          "size": 132,
+          "ratio": 0.7415730337078652,
+          "reduction": 25.842696629213485
+        },
+        "brotli": {
+          "size": 109,
+          "ratio": 0.6123595505617978,
+          "reduction": 38.764044943820224
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.8305243445692884
+    },
+    {
+      "filename": "006_bat_and_weasels.txt",
+      "source": "Human",
+      "original_size": 107,
+      "word_count": 23,
+      "char_count": 107,
+      "compression": {
+        "original": {
+          "size": 107,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 152,
+          "ratio": 1.4205607476635513,
+          "reduction": -42.05607476635514
+        },
+        "bz2": {
+          "size": 121,
+          "ratio": 1.1308411214953271,
+          "reduction": -13.084112149532709
+        },
+        "gzip": {
+          "size": 105,
+          "ratio": 0.9813084112149533,
+          "reduction": 1.8691588785046727
+        },
+        "zlib": {
+          "size": 93,
+          "ratio": 0.8691588785046729,
+          "reduction": 13.084112149532709
+        },
+        "zstd": {
+          "size": 90,
+          "ratio": 0.8411214953271028,
+          "reduction": 15.887850467289718
+        },
+        "brotli": {
+          "size": 87,
+          "ratio": 0.8130841121495327,
+          "reduction": 18.69158878504673
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 1.0093457943925233
+    },
+    {
+      "filename": "007_dog_and_sow.txt",
+      "source": "Human",
+      "original_size": 134,
+      "word_count": 25,
+      "char_count": 134,
+      "compression": {
+        "original": {
+          "size": 134,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 180,
+          "ratio": 1.3432835820895523,
+          "reduction": -34.32835820895522
+        },
+        "bz2": {
+          "size": 131,
+          "ratio": 0.9776119402985075,
+          "reduction": 2.2388059701492535
+        },
+        "gzip": {
+          "size": 125,
+          "ratio": 0.9328358208955224,
+          "reduction": 6.7164179104477615
+        },
+        "zlib": {
+          "size": 113,
+          "ratio": 0.8432835820895522,
+          "reduction": 15.671641791044777
+        },
+        "zstd": {
+          "size": 110,
+          "ratio": 0.8208955223880597,
+          "reduction": 17.91044776119403
+        },
+        "brotli": {
+          "size": 104,
+          "ratio": 0.7761194029850746,
+          "reduction": 22.388059701492537
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9490049751243781
+    },
+    {
+      "filename": "008_fox_and_crow.txt",
+      "source": "Human",
+      "original_size": 116,
+      "word_count": 22,
+      "char_count": 116,
+      "compression": {
+        "original": {
+          "size": 116,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 156,
+          "ratio": 1.3448275862068966,
+          "reduction": -34.48275862068966
+        },
+        "bz2": {
+          "size": 122,
+          "ratio": 1.0517241379310345,
+          "reduction": -5.172413793103448
+        },
+        "gzip": {
+          "size": 109,
+          "ratio": 0.9396551724137931,
+          "reduction": 6.0344827586206895
+        },
+        "zlib": {
+          "size": 97,
+          "ratio": 0.8362068965517241,
+          "reduction": 16.379310344827587
+        },
+        "zstd": {
+          "size": 94,
+          "ratio": 0.8103448275862069,
+          "reduction": 18.96551724137931
+        },
+        "brotli": {
+          "size": 88,
+          "ratio": 0.7586206896551724,
+          "reduction": 24.137931034482758
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9568965517241379
+    },
+    {
+      "filename": "009_wolf_and_lamb.txt",
+      "source": "Human",
+      "original_size": 95,
+      "word_count": 16,
+      "char_count": 95,
+      "compression": {
+        "original": {
+          "size": 95,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 152,
+          "ratio": 1.6,
+          "reduction": -60.0
+        },
+        "bz2": {
+          "size": 117,
+          "ratio": 1.231578947368421,
+          "reduction": -23.157894736842106
+        },
+        "gzip": {
+          "size": 102,
+          "ratio": 1.0736842105263158,
+          "reduction": -7.368421052631578
+        },
+        "zlib": {
+          "size": 90,
+          "ratio": 0.9473684210526315,
+          "reduction": 5.263157894736842
+        },
+        "zstd": {
+          "size": 88,
+          "ratio": 0.9263157894736842,
+          "reduction": 7.368421052631578
+        },
+        "brotli": {
+          "size": 73,
+          "ratio": 0.7684210526315789,
+          "reduction": 23.157894736842106
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 1.0912280701754387
+    },
+    {
+      "filename": "010_peacock_and_crane.txt",
+      "source": "Human",
+      "original_size": 98,
+      "word_count": 18,
+      "char_count": 98,
+      "compression": {
+        "original": {
+          "size": 98,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 144,
+          "ratio": 1.469387755102041,
+          "reduction": -46.93877551020408
+        },
+        "bz2": {
+          "size": 113,
+          "ratio": 1.153061224489796,
+          "reduction": -15.306122448979592
+        },
+        "gzip": {
+          "size": 99,
+          "ratio": 1.010204081632653,
+          "reduction": -1.0204081632653061
+        },
+        "zlib": {
+          "size": 87,
+          "ratio": 0.8877551020408163,
+          "reduction": 11.224489795918368
+        },
+        "zstd": {
+          "size": 87,
+          "ratio": 0.8877551020408163,
+          "reduction": 11.224489795918368
+        },
+        "brotli": {
+          "size": 91,
+          "ratio": 0.9285714285714286,
+          "reduction": 7.142857142857142
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 1.056122448979592
+    },
+    {
+      "filename": "011_lion_and_mouse.txt",
+      "source": "Human",
+      "original_size": 131,
+      "word_count": 25,
+      "char_count": 131,
+      "compression": {
+        "original": {
+          "size": 131,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 176,
+          "ratio": 1.3435114503816794,
+          "reduction": -34.35114503816794
+        },
+        "bz2": {
+          "size": 126,
+          "ratio": 0.9618320610687023,
+          "reduction": 3.816793893129771
+        },
+        "gzip": {
+          "size": 116,
+          "ratio": 0.8854961832061069,
+          "reduction": 11.450381679389313
+        },
+        "zlib": {
+          "size": 104,
+          "ratio": 0.7938931297709924,
+          "reduction": 20.610687022900763
+        },
+        "zstd": {
+          "size": 104,
+          "ratio": 0.7938931297709924,
+          "reduction": 20.610687022900763
+        },
+        "brotli": {
+          "size": 104,
+          "ratio": 0.7938931297709924,
+          "reduction": 20.610687022900763
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9287531806615776
+    },
+    {
+      "filename": "012_crow_and_pitcher.txt",
+      "source": "Human",
+      "original_size": 94,
+      "word_count": 16,
+      "char_count": 94,
+      "compression": {
+        "original": {
+          "size": 94,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 152,
+          "ratio": 1.6170212765957446,
+          "reduction": -61.702127659574465
+        },
+        "bz2": {
+          "size": 114,
+          "ratio": 1.2127659574468086,
+          "reduction": -21.27659574468085
+        },
+        "gzip": {
+          "size": 101,
+          "ratio": 1.074468085106383,
+          "reduction": -7.446808510638298
+        },
+        "zlib": {
+          "size": 89,
+          "ratio": 0.9468085106382979,
+          "reduction": 5.319148936170213
+        },
+        "zstd": {
+          "size": 84,
+          "ratio": 0.8936170212765957,
+          "reduction": 10.638297872340425
+        },
+        "brotli": {
+          "size": 77,
+          "ratio": 0.8191489361702128,
+          "reduction": 18.085106382978726
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 1.0939716312056738
+    },
+    {
+      "filename": "013_north_wind_and_sun.txt",
+      "source": "Human",
+      "original_size": 127,
+      "word_count": 21,
+      "char_count": 127,
+      "compression": {
+        "original": {
+          "size": 127,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 176,
+          "ratio": 1.3858267716535433,
+          "reduction": -38.582677165354326
+        },
+        "bz2": {
+          "size": 131,
+          "ratio": 1.031496062992126,
+          "reduction": -3.149606299212598
+        },
+        "gzip": {
+          "size": 119,
+          "ratio": 0.937007874015748,
+          "reduction": 6.299212598425196
+        },
+        "zlib": {
+          "size": 107,
+          "ratio": 0.84251968503937,
+          "reduction": 15.748031496062993
+        },
+        "zstd": {
+          "size": 108,
+          "ratio": 0.8503937007874016,
+          "reduction": 14.960629921259844
+        },
+        "brotli": {
+          "size": 101,
+          "ratio": 0.7952755905511811,
+          "reduction": 20.47244094488189
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.973753280839895
+    },
+    {
+      "filename": "014_boys_and_frogs.txt",
+      "source": "Human",
+      "original_size": 107,
+      "word_count": 20,
+      "char_count": 107,
+      "compression": {
+        "original": {
+          "size": 107,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 160,
+          "ratio": 1.4953271028037383,
+          "reduction": -49.532710280373834
+        },
+        "bz2": {
+          "size": 123,
+          "ratio": 1.1495327102803738,
+          "reduction": -14.953271028037381
+        },
+        "gzip": {
+          "size": 108,
+          "ratio": 1.0093457943925233,
+          "reduction": -0.9345794392523363
+        },
+        "zlib": {
+          "size": 96,
+          "ratio": 0.897196261682243,
+          "reduction": 10.2803738317757
+        },
+        "zstd": {
+          "size": 96,
+          "ratio": 0.897196261682243,
+          "reduction": 10.2803738317757
+        },
+        "brotli": {
+          "size": 89,
+          "ratio": 0.8317757009345794,
+          "reduction": 16.822429906542055
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 1.0467289719626167
+    },
+    {
+      "filename": "015_charcoal_burner_and_fuller.txt",
+      "source": "Human",
+      "original_size": 143,
+      "word_count": 22,
+      "char_count": 143,
+      "compression": {
+        "original": {
+          "size": 143,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 188,
+          "ratio": 1.3146853146853146,
+          "reduction": -31.46853146853147
+        },
+        "bz2": {
+          "size": 145,
+          "ratio": 1.013986013986014,
+          "reduction": -1.3986013986013985
+        },
+        "gzip": {
+          "size": 133,
+          "ratio": 0.9300699300699301,
+          "reduction": 6.993006993006993
+        },
+        "zlib": {
+          "size": 121,
+          "ratio": 0.8461538461538461,
+          "reduction": 15.384615384615385
+        },
+        "zstd": {
+          "size": 117,
+          "ratio": 0.8181818181818182,
+          "reduction": 18.181818181818183
+        },
+        "brotli": {
+          "size": 108,
+          "ratio": 0.7552447552447552,
+          "reduction": 24.475524475524477
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9463869463869463
+    },
+    {
+      "filename": "015_man_and_satyr.txt",
+      "source": "Human",
+      "original_size": 231,
+      "word_count": 44,
+      "char_count": 231,
+      "compression": {
+        "original": {
+          "size": 231,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 236,
+          "ratio": 1.0216450216450217,
+          "reduction": -2.1645021645021645
+        },
+        "bz2": {
+          "size": 181,
+          "ratio": 0.7835497835497836,
+          "reduction": 21.645021645021643
+        },
+        "gzip": {
+          "size": 168,
+          "ratio": 0.7272727272727273,
+          "reduction": 27.27272727272727
+        },
+        "zlib": {
+          "size": 156,
+          "ratio": 0.6753246753246753,
+          "reduction": 32.467532467532465
+        },
+        "zstd": {
+          "size": 158,
+          "ratio": 0.683982683982684,
+          "reduction": 31.601731601731604
+        },
+        "brotli": {
+          "size": 130,
+          "ratio": 0.5627705627705628,
+          "reduction": 43.722943722943725
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.7424242424242424
+    },
+    {
+      "filename": "016_eagle_and_arrow.txt",
+      "source": "Human",
+      "original_size": 120,
+      "word_count": 22,
+      "char_count": 120,
+      "compression": {
+        "original": {
+          "size": 120,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 168,
+          "ratio": 1.4,
+          "reduction": -40.0
+        },
+        "bz2": {
+          "size": 121,
+          "ratio": 1.0083333333333333,
+          "reduction": -0.8333333333333334
+        },
+        "gzip": {
+          "size": 112,
+          "ratio": 0.9333333333333333,
+          "reduction": 6.666666666666667
+        },
+        "zlib": {
+          "size": 100,
+          "ratio": 0.8333333333333334,
+          "reduction": 16.666666666666664
+        },
+        "zstd": {
+          "size": 98,
+          "ratio": 0.8166666666666667,
+          "reduction": 18.333333333333332
+        },
+        "brotli": {
+          "size": 96,
+          "ratio": 0.8,
+          "reduction": 20.0
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9652777777777778
+    },
+    {
+      "filename": "016_mice_in_council.txt",
+      "source": "Human",
+      "original_size": 948,
+      "word_count": 178,
+      "char_count": 948,
+      "compression": {
+        "original": {
+          "size": 948,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 628,
+          "ratio": 0.6624472573839663,
+          "reduction": 33.755274261603375
+        },
+        "bz2": {
+          "size": 541,
+          "ratio": 0.570675105485232,
+          "reduction": 42.93248945147679
+        },
+        "gzip": {
+          "size": 522,
+          "ratio": 0.5506329113924051,
+          "reduction": 44.936708860759495
+        },
+        "zlib": {
+          "size": 510,
+          "ratio": 0.5379746835443038,
+          "reduction": 46.20253164556962
+        },
+        "zstd": {
+          "size": 521,
+          "ratio": 0.54957805907173,
+          "reduction": 45.042194092827
+        },
+        "brotli": {
+          "size": 405,
+          "ratio": 0.4272151898734177,
+          "reduction": 57.27848101265823
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5497538677918424
+    },
+    {
+      "filename": "017_dog_in_manger.txt",
+      "source": "Human",
+      "original_size": 478,
+      "word_count": 93,
+      "char_count": 478,
+      "compression": {
+        "original": {
+          "size": 478,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 372,
+          "ratio": 0.7782426778242678,
+          "reduction": 22.17573221757322
+        },
+        "bz2": {
+          "size": 317,
+          "ratio": 0.6631799163179917,
+          "reduction": 33.68200836820084
+        },
+        "gzip": {
+          "size": 293,
+          "ratio": 0.6129707112970711,
+          "reduction": 38.70292887029289
+        },
+        "zlib": {
+          "size": 281,
+          "ratio": 0.5878661087866108,
+          "reduction": 41.21338912133891
+        },
+        "zstd": {
+          "size": 290,
+          "ratio": 0.606694560669456,
+          "reduction": 39.33054393305439
+        },
+        "brotli": {
+          "size": 249,
+          "ratio": 0.5209205020920502,
+          "reduction": 47.90794979079498
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6283124128312413
+    },
+    {
+      "filename": "017_tortoise_and_hare.txt",
+      "source": "Human",
+      "original_size": 127,
+      "word_count": 23,
+      "char_count": 127,
+      "compression": {
+        "original": {
+          "size": 127,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 172,
+          "ratio": 1.3543307086614174,
+          "reduction": -35.43307086614173
+        },
+        "bz2": {
+          "size": 130,
+          "ratio": 1.0236220472440944,
+          "reduction": -2.3622047244094486
+        },
+        "gzip": {
+          "size": 116,
+          "ratio": 0.9133858267716536,
+          "reduction": 8.661417322834646
+        },
+        "zlib": {
+          "size": 104,
+          "ratio": 0.8188976377952756,
+          "reduction": 18.11023622047244
+        },
+        "zstd": {
+          "size": 102,
+          "ratio": 0.8031496062992126,
+          "reduction": 19.68503937007874
+        },
+        "brotli": {
+          "size": 99,
+          "ratio": 0.7795275590551181,
+          "reduction": 22.04724409448819
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9488188976377953
+    },
+    {
+      "filename": "018_lioness_and_vixen.txt",
+      "source": "Human",
+      "original_size": 142,
+      "word_count": 29,
+      "char_count": 142,
+      "compression": {
+        "original": {
+          "size": 142,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 180,
+          "ratio": 1.267605633802817,
+          "reduction": -26.76056338028169
+        },
+        "bz2": {
+          "size": 139,
+          "ratio": 0.9788732394366197,
+          "reduction": 2.112676056338028
+        },
+        "gzip": {
+          "size": 126,
+          "ratio": 0.8873239436619719,
+          "reduction": 11.267605633802818
+        },
+        "zlib": {
+          "size": 114,
+          "ratio": 0.8028169014084507,
+          "reduction": 19.718309859154928
+        },
+        "zstd": {
+          "size": 112,
+          "ratio": 0.7887323943661971,
+          "reduction": 21.12676056338028
+        },
+        "brotli": {
+          "size": 102,
+          "ratio": 0.7183098591549296,
+          "reduction": 28.169014084507044
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9072769953051644
+    },
+    {
+      "filename": "018_tortoise_and_hare.txt",
+      "source": "Human",
+      "original_size": 603,
+      "word_count": 114,
+      "char_count": 603,
+      "compression": {
+        "original": {
+          "size": 603,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 452,
+          "ratio": 0.7495854063018242,
+          "reduction": 25.04145936981758
+        },
+        "bz2": {
+          "size": 378,
+          "ratio": 0.6268656716417911,
+          "reduction": 37.3134328358209
+        },
+        "gzip": {
+          "size": 356,
+          "ratio": 0.5903814262023217,
+          "reduction": 40.96185737976783
+        },
+        "zlib": {
+          "size": 344,
+          "ratio": 0.5704809286898839,
+          "reduction": 42.95190713101161
+        },
+        "zstd": {
+          "size": 357,
+          "ratio": 0.5920398009950248,
+          "reduction": 40.79601990049751
+        },
+        "brotli": {
+          "size": 286,
+          "ratio": 0.47429519071310117,
+          "reduction": 52.57048092868989
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6006080707573245
+    },
+    {
+      "filename": "019_ant_and_grasshopper.txt",
+      "source": "Human",
+      "original_size": 708,
+      "word_count": 129,
+      "char_count": 708,
+      "compression": {
+        "original": {
+          "size": 708,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 508,
+          "ratio": 0.7175141242937854,
+          "reduction": 28.24858757062147
+        },
+        "bz2": {
+          "size": 442,
+          "ratio": 0.6242937853107344,
+          "reduction": 37.570621468926554
+        },
+        "gzip": {
+          "size": 414,
+          "ratio": 0.5847457627118644,
+          "reduction": 41.52542372881356
+        },
+        "zlib": {
+          "size": 402,
+          "ratio": 0.5677966101694916,
+          "reduction": 43.22033898305085
+        },
+        "zstd": {
+          "size": 406,
+          "ratio": 0.5734463276836158,
+          "reduction": 42.65536723163842
+        },
+        "brotli": {
+          "size": 371,
+          "ratio": 0.5240112994350282,
+          "reduction": 47.59887005649718
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5986346516007532
+    },
+    {
+      "filename": "019_old_woman_wine_jar.txt",
+      "source": "Human",
+      "original_size": 121,
+      "word_count": 21,
+      "char_count": 121,
+      "compression": {
+        "original": {
+          "size": 121,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 172,
+          "ratio": 1.421487603305785,
+          "reduction": -42.14876033057851
+        },
+        "bz2": {
+          "size": 127,
+          "ratio": 1.0495867768595042,
+          "reduction": -4.958677685950414
+        },
+        "gzip": {
+          "size": 117,
+          "ratio": 0.9669421487603306,
+          "reduction": 3.3057851239669422
+        },
+        "zlib": {
+          "size": 105,
+          "ratio": 0.8677685950413223,
+          "reduction": 13.223140495867769
+        },
+        "zstd": {
+          "size": 102,
+          "ratio": 0.8429752066115702,
+          "reduction": 15.702479338842975
+        },
+        "brotli": {
+          "size": 90,
+          "ratio": 0.743801652892562,
+          "reduction": 25.6198347107438
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9820936639118457
+    },
+    {
+      "filename": "020_fox_and_grapes.txt",
+      "source": "Human",
+      "original_size": 684,
+      "word_count": 140,
+      "char_count": 684,
+      "compression": {
+        "original": {
+          "size": 684,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 504,
+          "ratio": 0.7368421052631579,
+          "reduction": 26.31578947368421
+        },
+        "bz2": {
+          "size": 422,
+          "ratio": 0.6169590643274854,
+          "reduction": 38.30409356725146
+        },
+        "gzip": {
+          "size": 404,
+          "ratio": 0.5906432748538012,
+          "reduction": 40.93567251461988
+        },
+        "zlib": {
+          "size": 392,
+          "ratio": 0.5730994152046783,
+          "reduction": 42.69005847953216
+        },
+        "zstd": {
+          "size": 406,
+          "ratio": 0.5935672514619883,
+          "reduction": 40.643274853801174
+        },
+        "brotli": {
+          "size": 347,
+          "ratio": 0.5073099415204678,
+          "reduction": 49.26900584795322
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6030701754385965
+    },
+    {
+      "filename": "020_rich_man_and_tanner.txt",
+      "source": "Human",
+      "original_size": 147,
+      "word_count": 26,
+      "char_count": 147,
+      "compression": {
+        "original": {
+          "size": 147,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 184,
+          "ratio": 1.251700680272109,
+          "reduction": -25.170068027210885
+        },
+        "bz2": {
+          "size": 137,
+          "ratio": 0.9319727891156463,
+          "reduction": 6.802721088435375
+        },
+        "gzip": {
+          "size": 127,
+          "ratio": 0.8639455782312925,
+          "reduction": 13.60544217687075
+        },
+        "zlib": {
+          "size": 115,
+          "ratio": 0.782312925170068,
+          "reduction": 21.768707482993197
+        },
+        "zstd": {
+          "size": 113,
+          "ratio": 0.7687074829931972,
+          "reduction": 23.12925170068027
+        },
+        "brotli": {
+          "size": 96,
+          "ratio": 0.6530612244897959,
+          "reduction": 34.69387755102041
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.8752834467120181
+    },
+    {
+      "filename": "021_serpent_and_file.txt",
+      "source": "Human",
+      "original_size": 443,
+      "word_count": 92,
+      "char_count": 443,
+      "compression": {
+        "original": {
+          "size": 443,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 388,
+          "ratio": 0.8758465011286681,
+          "reduction": 12.415349887133182
+        },
+        "bz2": {
+          "size": 319,
+          "ratio": 0.7200902934537246,
+          "reduction": 27.99097065462754
+        },
+        "gzip": {
+          "size": 295,
+          "ratio": 0.6659142212189616,
+          "reduction": 33.40857787810384
+        },
+        "zlib": {
+          "size": 283,
+          "ratio": 0.6388261851015802,
+          "reduction": 36.11738148984199
+        },
+        "zstd": {
+          "size": 292,
+          "ratio": 0.6591422121896162,
+          "reduction": 34.08577878103837
+        },
+        "brotli": {
+          "size": 253,
+          "ratio": 0.5711060948081265,
+          "reduction": 42.88939051918736
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6884875846501128
+    },
+    {
+      "filename": "021_straw_coal_bean.txt",
+      "source": "Human",
+      "original_size": 507,
+      "word_count": 95,
+      "char_count": 507,
+      "compression": {
+        "original": {
+          "size": 507,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 384,
+          "ratio": 0.757396449704142,
+          "reduction": 24.2603550295858
+        },
+        "bz2": {
+          "size": 305,
+          "ratio": 0.6015779092702169,
+          "reduction": 39.8422090729783
+        },
+        "gzip": {
+          "size": 294,
+          "ratio": 0.5798816568047337,
+          "reduction": 42.01183431952663
+        },
+        "zlib": {
+          "size": 282,
+          "ratio": 0.5562130177514792,
+          "reduction": 44.37869822485207
+        },
+        "zstd": {
+          "size": 297,
+          "ratio": 0.5857988165680473,
+          "reduction": 41.42011834319527
+        },
+        "brotli": {
+          "size": 233,
+          "ratio": 0.45956607495069035,
+          "reduction": 54.043392504930964
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5900723208415516
+    },
+    {
+      "filename": "022_bald_man_and_fly.txt",
+      "source": "Human",
+      "original_size": 595,
+      "word_count": 119,
+      "char_count": 595,
+      "compression": {
+        "original": {
+          "size": 595,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 440,
+          "ratio": 0.7394957983193278,
+          "reduction": 26.05042016806723
+        },
+        "bz2": {
+          "size": 368,
+          "ratio": 0.6184873949579832,
+          "reduction": 38.15126050420168
+        },
+        "gzip": {
+          "size": 349,
+          "ratio": 0.5865546218487395,
+          "reduction": 41.344537815126046
+        },
+        "zlib": {
+          "size": 337,
+          "ratio": 0.5663865546218487,
+          "reduction": 43.36134453781513
+        },
+        "zstd": {
+          "size": 350,
+          "ratio": 0.5882352941176471,
+          "reduction": 41.17647058823529
+        },
+        "brotli": {
+          "size": 300,
+          "ratio": 0.5042016806722689,
+          "reduction": 49.57983193277311
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6005602240896358
+    },
+    {
+      "filename": "022_old_sultan.txt",
+      "source": "Human",
+      "original_size": 484,
+      "word_count": 89,
+      "char_count": 484,
+      "compression": {
+        "original": {
+          "size": 484,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 372,
+          "ratio": 0.768595041322314,
+          "reduction": 23.140495867768596
+        },
+        "bz2": {
+          "size": 302,
+          "ratio": 0.6239669421487604,
+          "reduction": 37.60330578512397
+        },
+        "gzip": {
+          "size": 286,
+          "ratio": 0.5909090909090909,
+          "reduction": 40.909090909090914
+        },
+        "zlib": {
+          "size": 274,
+          "ratio": 0.5661157024793388,
+          "reduction": 43.388429752066116
+        },
+        "zstd": {
+          "size": 285,
+          "ratio": 0.5888429752066116,
+          "reduction": 41.11570247933884
+        },
+        "brotli": {
+          "size": 220,
+          "ratio": 0.45454545454545453,
+          "reduction": 54.54545454545454
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5988292011019284
+    },
+    {
+      "filename": "023_fox_and_mask.txt",
+      "source": "Human",
+      "original_size": 521,
+      "word_count": 100,
+      "char_count": 521,
+      "compression": {
+        "original": {
+          "size": 521,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 420,
+          "ratio": 0.8061420345489443,
+          "reduction": 19.385796545105567
+        },
+        "bz2": {
+          "size": 345,
+          "ratio": 0.6621880998080614,
+          "reduction": 33.78119001919386
+        },
+        "gzip": {
+          "size": 328,
+          "ratio": 0.6295585412667947,
+          "reduction": 37.04414587332054
+        },
+        "zlib": {
+          "size": 316,
+          "ratio": 0.6065259117082533,
+          "reduction": 39.34740882917466
+        },
+        "zstd": {
+          "size": 326,
+          "ratio": 0.6257197696737045,
+          "reduction": 37.42802303262956
+        },
+        "brotli": {
+          "size": 268,
+          "ratio": 0.5143953934740882,
+          "reduction": 48.56046065259117
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6407549584133078
+    },
+    {
+      "filename": "023_frog_prince.txt",
+      "source": "Human",
+      "original_size": 368,
+      "word_count": 72,
+      "char_count": 368,
+      "compression": {
+        "original": {
+          "size": 368,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 320,
+          "ratio": 0.8695652173913043,
+          "reduction": 13.043478260869565
+        },
+        "bz2": {
+          "size": 250,
+          "ratio": 0.6793478260869565,
+          "reduction": 32.065217391304344
+        },
+        "gzip": {
+          "size": 234,
+          "ratio": 0.6358695652173914,
+          "reduction": 36.41304347826087
+        },
+        "zlib": {
+          "size": 222,
+          "ratio": 0.6032608695652174,
+          "reduction": 39.67391304347826
+        },
+        "zstd": {
+          "size": 235,
+          "ratio": 0.6385869565217391,
+          "reduction": 36.141304347826086
+        },
+        "brotli": {
+          "size": 191,
+          "ratio": 0.5190217391304348,
+          "reduction": 48.09782608695652
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.657608695652174
+    },
+    {
+      "filename": "024_cat_mouse_partnership.txt",
+      "source": "Human",
+      "original_size": 351,
+      "word_count": 67,
+      "char_count": 351,
+      "compression": {
+        "original": {
+          "size": 351,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 304,
+          "ratio": 0.8660968660968661,
+          "reduction": 13.390313390313391
+        },
+        "bz2": {
+          "size": 246,
+          "ratio": 0.7008547008547008,
+          "reduction": 29.914529914529915
+        },
+        "gzip": {
+          "size": 226,
+          "ratio": 0.6438746438746439,
+          "reduction": 35.61253561253561
+        },
+        "zlib": {
+          "size": 214,
+          "ratio": 0.6096866096866097,
+          "reduction": 39.03133903133903
+        },
+        "zstd": {
+          "size": 228,
+          "ratio": 0.6495726495726496,
+          "reduction": 35.04273504273504
+        },
+        "brotli": {
+          "size": 165,
+          "ratio": 0.4700854700854701,
+          "reduction": 52.991452991452995
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6566951566951567
+    },
+    {
+      "filename": "024_man_and_satyr.txt",
+      "source": "Human",
+      "original_size": 628,
+      "word_count": 129,
+      "char_count": 628,
+      "compression": {
+        "original": {
+          "size": 628,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 432,
+          "ratio": 0.6878980891719745,
+          "reduction": 31.210191082802545
+        },
+        "bz2": {
+          "size": 356,
+          "ratio": 0.5668789808917197,
+          "reduction": 43.31210191082803
+        },
+        "gzip": {
+          "size": 345,
+          "ratio": 0.5493630573248408,
+          "reduction": 45.06369426751593
+        },
+        "zlib": {
+          "size": 333,
+          "ratio": 0.5302547770700637,
+          "reduction": 46.97452229299363
+        },
+        "zstd": {
+          "size": 348,
+          "ratio": 0.554140127388535,
+          "reduction": 44.5859872611465
+        },
+        "brotli": {
+          "size": 283,
+          "ratio": 0.45063694267515925,
+          "reduction": 54.93630573248408
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5565286624203821
+    },
+    {
+      "filename": "025_country_mouse_city_mouse.txt",
+      "source": "Human",
+      "original_size": 825,
+      "word_count": 162,
+      "char_count": 825,
+      "compression": {
+        "original": {
+          "size": 825,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 532,
+          "ratio": 0.6448484848484849,
+          "reduction": 35.515151515151516
+        },
+        "bz2": {
+          "size": 461,
+          "ratio": 0.5587878787878788,
+          "reduction": 44.121212121212125
+        },
+        "gzip": {
+          "size": 436,
+          "ratio": 0.5284848484848484,
+          "reduction": 47.15151515151515
+        },
+        "zlib": {
+          "size": 424,
+          "ratio": 0.5139393939393939,
+          "reduction": 48.60606060606061
+        },
+        "zstd": {
+          "size": 438,
+          "ratio": 0.5309090909090909,
+          "reduction": 46.909090909090914
+        },
+        "brotli": {
+          "size": 361,
+          "ratio": 0.43757575757575756,
+          "reduction": 56.242424242424235
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5357575757575758
+    },
+    {
+      "filename": "025_viper_and_file.txt",
+      "source": "Human",
+      "original_size": 134,
+      "word_count": 24,
+      "char_count": 134,
+      "compression": {
+        "original": {
+          "size": 134,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 184,
+          "ratio": 1.373134328358209,
+          "reduction": -37.3134328358209
+        },
+        "bz2": {
+          "size": 142,
+          "ratio": 1.0597014925373134,
+          "reduction": -5.970149253731343
+        },
+        "gzip": {
+          "size": 126,
+          "ratio": 0.9402985074626866,
+          "reduction": 5.970149253731343
+        },
+        "zlib": {
+          "size": 114,
+          "ratio": 0.8507462686567164,
+          "reduction": 14.925373134328357
+        },
+        "zstd": {
+          "size": 113,
+          "ratio": 0.8432835820895522,
+          "reduction": 15.671641791044777
+        },
+        "brotli": {
+          "size": 85,
+          "ratio": 0.6343283582089553,
+          "reduction": 36.56716417910448
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9502487562189055
+    },
+    {
+      "filename": "026_cat_and_cock.txt",
+      "source": "Human",
+      "original_size": 146,
+      "word_count": 29,
+      "char_count": 146,
+      "compression": {
+        "original": {
+          "size": 146,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 192,
+          "ratio": 1.3150684931506849,
+          "reduction": -31.506849315068493
+        },
+        "bz2": {
+          "size": 138,
+          "ratio": 0.9452054794520548,
+          "reduction": 5.47945205479452
+        },
+        "gzip": {
+          "size": 128,
+          "ratio": 0.8767123287671232,
+          "reduction": 12.32876712328767
+        },
+        "zlib": {
+          "size": 116,
+          "ratio": 0.7945205479452054,
+          "reduction": 20.54794520547945
+        },
+        "zstd": {
+          "size": 114,
+          "ratio": 0.7808219178082192,
+          "reduction": 21.91780821917808
+        },
+        "brotli": {
+          "size": 104,
+          "ratio": 0.7123287671232876,
+          "reduction": 28.767123287671232
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.9041095890410958
+    },
+    {
+      "filename": "026_lion_and_mouse.txt",
+      "source": "Human",
+      "original_size": 863,
+      "word_count": 179,
+      "char_count": 863,
+      "compression": {
+        "original": {
+          "size": 863,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 572,
+          "ratio": 0.6628041714947857,
+          "reduction": 33.719582850521434
+        },
+        "bz2": {
+          "size": 494,
+          "ratio": 0.5724217844727694,
+          "reduction": 42.75782155272306
+        },
+        "gzip": {
+          "size": 471,
+          "ratio": 0.5457705677867902,
+          "reduction": 45.42294322132097
+        },
+        "zlib": {
+          "size": 459,
+          "ratio": 0.5318655851680185,
+          "reduction": 46.81344148319815
+        },
+        "zstd": {
+          "size": 467,
+          "ratio": 0.541135573580533,
+          "reduction": 45.886442641946694
+        },
+        "brotli": {
+          "size": 412,
+          "ratio": 0.47740440324449596,
+          "reduction": 52.259559675550406
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5552336809578988
+    },
+    {
+      "filename": "027_soldier_and_horse.txt",
+      "source": "Human",
+      "original_size": 261,
+      "word_count": 47,
+      "char_count": 261,
+      "compression": {
+        "original": {
+          "size": 261,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 264,
+          "ratio": 1.0114942528735633,
+          "reduction": -1.1494252873563218
+        },
+        "bz2": {
+          "size": 207,
+          "ratio": 0.7931034482758621,
+          "reduction": 20.689655172413794
+        },
+        "gzip": {
+          "size": 186,
+          "ratio": 0.7126436781609196,
+          "reduction": 28.735632183908045
+        },
+        "zlib": {
+          "size": 174,
+          "ratio": 0.6666666666666666,
+          "reduction": 33.33333333333333
+        },
+        "zstd": {
+          "size": 177,
+          "ratio": 0.6781609195402298,
+          "reduction": 32.18390804597701
+        },
+        "brotli": {
+          "size": 129,
+          "ratio": 0.4942528735632184,
+          "reduction": 50.57471264367817
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.7260536398467433
+    },
+    {
+      "filename": "027_wolf_in_sheeps_clothing.txt",
+      "source": "Human",
+      "original_size": 669,
+      "word_count": 130,
+      "char_count": 669,
+      "compression": {
+        "original": {
+          "size": 669,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 472,
+          "ratio": 0.7055306427503737,
+          "reduction": 29.446935724962632
+        },
+        "bz2": {
+          "size": 389,
+          "ratio": 0.5814648729446936,
+          "reduction": 41.85351270553064
+        },
+        "gzip": {
+          "size": 377,
+          "ratio": 0.5635276532137519,
+          "reduction": 43.64723467862481
+        },
+        "zlib": {
+          "size": 365,
+          "ratio": 0.5455904334828101,
+          "reduction": 45.440956651718984
+        },
+        "zstd": {
+          "size": 375,
+          "ratio": 0.5605381165919282,
+          "reduction": 43.946188340807176
+        },
+        "brotli": {
+          "size": 311,
+          "ratio": 0.4648729446935725,
+          "reduction": 53.51270553064275
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.570254110612855
+    },
+    {
+      "filename": "028_golden_bird.txt",
+      "source": "Human",
+      "original_size": 332,
+      "word_count": 52,
+      "char_count": 332,
+      "compression": {
+        "original": {
+          "size": 332,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 292,
+          "ratio": 0.8795180722891566,
+          "reduction": 12.048192771084338
+        },
+        "bz2": {
+          "size": 234,
+          "ratio": 0.7048192771084337,
+          "reduction": 29.518072289156628
+        },
+        "gzip": {
+          "size": 220,
+          "ratio": 0.6626506024096386,
+          "reduction": 33.734939759036145
+        },
+        "zlib": {
+          "size": 208,
+          "ratio": 0.6265060240963856,
+          "reduction": 37.34939759036144
+        },
+        "zstd": {
+          "size": 210,
+          "ratio": 0.6325301204819277,
+          "reduction": 36.74698795180723
+        },
+        "brotli": {
+          "size": 162,
+          "ratio": 0.4879518072289157,
+          "reduction": 51.204819277108435
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6656626506024096
+    },
+    {
+      "filename": "028_goose_golden_eggs.txt",
+      "source": "Human",
+      "original_size": 661,
+      "word_count": 129,
+      "char_count": 661,
+      "compression": {
+        "original": {
+          "size": 661,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 480,
+          "ratio": 0.7261724659606656,
+          "reduction": 27.382753403933435
+        },
+        "bz2": {
+          "size": 398,
+          "ratio": 0.6021180030257186,
+          "reduction": 39.78819969742814
+        },
+        "gzip": {
+          "size": 388,
+          "ratio": 0.5869894099848714,
+          "reduction": 41.301059001512854
+        },
+        "zlib": {
+          "size": 376,
+          "ratio": 0.5688350983358548,
+          "reduction": 43.11649016641452
+        },
+        "zstd": {
+          "size": 386,
+          "ratio": 0.583963691376702,
+          "reduction": 41.6036308623298
+        },
+        "brotli": {
+          "size": 306,
+          "ratio": 0.4629349470499244,
+          "reduction": 53.70650529500757
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5885022692889561
+    },
+    {
+      "filename": "029_boy_who_cried_wolf.txt",
+      "source": "Human",
+      "original_size": 1076,
+      "word_count": 200,
+      "char_count": 1076,
+      "compression": {
+        "original": {
+          "size": 1076,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 632,
+          "ratio": 0.587360594795539,
+          "reduction": 41.2639405204461
+        },
+        "bz2": {
+          "size": 533,
+          "ratio": 0.49535315985130113,
+          "reduction": 50.46468401486989
+        },
+        "gzip": {
+          "size": 531,
+          "ratio": 0.49349442379182157,
+          "reduction": 50.65055762081785
+        },
+        "zlib": {
+          "size": 519,
+          "ratio": 0.48234200743494426,
+          "reduction": 51.765799256505574
+        },
+        "zstd": {
+          "size": 531,
+          "ratio": 0.49349442379182157,
+          "reduction": 50.65055762081785
+        },
+        "brotli": {
+          "size": 453,
+          "ratio": 0.42100371747211895,
+          "reduction": 57.899628252788105
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.4955080545229244
+    },
+    {
+      "filename": "029_hans_in_luck.txt",
+      "source": "Human",
+      "original_size": 317,
+      "word_count": 65,
+      "char_count": 317,
+      "compression": {
+        "original": {
+          "size": 317,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 276,
+          "ratio": 0.8706624605678234,
+          "reduction": 12.933753943217665
+        },
+        "bz2": {
+          "size": 227,
+          "ratio": 0.7160883280757098,
+          "reduction": 28.391167192429023
+        },
+        "gzip": {
+          "size": 205,
+          "ratio": 0.6466876971608833,
+          "reduction": 35.33123028391167
+        },
+        "zlib": {
+          "size": 193,
+          "ratio": 0.6088328075709779,
+          "reduction": 39.11671924290221
+        },
+        "zstd": {
+          "size": 195,
+          "ratio": 0.6151419558359621,
+          "reduction": 38.48580441640379
+        },
+        "brotli": {
+          "size": 163,
+          "ratio": 0.5141955835962145,
+          "reduction": 48.580441640378545
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6619348054679285
+    },
+    {
+      "filename": "030_jorinda_and_jorindel.txt",
+      "source": "Human",
+      "original_size": 298,
+      "word_count": 53,
+      "char_count": 298,
+      "compression": {
+        "original": {
+          "size": 298,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 280,
+          "ratio": 0.9395973154362416,
+          "reduction": 6.0402684563758395
+        },
+        "bz2": {
+          "size": 219,
+          "ratio": 0.7348993288590604,
+          "reduction": 26.51006711409396
+        },
+        "gzip": {
+          "size": 201,
+          "ratio": 0.674496644295302,
+          "reduction": 32.5503355704698
+        },
+        "zlib": {
+          "size": 189,
+          "ratio": 0.6342281879194631,
+          "reduction": 36.577181208053695
+        },
+        "zstd": {
+          "size": 188,
+          "ratio": 0.6308724832214765,
+          "reduction": 36.91275167785235
+        },
+        "brotli": {
+          "size": 163,
+          "ratio": 0.5469798657718121,
+          "reduction": 45.302013422818796
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6935123042505593
+    },
+    {
+      "filename": "030_ugly_duckling.txt",
+      "source": "Human",
+      "original_size": 728,
+      "word_count": 135,
+      "char_count": 728,
+      "compression": {
+        "original": {
+          "size": 728,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 504,
+          "ratio": 0.6923076923076923,
+          "reduction": 30.76923076923077
+        },
+        "bz2": {
+          "size": 435,
+          "ratio": 0.5975274725274725,
+          "reduction": 40.24725274725275
+        },
+        "gzip": {
+          "size": 408,
+          "ratio": 0.5604395604395604,
+          "reduction": 43.956043956043956
+        },
+        "zlib": {
+          "size": 396,
+          "ratio": 0.5439560439560439,
+          "reduction": 45.604395604395606
+        },
+        "zstd": {
+          "size": 411,
+          "ratio": 0.5645604395604396,
+          "reduction": 43.543956043956044
+        },
+        "brotli": {
+          "size": 326,
+          "ratio": 0.4478021978021978,
+          "reduction": 55.219780219780226
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5677655677655677
+    },
+    {
+      "filename": "031_three_little_pigs.txt",
+      "source": "Human",
+      "original_size": 744,
+      "word_count": 144,
+      "char_count": 744,
+      "compression": {
+        "original": {
+          "size": 744,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 424,
+          "ratio": 0.5698924731182796,
+          "reduction": 43.01075268817204
+        },
+        "bz2": {
+          "size": 371,
+          "ratio": 0.4986559139784946,
+          "reduction": 50.134408602150536
+        },
+        "gzip": {
+          "size": 351,
+          "ratio": 0.4717741935483871,
+          "reduction": 52.82258064516129
+        },
+        "zlib": {
+          "size": 339,
+          "ratio": 0.45564516129032256,
+          "reduction": 54.43548387096774
+        },
+        "zstd": {
+          "size": 354,
+          "ratio": 0.47580645161290325,
+          "reduction": 52.41935483870967
+        },
+        "brotli": {
+          "size": 307,
+          "ratio": 0.41263440860215056,
+          "reduction": 58.73655913978495
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.4807347670250896
+    },
+    {
+      "filename": "031_travelling_musicians.txt",
+      "source": "Human",
+      "original_size": 323,
+      "word_count": 56,
+      "char_count": 323,
+      "compression": {
+        "original": {
+          "size": 323,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 300,
+          "ratio": 0.9287925696594427,
+          "reduction": 7.120743034055728
+        },
+        "bz2": {
+          "size": 232,
+          "ratio": 0.718266253869969,
+          "reduction": 28.173374613003094
+        },
+        "gzip": {
+          "size": 219,
+          "ratio": 0.6780185758513931,
+          "reduction": 32.19814241486068
+        },
+        "zlib": {
+          "size": 207,
+          "ratio": 0.6408668730650154,
+          "reduction": 35.91331269349845
+        },
+        "zstd": {
+          "size": 218,
+          "ratio": 0.6749226006191951,
+          "reduction": 32.50773993808049
+        },
+        "brotli": {
+          "size": 159,
+          "ratio": 0.49226006191950467,
+          "reduction": 50.77399380804953
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6888544891640866
+    },
+    {
+      "filename": "032_fox_and_leopard.txt",
+      "source": "Human",
+      "original_size": 213,
+      "word_count": 38,
+      "char_count": 213,
+      "compression": {
+        "original": {
+          "size": 213,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 224,
+          "ratio": 1.051643192488263,
+          "reduction": -5.164319248826291
+        },
+        "bz2": {
+          "size": 183,
+          "ratio": 0.8591549295774648,
+          "reduction": 14.084507042253522
+        },
+        "gzip": {
+          "size": 162,
+          "ratio": 0.7605633802816901,
+          "reduction": 23.943661971830984
+        },
+        "zlib": {
+          "size": 150,
+          "ratio": 0.704225352112676,
+          "reduction": 29.577464788732392
+        },
+        "zstd": {
+          "size": 150,
+          "ratio": 0.704225352112676,
+          "reduction": 29.577464788732392
+        },
+        "brotli": {
+          "size": 133,
+          "ratio": 0.6244131455399061,
+          "reduction": 37.558685446009385
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.784037558685446
+    },
+    {
+      "filename": "032_little_red_riding_hood.txt",
+      "source": "Human",
+      "original_size": 767,
+      "word_count": 137,
+      "char_count": 767,
+      "compression": {
+        "original": {
+          "size": 767,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 476,
+          "ratio": 0.6205997392438071,
+          "reduction": 37.9400260756193
+        },
+        "bz2": {
+          "size": 429,
+          "ratio": 0.559322033898305,
+          "reduction": 44.06779661016949
+        },
+        "gzip": {
+          "size": 392,
+          "ratio": 0.5110821382007823,
+          "reduction": 48.89178617992177
+        },
+        "zlib": {
+          "size": 380,
+          "ratio": 0.4954367666232073,
+          "reduction": 50.456323337679265
+        },
+        "zstd": {
+          "size": 389,
+          "ratio": 0.5071707953063885,
+          "reduction": 49.282920469361144
+        },
+        "brotli": {
+          "size": 325,
+          "ratio": 0.423728813559322,
+          "reduction": 57.6271186440678
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5195567144719687
+    },
+    {
+      "filename": "033_goldilocks_three_bears.txt",
+      "source": "Human",
+      "original_size": 777,
+      "word_count": 141,
+      "char_count": 777,
+      "compression": {
+        "original": {
+          "size": 777,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 428,
+          "ratio": 0.5508365508365508,
+          "reduction": 44.91634491634492
+        },
+        "bz2": {
+          "size": 388,
+          "ratio": 0.49935649935649934,
+          "reduction": 50.06435006435006
+        },
+        "gzip": {
+          "size": 353,
+          "ratio": 0.4543114543114543,
+          "reduction": 54.56885456885456
+        },
+        "zlib": {
+          "size": 341,
+          "ratio": 0.43886743886743884,
+          "reduction": 56.113256113256114
+        },
+        "zstd": {
+          "size": 347,
+          "ratio": 0.4465894465894466,
+          "reduction": 55.341055341055345
+        },
+        "brotli": {
+          "size": 300,
+          "ratio": 0.3861003861003861,
+          "reduction": 61.38996138996139
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.4626769626769627
+    },
+    {
+      "filename": "033_miser_and_gold.txt",
+      "source": "Human",
+      "original_size": 242,
+      "word_count": 46,
+      "char_count": 242,
+      "compression": {
+        "original": {
+          "size": 242,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 240,
+          "ratio": 0.9917355371900827,
+          "reduction": 0.8264462809917356
+        },
+        "bz2": {
+          "size": 189,
+          "ratio": 0.78099173553719,
+          "reduction": 21.90082644628099
+        },
+        "gzip": {
+          "size": 172,
+          "ratio": 0.7107438016528925,
+          "reduction": 28.92561983471074
+        },
+        "zlib": {
+          "size": 160,
+          "ratio": 0.6611570247933884,
+          "reduction": 33.88429752066116
+        },
+        "zstd": {
+          "size": 161,
+          "ratio": 0.6652892561983471,
+          "reduction": 33.47107438016529
+        },
+        "brotli": {
+          "size": 134,
+          "ratio": 0.5537190082644629,
+          "reduction": 44.62809917355372
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.7272727272727273
+    },
+    {
+      "filename": "034_gingerbread_man.txt",
+      "source": "Human",
+      "original_size": 622,
+      "word_count": 123,
+      "char_count": 622,
+      "compression": {
+        "original": {
+          "size": 622,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 440,
+          "ratio": 0.707395498392283,
+          "reduction": 29.260450160771708
+        },
+        "bz2": {
+          "size": 373,
+          "ratio": 0.5996784565916399,
+          "reduction": 40.032154340836016
+        },
+        "gzip": {
+          "size": 352,
+          "ratio": 0.5659163987138264,
+          "reduction": 43.40836012861736
+        },
+        "zlib": {
+          "size": 340,
+          "ratio": 0.5466237942122186,
+          "reduction": 45.337620578778136
+        },
+        "zstd": {
+          "size": 355,
+          "ratio": 0.5707395498392283,
+          "reduction": 42.92604501607717
+        },
+        "brotli": {
+          "size": 323,
+          "ratio": 0.5192926045016077,
+          "reduction": 48.07073954983923
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.584941050375134
+    },
+    {
+      "filename": "034_horse_and_ass.txt",
+      "source": "Human",
+      "original_size": 234,
+      "word_count": 40,
+      "char_count": 234,
+      "compression": {
+        "original": {
+          "size": 234,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 232,
+          "ratio": 0.9914529914529915,
+          "reduction": 0.8547008547008548
+        },
+        "bz2": {
+          "size": 187,
+          "ratio": 0.7991452991452992,
+          "reduction": 20.085470085470085
+        },
+        "gzip": {
+          "size": 171,
+          "ratio": 0.7307692307692307,
+          "reduction": 26.923076923076923
+        },
+        "zlib": {
+          "size": 159,
+          "ratio": 0.6794871794871795,
+          "reduction": 32.05128205128205
+        },
+        "zstd": {
+          "size": 158,
+          "ratio": 0.6752136752136753,
+          "reduction": 32.47863247863248
+        },
+        "brotli": {
+          "size": 122,
+          "ratio": 0.5213675213675214,
+          "reduction": 47.863247863247864
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.732905982905983
+    },
+    {
+      "filename": "035_emperor_new_clothes.txt",
+      "source": "Human",
+      "original_size": 823,
+      "word_count": 141,
+      "char_count": 823,
+      "compression": {
+        "original": {
+          "size": 823,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 528,
+          "ratio": 0.6415552855407047,
+          "reduction": 35.84447144592953
+        },
+        "bz2": {
+          "size": 456,
+          "ratio": 0.5540704738760632,
+          "reduction": 44.59295261239368
+        },
+        "gzip": {
+          "size": 435,
+          "ratio": 0.528554070473876,
+          "reduction": 47.1445929526124
+        },
+        "zlib": {
+          "size": 423,
+          "ratio": 0.5139732685297691,
+          "reduction": 48.60267314702308
+        },
+        "zstd": {
+          "size": 430,
+          "ratio": 0.5224787363304981,
+          "reduction": 47.75212636695018
+        },
+        "brotli": {
+          "size": 352,
+          "ratio": 0.42770352369380316,
+          "reduction": 57.22964763061968
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5313892264074525
+    },
+    {
+      "filename": "035_serpent_and_eagle.txt",
+      "source": "Human",
+      "original_size": 254,
+      "word_count": 43,
+      "char_count": 254,
+      "compression": {
+        "original": {
+          "size": 254,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 244,
+          "ratio": 0.9606299212598425,
+          "reduction": 3.937007874015748
+        },
+        "bz2": {
+          "size": 196,
+          "ratio": 0.7716535433070866,
+          "reduction": 22.83464566929134
+        },
+        "gzip": {
+          "size": 177,
+          "ratio": 0.6968503937007874,
+          "reduction": 30.314960629921263
+        },
+        "zlib": {
+          "size": 165,
+          "ratio": 0.6496062992125984,
+          "reduction": 35.039370078740156
+        },
+        "zstd": {
+          "size": 166,
+          "ratio": 0.6535433070866141,
+          "reduction": 34.645669291338585
+        },
+        "brotli": {
+          "size": 155,
+          "ratio": 0.610236220472441,
+          "reduction": 38.976377952755904
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.723753280839895
+    },
+    {
+      "filename": "036_dog_and_wolf.txt",
+      "source": "Human",
+      "original_size": 274,
+      "word_count": 51,
+      "char_count": 274,
+      "compression": {
+        "original": {
+          "size": 274,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 268,
+          "ratio": 0.9781021897810219,
+          "reduction": 2.18978102189781
+        },
+        "bz2": {
+          "size": 215,
+          "ratio": 0.7846715328467153,
+          "reduction": 21.532846715328464
+        },
+        "gzip": {
+          "size": 197,
+          "ratio": 0.718978102189781,
+          "reduction": 28.102189781021895
+        },
+        "zlib": {
+          "size": 185,
+          "ratio": 0.6751824817518248,
+          "reduction": 32.481751824817515
+        },
+        "zstd": {
+          "size": 184,
+          "ratio": 0.6715328467153284,
+          "reduction": 32.846715328467155
+        },
+        "brotli": {
+          "size": 148,
+          "ratio": 0.5401459854014599,
+          "reduction": 45.98540145985402
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.7281021897810219
+    },
+    {
+      "filename": "036_thumbelina.txt",
+      "source": "Human",
+      "original_size": 782,
+      "word_count": 148,
+      "char_count": 782,
+      "compression": {
+        "original": {
+          "size": 782,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 540,
+          "ratio": 0.690537084398977,
+          "reduction": 30.946291560102303
+        },
+        "bz2": {
+          "size": 443,
+          "ratio": 0.5664961636828645,
+          "reduction": 43.350383631713555
+        },
+        "gzip": {
+          "size": 437,
+          "ratio": 0.5588235294117647,
+          "reduction": 44.11764705882353
+        },
+        "zlib": {
+          "size": 425,
+          "ratio": 0.5434782608695652,
+          "reduction": 45.65217391304348
+        },
+        "zstd": {
+          "size": 436,
+          "ratio": 0.5575447570332481,
+          "reduction": 44.24552429667519
+        },
+        "brotli": {
+          "size": 355,
+          "ratio": 0.4539641943734015,
+          "reduction": 54.60358056265985
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5618073316283035
+    },
+    {
+      "filename": "037_ant_and_grasshopper.txt",
+      "source": "Human",
+      "original_size": 239,
+      "word_count": 40,
+      "char_count": 239,
+      "compression": {
+        "original": {
+          "size": 239,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 228,
+          "ratio": 0.9539748953974896,
+          "reduction": 4.602510460251046
+        },
+        "bz2": {
+          "size": 188,
+          "ratio": 0.7866108786610879,
+          "reduction": 21.338912133891213
+        },
+        "gzip": {
+          "size": 169,
+          "ratio": 0.7071129707112971,
+          "reduction": 29.288702928870293
+        },
+        "zlib": {
+          "size": 157,
+          "ratio": 0.6569037656903766,
+          "reduction": 34.30962343096235
+        },
+        "zstd": {
+          "size": 156,
+          "ratio": 0.6527196652719666,
+          "reduction": 34.72803347280335
+        },
+        "brotli": {
+          "size": 126,
+          "ratio": 0.5271966527196653,
+          "reduction": 47.28033472803347
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.7140864714086472
+    },
+    {
+      "filename": "037_little_match_girl.txt",
+      "source": "Human",
+      "original_size": 793,
+      "word_count": 148,
+      "char_count": 793,
+      "compression": {
+        "original": {
+          "size": 793,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 536,
+          "ratio": 0.6759142496847415,
+          "reduction": 32.40857503152585
+        },
+        "bz2": {
+          "size": 462,
+          "ratio": 0.5825977301387137,
+          "reduction": 41.740226986128626
+        },
+        "gzip": {
+          "size": 444,
+          "ratio": 0.5598991172761665,
+          "reduction": 44.01008827238335
+        },
+        "zlib": {
+          "size": 432,
+          "ratio": 0.544766708701135,
+          "reduction": 45.523329129886505
+        },
+        "zstd": {
+          "size": 439,
+          "ratio": 0.5535939470365699,
+          "reduction": 44.640605296343
+        },
+        "brotli": {
+          "size": 357,
+          "ratio": 0.4501891551071879,
+          "reduction": 54.98108448928121
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5611601513240857
+    },
+    {
+      "filename": "038_snow_white.txt",
+      "source": "Human",
+      "original_size": 828,
+      "word_count": 147,
+      "char_count": 828,
+      "compression": {
+        "original": {
+          "size": 828,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 524,
+          "ratio": 0.6328502415458938,
+          "reduction": 36.71497584541063
+        },
+        "bz2": {
+          "size": 454,
+          "ratio": 0.5483091787439613,
+          "reduction": 45.169082125603865
+        },
+        "gzip": {
+          "size": 431,
+          "ratio": 0.5205314009661836,
+          "reduction": 47.94685990338164
+        },
+        "zlib": {
+          "size": 419,
+          "ratio": 0.5060386473429952,
+          "reduction": 49.39613526570048
+        },
+        "zstd": {
+          "size": 428,
+          "ratio": 0.5169082125603864,
+          "reduction": 48.309178743961354
+        },
+        "brotli": {
+          "size": 356,
+          "ratio": 0.42995169082125606,
+          "reduction": 57.00483091787439
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5257648953301127
+    },
+    {
+      "filename": "038_town_mouse_country_mouse.txt",
+      "source": "Human",
+      "original_size": 279,
+      "word_count": 49,
+      "char_count": 279,
+      "compression": {
+        "original": {
+          "size": 279,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 252,
+          "ratio": 0.9032258064516129,
+          "reduction": 9.67741935483871
+        },
+        "bz2": {
+          "size": 202,
+          "ratio": 0.7240143369175627,
+          "reduction": 27.598566308243726
+        },
+        "gzip": {
+          "size": 184,
+          "ratio": 0.6594982078853047,
+          "reduction": 34.05017921146953
+        },
+        "zlib": {
+          "size": 172,
+          "ratio": 0.6164874551971327,
+          "reduction": 38.35125448028674
+        },
+        "zstd": {
+          "size": 175,
+          "ratio": 0.6272401433691757,
+          "reduction": 37.27598566308244
+        },
+        "brotli": {
+          "size": 148,
+          "ratio": 0.5304659498207885,
+          "reduction": 46.95340501792115
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6768219832735962
+    },
+    {
+      "filename": "039_bundle_of_sticks.txt",
+      "source": "Human",
+      "original_size": 238,
+      "word_count": 42,
+      "char_count": 238,
+      "compression": {
+        "original": {
+          "size": 238,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 236,
+          "ratio": 0.9915966386554622,
+          "reduction": 0.8403361344537815
+        },
+        "bz2": {
+          "size": 189,
+          "ratio": 0.7941176470588235,
+          "reduction": 20.588235294117645
+        },
+        "gzip": {
+          "size": 169,
+          "ratio": 0.7100840336134454,
+          "reduction": 28.991596638655466
+        },
+        "zlib": {
+          "size": 157,
+          "ratio": 0.6596638655462185,
+          "reduction": 34.03361344537815
+        },
+        "zstd": {
+          "size": 160,
+          "ratio": 0.6722689075630253,
+          "reduction": 32.773109243697476
+        },
+        "brotli": {
+          "size": 129,
+          "ratio": 0.542016806722689,
+          "reduction": 45.79831932773109
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.7282913165266106
+    },
+    {
+      "filename": "039_rapunzel.txt",
+      "source": "Human",
+      "original_size": 905,
+      "word_count": 165,
+      "char_count": 905,
+      "compression": {
+        "original": {
+          "size": 905,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 568,
+          "ratio": 0.6276243093922652,
+          "reduction": 37.23756906077348
+        },
+        "bz2": {
+          "size": 494,
+          "ratio": 0.5458563535911602,
+          "reduction": 45.414364640883974
+        },
+        "gzip": {
+          "size": 474,
+          "ratio": 0.523756906077348,
+          "reduction": 47.6243093922652
+        },
+        "zlib": {
+          "size": 462,
+          "ratio": 0.5104972375690607,
+          "reduction": 48.950276243093924
+        },
+        "zstd": {
+          "size": 473,
+          "ratio": 0.5226519337016574,
+          "reduction": 47.73480662983425
+        },
+        "brotli": {
+          "size": 403,
+          "ratio": 0.4453038674033149,
+          "reduction": 55.469613259668506
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5292817679558011
+    },
+    {
+      "filename": "040_fox_and_stork.txt",
+      "source": "Human",
+      "original_size": 249,
+      "word_count": 50,
+      "char_count": 249,
+      "compression": {
+        "original": {
+          "size": 249,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 228,
+          "ratio": 0.9156626506024096,
+          "reduction": 8.433734939759036
+        },
+        "bz2": {
+          "size": 184,
+          "ratio": 0.7389558232931727,
+          "reduction": 26.104417670682732
+        },
+        "gzip": {
+          "size": 166,
+          "ratio": 0.6666666666666666,
+          "reduction": 33.33333333333333
+        },
+        "zlib": {
+          "size": 154,
+          "ratio": 0.6184738955823293,
+          "reduction": 38.152610441767074
+        },
+        "zstd": {
+          "size": 152,
+          "ratio": 0.6104417670682731,
+          "reduction": 38.95582329317269
+        },
+        "brotli": {
+          "size": 141,
+          "ratio": 0.5662650602409639,
+          "reduction": 43.373493975903614
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.6860776439089692
+    },
+    {
+      "filename": "040_sleeping_beauty.txt",
+      "source": "Human",
+      "original_size": 875,
+      "word_count": 154,
+      "char_count": 875,
+      "compression": {
+        "original": {
+          "size": 875,
+          "ratio": 1.0,
+          "reduction": 0.0
+        },
+        "lzma": {
+          "size": 560,
+          "ratio": 0.64,
+          "reduction": 36.0
+        },
+        "bz2": {
+          "size": 476,
+          "ratio": 0.544,
+          "reduction": 45.6
+        },
+        "gzip": {
+          "size": 463,
+          "ratio": 0.5291428571428571,
+          "reduction": 47.08571428571429
+        },
+        "zlib": {
+          "size": 451,
+          "ratio": 0.5154285714285715,
+          "reduction": 48.45714285714286
+        },
+        "zstd": {
+          "size": 460,
+          "ratio": 0.5257142857142857,
+          "reduction": 47.42857142857143
+        },
+        "brotli": {
+          "size": 389,
+          "ratio": 0.44457142857142856,
+          "reduction": 55.54285714285714
+        },
+        "ppmd": null
+      },
+      "avg_complexity": 0.5331428571428571
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+1 
+C. A. R. Hoare, Hints on programming language design. In C. Bunyan (ed.) Computer
+Systems Reliability, State of the Art Report Vol. 20, pp. 505-34. Reprinted with permission.
+Copyright © 1974, Pergamon/Infotech.
+
+2
+Bynum, Terrell, "Computer and Information Ethics", The Stanford Encyclopedia of Philosophy (Summer 2018 Edition), Edward N. Zalta (ed.), URL = <https://plato.stanford.edu/archives/sum2018/entries/ethics-computer/>. 
+
+3
+Thompson_1984_ReflectionsonTrustingTrust https://www.cs.cmu.edu/~rdriley/487/papers/Thompson_1984_ReflectionsonTrustingTrust.pdf
+
+4
+Frederick P. Brooks – “No Silver Bullet: Essence and Accidents of Software Engineering
+https://www.cs.unc.edu/techreports/86-020.pdf
+
+5
+https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf
+Saltzer, Reed & Clark – “End-to-End Arguments in System Design
+
+6
+https://ics.uci.edu/~corps/phaseii/Weiser-Computer21stCentury-SciAm.pdf
+Mark Weiser – “The Computer for the 21st Century
+7
+Saltzer & Schroeder – “The Protection of Information in Computer Systems
+https://www.cl.cam.ac.uk/teaching/1112/R01/75-protection.pdf
+
+8
+https://www.cs.kent.ac.uk/people/staff/dat/miranda/whyfp90.pdf?utm_source=chatgpt.com
+John Hughes – “Why Functional Programming Matters
+
+9
+Jeffrey Dean & Luiz André Barroso – “The Tail at Scale
+https://www.barroso.org/publications/TheTailAtScale.pdf
+
+10
+Ben Moseley & Peter Marks – “Out of the Tar Pit
+https://www.barroso.org/publications/TheTailAtScale.pdf
+11 
+https://people.freebsd.org/~lstewart/articles/cpumemory.pdf
+Ulrich Drepper – “What Every Programmer Should Know About Memory”
+
+12 
+https://queue.acm.org/detail.cfm?id=1095421&utm_source=chatgpt.com
+Jeffrey Dean & Luiz André Barroso – “The Tail at Scale” (PDF). 
+barroso.org
+13
+Ben Moseley & Peter Marks – “Out of the Tar Pit” (PDF). 
+https://curtclifton.net/papers/MoseleyMarks06a.pdf?utm_source=chatgpt.com
+14
+Ulrich Drepper – “What Every Programmer Should Know About Memory” (PDF). 
+https://www.barroso.org/publications/TheTailAtScale.pdf?utm_source=chatgpt.com
+15
+Joel Spolsky – “The Law of Leaky Abstractions.” 
+https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/?utm_source=chatgpt.com
+16
+Richard P. Gabriel – “The Rise of ‘Worse is Better’.” 
+https://www.dreamsongs.com/WorseIsBetter.html?utm_source=chatgpt.com
+18
+Richard Hamming – “You and Your Research” (tam metin transkript). 
+https://www.cs.virginia.edu/~robins/YouAndYourResearch.html?utm_source=chatgpt.com
+19
+ACM Queue – “Pride and Prejudice: (The Vasa)” (mühendislikte ders çıkarıcı deneme). 
+https://queue.acm.org/detail.cfm?id=1508213&utm_source=chatgpt.com
+20
+ACM Queue – “Software and the Concurrency Revolution.” 
+https://queue.acm.org/detail.cfm?id=1095421&utm_source=chatgpt.com
+21
+ACM Queue – “Programmer Job Interviews: The Hidden Agenda.” 
+https://queue.acm.org/detail.cfm?id=3639444&utm_source=chatgpt.com
+22
+IEEE Spectrum – Opinion sayfası (çeşitli çağdaş teknoloji denemeleri). 
+https://spectrum.ieee.org/type/opinion/?utm_source=chatgpt.com
+23
+IEEE Spectrum – “On Reflections” (mühendislik hayatı üzerine denemeler). 
+https://spectrum.ieee.org/on-reflections?utm_source=chatgpt.com
+24
+IEEE Spectrum – “Discovering Dennis Ritchie’s Lost Dissertation.” 
+https://spectrum.ieee.org/discovering-computer-legend-dennis-ritchies-lost-dissertation?utm_source=chatgpt.com
+25
+Online Ethics Center – “Teaching Ethics Across the Engineering Curriculum.” 
+https://onlineethics.org/cases/essays-ethics-instruction/teaching-ethics-across-engineering-curriculum?utm_source=chatgpt.com
+26
+John Backus – “Can Programming Be Liberated from the von Neumann Style?” (PDF). 
+https://worrydream.com/refs/Backus_1978_-_Can_Programming_Be_Liberated_from_the_von_Neumann_Style.pdf?utm_source=chatgpt.com
+27
+Niklaus Wirth – “A Plea for Lean Software” (PDF). 
+https://people.inf.ethz.ch/wirth/Articles/LeanSoftware.pdf?utm_source=chatgpt.com
+28
+ACM Queue – “The Parchment Path?” (ürün yönetimi ve yazılım pratiği üzerine deneme). 
+https://queue.acm.org/detail.cfm?id=3587482&utm_source=chatgpt.com
+29
+The Protection of Information in Computer Systems — Saltzer & Schroeder
+https://www.cl.cam.ac.uk/teaching/1112/R01/75-protection.pdf?utm_source=chatgpt.com
+
+30
+https://groups.csail.mit.edu/tds/papers/Lynch/jacm85.pdf?utm_source=chatgpt.com
+Impossibility of Distributed Consensus with One Faulty Process — Michael J. Fischer, Nancy A. Lynch, Michael S. Paterson

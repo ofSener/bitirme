@@ -1,0 +1,160 @@
+KOLMOGOROV COMPLEXITY ANALYSIS - ESSAYS DATASET
+Chart Documentation and Interpretation Guide
+
+Generated: 2025-09-21 03:00:30
+Dataset: Essays
+Location: C:\Users\hzome\OneDrive\Masaüstü\bitirme\outputs\essays_visualizations
+
+================================================================================
+CHART DESCRIPTIONS AND KEY INSIGHTS
+================================================================================
+
+
+CHART 01: Distribution Comparison Histogram
+--------------------------------------------------
+
+Description:
+Shows the probability distribution of compression complexity for AI vs Human texts
+
+Key Insights:
+• AI texts have mean complexity: 0.352
+• Human texts have mean complexity: 0.387
+• Human texts are 10.0% more complex on average
+• Higher complexity means less compressible (more random/diverse)
+
+File: 01_distribution_comparison_histogram.png
+
+
+CHART 02: Box Plot Statistical Comparison
+--------------------------------------------------
+
+Description:
+Shows median, quartiles, and outliers for complexity distributions
+
+Key Insights:
+• Box shows 25th-75th percentile range (IQR)
+• Line inside box is median, diamond is mean
+• Whiskers extend to 1.5×IQR, dots are outliers
+• Human texts show higher median complexity
+
+File: 02_box_plot_statistical_comparison.png
+
+
+CHART 03: Algorithm Performance Comparison
+--------------------------------------------------
+
+Description:
+Compares average compression ratios across different algorithms
+
+Key Insights:
+• Lower compression ratio = better compression = higher complexity detection
+• Best discriminating algorithm: BZ2 (11.0% difference)
+• Percentages show how much more complex human texts are for each algorithm
+• Positive percentage means human texts are less compressible
+
+File: 03_algorithm_performance_comparison.png
+
+
+CHART 04: Statistical Significance Tests
+--------------------------------------------------
+
+Description:
+Shows p-values and effect sizes to determine if differences are statistically significant
+
+Key Insights:
+• p < 0.05 indicates statistically significant difference
+• T-test result: Significant (p = 0.004513)
+• Effect size: 0.776 (Medium)
+• Mann-Whitney U test is non-parametric alternative to t-test
+
+File: 04_statistical_significance_tests.png
+
+
+CHART 05: Algorithm Correlation Matrix
+--------------------------------------------------
+
+Description:
+Shows how similarly different compression algorithms behave
+
+Key Insights:
+• Highest correlation: 0.993 (algorithms behave very similarly)
+• Lowest correlation: 0.922 (algorithms behave differently)
+• High correlation suggests redundancy between algorithms
+• Low correlation suggests complementary discrimination power
+
+File: 05_algorithm_correlation_matrix.png
+
+
+CHART 06: Principal Component Analysis (PCA)
+--------------------------------------------------
+
+Description:
+Reduces high-dimensional data to 2D while preserving maximum variance
+
+Key Insights:
+• PC1 explains 98.1% of variance
+• PC2 explains 1.5% of variance
+• Together they explain 99.7% of total variance
+• Clear separation suggests algorithms can distinguish AI from human text
+
+File: 06_principal_component_analysis_(pca).png
+
+
+CHART 07: Random Forest Feature Importance
+--------------------------------------------------
+
+Description:
+Shows which compression algorithms are most useful for distinguishing AI from human text
+
+Key Insights:
+• Most important algorithm: BROTLI (score: 0.000)
+• Model accuracy: 100.0%
+• Higher importance = better at distinguishing AI vs Human
+• Based on Random Forest machine learning algorithm
+
+File: 07_random_forest_feature_importance.png
+
+
+CHART 08: 95% Confidence Intervals
+--------------------------------------------------
+
+Description:
+Shows the range where the true population mean is likely to be (95% confidence)
+
+Key Insights:
+• AI mean: 0.3522 ± 0.0138
+• Human mean: 0.3875 ± 0.0202
+• Confidence intervals do not overlap
+• Non-overlapping intervals suggest significant difference
+
+File: 08_95%_confidence_intervals.png
+
+
+================================================================================
+TECHNICAL NOTES
+================================================================================
+
+Compression Ratio Interpretation:
+• Lower ratio = Better compression = Higher algorithmic complexity detection
+• Ratio = Compressed_Size / Original_Size
+• Values closer to 0 mean better compression
+• Values closer to 1 mean poor compression (already complex/random)
+
+Statistical Significance:
+• p < 0.05 = Statistically significant difference
+• Cohen's d effect sizes: 0.2=small, 0.5=medium, 0.8=large
+• Confidence intervals show uncertainty in mean estimates
+
+Algorithm Performance:
+• LZMA: High compression, good for text analysis
+• BZ2: Burrows-Wheeler transform, good pattern detection
+• GZIP: Fast, widely used, moderate compression
+• Brotli: Modern algorithm, optimized for text
+
+Methodology:
+All texts were processed using multiple compression algorithms to estimate
+Kolmogorov complexity. The core hypothesis is that AI-generated texts show
+more predictable patterns and thus achieve better compression ratios than
+human-written texts, which contain more genuine randomness and creativity.
+
+================================================================================

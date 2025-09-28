@@ -1,0 +1,28 @@
+
+
+    Share
+    Print
+    Join the Discussion (1)
+
+I’ve been around for a while. I graduated from college before most schools (certainly most small colleges) had CS majors and CS degrees. I’ve been teaching CS in full-time post-secondary positions for 30 years. I’ve seen a lot of change in that time, and I’ve seen the way the CS community responds to change.
+
+I’ve seen the dominant introductory programming language change many times (Pascal, C, C++, anyone remember Modula 2?). When Java came along, suddenly that was the end-all and be-all, we HAD to change to Java. Object oriented programming was going to solve all software engineering problems, Java was the right language to use for every application, everyone had to learn Java as their first language. Even AP computer science had to be taught with Java. (I personally believe that this change in the late 1990s, coupled with the dot-com bust, was a significant contributor to falling CS enrollments, and it hindered efforts to diversify computing. A topic for another day.)
+
+Then the Web came along. We HAD to teach Web design and Web development, we had to teach Javascript and HTML and CSS. We had to develop e-commerce courses. Baby web-dev courses would be the way that we’d finally diversify computing. Every student had to learn how to build their own website, maybe even in 8th grade (I cannot count the number of students who told me on day 1 of the intro CS course that they knew how to program because they had built a static HTML website).
+
+Next it was Data Science. That was the new area that would guarantee a job for every CS student and would diversify the field, so we all had to figure out how to spin up a Data Science (DS) major. In some ways this may have been the least disruptive of all the “dive in head first” episodes, because the DS curriculum can be constructed in a way that is somewhat distinct from the CS curriculum.
+
+So here we are today, in the throes of the next hand-wringing “what will we do” moment with AI. Here are my issues and concerns:
+
+      1. First, let’s be clear about nomenclature. Everyone says AI, but what they really mean is generative AI, which is based on machine learning. There’s no discussion of the myriad other subfields and techniques that have historically been part of AI and still help us solve all sorts of interesting problems.
+
+      2. We’re jumping through hoops without stopping first to question the run-away train. In much discussion about CS education:
+          a.) There’s little interest in interrogating the downsides of generative AI, such as the environmental impact, the data theft impact, the treatment and exploitation of data workers.
+          b.) There’s little interest in considering the extent to which, by incorporating generative AI into our teaching, we end up supporting a handful of companies that are burning billions in a vain attempt to each achieve performance that is a scintilla better than everyone else’s.
+          c.) There’s little interest in thinking about what’s going to happen when the LLM companies decide that they have plateaued, that there’s no more money to burn spend, and a bunch of them fold—but we’ve perturbed education to such an extent that our students can no longer function without their AI helpers.
+
+      3. I listened to an industry representative say that he wants students to have “design thinking and the ability to ask questions” without recognizing that the student use of AI tools he advocates will stunt their critical thinking skills, making it impossible for them to ask questions and do interesting “design thinking.”
+
+      4. I listened to an industry rep talk about how he wants to see students’ Github repositories so he can see all the projects they work on outside of class (presumably with the help of AI coding tools), without any recognition of the fact that interesting innovative solutions to hard problems come from people who have experiences outside of class that don’t involve computing, who do something besides code all the time; like be on the debate team, sing in a choir, get involved in theater, take a dance class, study history, read poetry.
+
+To be clear, I think AI can be very useful for niche applications. I think carefully trained AI tools can contribute to the solution of hard problems. But I also think it’s critical that we think long and hard about what it is we teach in computer science, what the goal of a CS major is, and what a balanced, modest, cautious incorporation of AI in CS education (and all education) would be. Both industry folks and CS folks need to look more closely at the work of scholars in learning sciences, computing education research, HCI, and other areas who are raising these concerns. The work being done by liberal arts faculty (across a wide range of fields) to explore both technical and ethical aspects of AI can also illuminate the issues before us. This can help us articulate what sort of future problem solvers and software developers we want to graduate from our programs, and determine ways in which the incorporation of AI can help us get there. Let’s focus on that, rather than on the industry assertion that the ship has sailed, every student needs to use AI early and often, and there is no future application that isn’t going to use AI in some way.

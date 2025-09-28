@@ -1,0 +1,578 @@
+Power corrupts What we mean by this is that, in the absence of language-
+enforced guarantees (i.e. restrictions on the power of the language)
+mistakes (and abuses) will happen. This is the reason that garbage
+collection is good — the power of manual memory management is
+removed. Exactly the same principle applies to state — another kind
+of power. In this case it means that we need to be very wary of any
+language that even permits state, regardless of how much it discourages
+its use (obvious examples are ML and Scheme). The bottom line is
+that the more powerful a language (i.e. the more that is possible within
+the language), the harder it is to understand systems constructed in
+it.
+Some of these causes are of a human-nature, others due to environmental
+issues, but all can — we believe — be greatly alleviated by focusing on
+e↵ective management of the complexity causes discussed in sections 4.1–4.3.
+5 Classical approaches to managing complexity
+The di↵erent classical approaches to managing complexity can perhaps best
+be understood by looking at how programming languages of each of the three
+major styles (imperative, functional, logic) approach the issue. (We take
+object-oriented languages as a commonly used example of the imperative
+style).
+5.1 Object-Orientation
+Object-orientation — whilst being a very broadly applied term (encom-
+passing everything from Java-style class-based to Self-style prototype-based
+languages, from single-dispatch to CLOS-style multiple dispatch languages,
+and from traditional passive objects to the active / actor styles) — is essen-
+tially an imperative approach to programming. It has evolved as the domi-
+nant method of general software development for traditional (von-Neumann)
+computers, and many of its characteristics spring from a desire to facilitate
+von-Neumann style (i.e. state-based) computation.
+5.1.1 State
+In most forms of object-oriented programming (OOP) an object is seen as
+consisting of some state together with a set of procedures for accessing and
+manipulating that state.
+12
+This is essentially similar to the (earlier) idea of an abstract data type
+(ADT) and is one of the primary strengths of the OOP approach when
+compared with less structured imperative styles. In the OOP context this
+is referred to as the idea of encapsulation, and it allows the programmer to
+enforce integrity constraints over an object’s state by regulating access to
+that state through the access procedures (“methods”).
+One problem with this is that, if several of the access procedures ac-
+cess or manipulate the same bit of state, then there may be several places
+where a given constraint must be enforced (these di↵erent access procedures
+may or may not be within the same ﬁle depending on the speciﬁc language
+and whether features, such as inheritance, are in use). Another major prob-
+lem 4 is that encapsulation-based integrity constraint enforcement is strongly
+biased toward single-object constraints and it is awkward to enforce more
+complicated constraints involving multiple objects with this approach (for
+one thing it becomes unclear where such multiple-object constraints should
+reside).
+Identity and State
+There is one other intrinsic aspect of OOP which is intimately bound up
+with the issue of state, and that is the concept of object identity.
+In OOP, each object is seen as being a uniquely identiﬁable entity re-
+gardless of its attributes. This is known as intensional identity (in contrast
+with extensional identity in which things are considered the same if their
+attributes are the same). As Baker observed [Bak93]:
+In a sense, object identity can be considered to be a rejection of
+the “relational algebra” view of the world in which two objects
+can only be distinguished through di↵ering attributes.
+Object identity does make sense when objects are used to provide a
+(mutable) stateful abstraction — because two distinct stateful objects can
+be mutated to contain di↵erent state even if their attributes (the contained
+state) happen initially to be the same.
+However, in other situations where mutability is not required (such as —
+say — the need to represent a simple numeric value), the OOP approach is
+forced to adopt techniques such as the creation of “Value Objects”, and an
+4 this particular problem doesn’t really apply to object-oriented languages (such as
+CLOS) which are based upon generic functions — but they don’t have the same concept
+of encapsulation.
+13
+attempt is made to de-emphasise the original intensional concept of object
+identity and re-introduce extensional identity. In these cases it is common
+to start using custom access procedures (methods) to determine whether
+two objects are equivalent in some other, domain-speciﬁc sense. (One risk
+— aside from the extra code volume required to support this — is that
+there can no longer be any guarantee that such domain-speciﬁc equivalence
+concepts conform to the standard idea of an equivalence relation — for
+example there is not necessarily any guarantee of transitivity).
+The intrinsic concept of object identity stems directly from the use of
+state, and is (being part of the paradigm itself) unavoidable. This additional
+concept of identity adds complexity to the task of reasoning about systems
+developed in the OOP style (it is necessary to switch mentally between the
+two equivalence concepts — serious errors can result from confusion between
+the two).
+State in OOP
+The bottom line is that all forms of OOP rely on state (contained within
+objects) and in general all behaviour is a↵ected by this state. As a result
+of this, OOP su↵ers directly from the problems associated with state de-
+scribed above, and as such we believe that it does not provide an adequate
+foundation for avoiding complexity.
+5.1.2 Control
+Most OOP languages o↵er standard sequential control ﬂow, and many o↵er
+explicit classical “shared-state concurrency” mechanisms together with all
+the standard complexity problems that these can cause. One slight variation
+is that actor-style languages use the “message-passing” model of concurrency
+— they associate threads of control with individual objects and messages
+are passed between these. This can lead to easier informal reasoning in some
+cases, but the use of actor-style languages is not widespread.
+5.1.3 Summary — OOP
+Conventional imperative and object-oriented programs su↵er greatly from
+both state-derived and control-derived complexity.
+14
+5.2 Functional Programming
+Whilst OOP developed out of a desire to o↵er improved ways of managing
+and dealing with the classic stateful von-Neumann architecture, functional
+programming has its roots in the completely stateless lambda calculus of
+Church (we are ignoring the even simpler functional systems based on com-
+binatory logic). The untyped lambda calculus is known to be equivalent
+in power to the standard stateful abstraction of computation — the Turing
+machine.
+5.2.1 State
+Modern functional programming languages are often classiﬁed as ‘pure’ —
+those such as Haskell[PJ + 03] which shun state and side-e↵ects completely,
+and ‘impure’ — those such as ML which, whilst advocating the avoidance of
+state and side-e↵ects in general, do permit their use. Where not explicitly
+mentioned we shall generally be considering functional programming in its
+pure form.
+The primary strength of functional programming is that by avoiding
+state (and side-e↵ects) the entire system gains the property of referential
+transparency — which implies that when supplied with a given set of argu-
+ments a function will always return exactly the same result (speaking loosely
+we could say that it will always behave in the same way). Everything which
+can possibly a↵ect the result in any way is always immediately visible in the
+actual parameters.
+It is this cast iron guarantee of referential transparency that obliterates
+one of the two crucial weaknesses of testing as discussed above. As a re-
+sult, even though the other weakness of testing remains (testing for one set
+of inputs says nothing at all about behaviour with another set of inputs),
+testing does become far more e↵ective if a system has been developed in a
+functional style.
+By avoiding state functional programming also avoids all of the other
+state-related weaknesses discussed above, so — for example — informal
+reasoning also becomes much more e↵ective.
+5.2.2 Control
+Most functional languages specify implicit (left-to-right) sequencing (of cal-
+culation of function arguments) and hence they face many of the same issues
+mentioned above. Functional languages do derive one slight beneﬁt when
+15
+it comes to control because they encourage a more abstract use of control
+using functionals (such as fold / map) rather than explicit looping.
+There are also concurrent versions of many functional languages, and
+the fact that state is generally avoided can give beneﬁts in this area (for
+example in a pure functional language it will always be safe to evaluate all
+arguments to a function in parallel).
+5.2.3 Kinds of State
+In most of this paper when we refer to “state” what we really mean is
+mutable state.
+In languages which do not support (or discourage) mutable state it is
+common to achieve somewhat similar e↵ects by means of passing extra pa-
+rameters to procedures (functions). Consider a procedure which performs
+some internal stateful computation and returns a result — perhaps the pro-
+cedure implements a counter and returns an incremented value each time it
+is called:
+procedure int getNextCounter()
+// ’counter’ is declared and initialized elsewhere in the code
+counter := counter + 1
+return counter
+The way that this is typically implemented in a basic functional pro-
+gramming language is to replace the stateful procedure which took no ar-
+guments and returned one result with a function which takes one argument
+and returns a pair of values as a result.
+function (int,int) getNextCounter(int oldCounter)
+let int result = oldCounter + 1
+let int newCounter = oldCounter + 1
+return (newCounter, result)
+There is then an obligation upon the caller of the function to make
+sure that the next time the getNextCounter function gets called it is sup-
+plied with the newCounter returned from the previous invocation.E↵ectively
+what is happening is that the mutable state that was hidden inside the
+getNextCounter procedure is replaced by an extra parameter on both the
+input and output of the getNextCounter function. This extra parameter is
+not mutable in any way (the entity which is referred to by oldCounter is a
+di↵erent value each time the function is called).
+16
+As we have discussed, the functional version of this program is refer-
+entially transparent, and the imperative version is not (hence the caller of
+the getNextCounter procedure has no idea what may inﬂuence the result
+he gets — it could in principle be dependent upon many, many di↵erent
+hidden mutable variables — but the caller of the getNextCounter function
+can instantly see exactly that the result can depend only on the single value
+supplied to the function).
+Despite this, the fact is that we are using functional values to simulate
+state. There is in principle nothing to stop functional programs from pass-
+ing a single extra parameter into and out of every single function in the
+entire system. If this extra parameter were a collection (compound value)
+of some kind then it could be used to simulate an arbitrarily large set of
+mutable variables. In e↵ect this approach recreates a single pool of global
+variables — hence, even though referential transparency is maintained, ease
+of reasoning is lost (we still know that each function is dependent only upon
+its arguments, but one of them has become so large and contains irrelevant
+values that the beneﬁt of this knowledge as an aid to understanding is al-
+most nothing). This is however an extreme example and does not detract
+from the general power of the functional approach.
+It is worth noting in passing that — even though it would be no substi-
+tute for a guarantee of referential transparency — there is no reason why
+the functional style of programming cannot be adopted in stateful languages
+(i.e. imperative as well as impure functional ones). More generally, we would
+argue that — whatever the language being used — there are large beneﬁts
+to be had from avoiding hidden, implicit, mutable state.
+5.2.4 State and Modularity
+It is sometimes argued (e.g. [vRH04, p315]) that state is important because
+it permits a particular kind of modularity. This is certainly true. Working
+within a stateful framework it is possible to add state to any component
+without adjusting the components which invoke it. Working within a func-
+tional framework the same e↵ect can only be achieved by adjusting every
+single component that invokes it to carry the additional information around
+(as with the getNextCounter function above).
+There is a fundamental trade o↵ between the two approaches. In the
+functional approach (when trying to achieve state-like results) you are forced
+to make changes to every part of the program that could be a↵ected (adding
+the relevant extra parameter), in the stateful you are not.
+But what this means is that in a functional program you can always tell
+17
+exactly what will control the outcome of a procedure (i.e. function) simply by
+looking at the arguments supplied where it is invoked. In a stateful program
+this property (again a consequence of referential transparency) is completely
+destroyed, you can never tell what will control the outcome, and potentially
+have to look at every single piece of code in the entire system to determine
+this information.
+The trade-o↵ is between complexity (with the ability to take a shortcut
+when making some speciﬁc types of change) and simplicity (with huge im-
+provements in both testing and reasoning). As with the discipline of (static)
+typing, it is trading a one-o↵ up-front cost for continuing future gains and
+safety (“one-o↵” because each piece of code is written once but is read,
+reasoned about and tested on a continuing basis).
+A further problem with the modularity argument is that some examples
+— such as the use of procedure (function) invocation counts for debugging /
+performance-tuning purposes — seem to be better addressed within the sup-
+porting infrastructure / language, rather than within the system itself (we
+prefer to advocate a clear separation between such administrative/diagnostic
+information and the core logic of the system).
+Still, the fact remains that such arguments have been insucient to
+result in widespread adoption of functional programming. We must therefore
+conclude that the main weakness of functional programming is the ﬂip side
+of its main strength — namely that problems arise when (as is often the
+case) the system to be built must maintain state of some kind.
+The question inevitably arises of whether we can ﬁnd some way to “have
+our cake and eat it”. One potential approach is the elegant system of mon-
+ads used by Haskell [Wad95]. This does basically allow you to avoid the
+problem described above, but it can very easily be abused to create a state-
+ful, side-e↵ecting sub-language (and hence re-introduce all the problems we
+are seeking to avoid) inside Haskell — albeit one that is marked by its type.
+Again, despite their huge strengths, monads have as yet been insucient to
+give rise to widespread adoption of functional techniques.
+5.2.5 Summary — Functional Programming
+Functional programming goes a long way towards avoiding the problems
+of state-derived complexity. This has very signiﬁcant beneﬁts for testing
+(avoiding what is normally one of testing’s biggest weaknesses) as well as
+for reasoning.
+18
+5.3 Logic Programming
+Together with functional programming, logic programming is considered to
+be a declarative style of programming because the emphasis is on specifying
+what needs to be done rather than exactly how to do it. Also as with
+functional programming — and in contrast with OOP — its principles and
+the way of thinking encouraged do not derive from the stateful von-Neumann
+architecture.
+Pure logic programming is the approach of doing nothing more than
+making statements about the problem (and desired solutions). This is done
+by stating a set of axioms which describe the problem and the attributes
+required of something for it to be considered a solution. The ideal of logic
+programming is that there should be an infrastructure which can take the
+raw axioms and use them to ﬁnd or check solutions. All solutions are formal
+logical consequences of the axioms supplied, and “running” the system is
+equivalent to the construction of a formal proof of each solution.
+The seminal “logic programming” language was Prolog. Prolog is best
+seen as a pure logical core (pure Prolog) with various extra-logical 5 exten-
+sions. Pure Prolog is close to the ideals of logic programming, but there
+are important di↵erences. Every pure Prolog program can be “read” in two
+ways — either as a pure set of logical axioms (i.e. assertions about the prob-
+lem domain — this is the pure logic programming reading), or operationally
+— as a sequence of commands which are applied (in a particular order) to
+determine whether a goal can be deduced (from the axioms). This second
+reading corresponds to the actual way that pure Prolog will make use of the
+axioms when it tries to prove goals. It is worth noting that a single Prolog
+program can be both correct when read in the ﬁrst way, and incorrect (for
+example due to non-termination) when read in the second.
+It is for this reason that Prolog falls short of the ideals of logic pro-
+gramming. Speciﬁcally it is necessary to be concerned with the operational
+interpretation of the program whilst writing the axioms.
+5.3.1 State
+Pure logic programming makes no use of mutable state, and for this reason
+proﬁts from the same advantages in understandability that accrue to pure
+functional programming. Many languages based on the paradigm do how-
+ever provide some stateful mechanisms. In the extra-logical part of Proloisn’t needed (in this ideal world). Because of this, and the huge complexity
+which state can cause, the ideal world removes all non-essential state. There
+is no other state at all. No caches, no stores of derived calculations of any
+kind. One e↵ect of this is that all the state in the system is visible to the
+user of (or person testing) the system (because inputs can reasonably be
+expected to be visible in ways which internal cached state normally is not).
+7.1.2 Control in the ideal world
+Whereas we have seen that some state is essential, control generally can be
+completely omitted from the ideal world and as such is considered entirely
+accidental. It typically won’t be mentioned in the informal requirements
+and hence should not appear in the formal requirements (because these are
+derived with no view to execution).
+What do we mean by this? Clearly if the program is ever to run, some
+control will be needed somewhere because things will have to happen in
+some order — but this should no more be our concern than the fact that the
+chances are some electricity will be needed somewhere. The important thing
+is that we (as developers of the system) should not have to worry about the
+control ﬂow in the system. Speciﬁcally the results of the system should be
+independent of the actual control mechanism which is ﬁnally used.
+These are precisely the lessons which logic programming teaches us, and
+because of this we would like to take the lead for our ideal approach to
+control from logic programming which shows that control can be separated
+completely.
+It is worth noting that because typically the informal requirements will
+not mention concurrency, that too is normally of an accidental nature. In
+an ideal world we can assume that ﬁnite (stateless) computations take zero
+time 8 and as such it is immaterial to a user whether they happen in sequence
+or in parallel.
+7.1.3 Summary
+In the ideal world we have been able to avoid large amounts of complexity
+— both state and control. As a result, it is clear that a lot of complexity
+is accidental. This gives us hope that it may be possible to signiﬁcantly
+reduce the complexity of real large systems. The question is — how close is
+it possible to get to the ideal world in the real one?
+8 this assumption is generally known as the “synchrony hypothesis”
+27
+7.2 Theoretical and Practical Limitations
+The real world is not of course ideal. In this section we examine a few of
+the assumptions made in the section 7.1 and see where they break down.
+As already noted, our vision of an ideal world is similar in many ways to
+the vision of declarative programming that lies behind functional and logic
+programming.
+Unfortunately we have seen that functional and logic programming ul-
+timately had to confront both state and control. We should note that the
+reasons for having to confront each are slightly di↵erent. State is required
+simply because most systems do have some state as part of their true essence.
+Control generally is accidental (the users normally are not concerned about
+it at all) but the ability to restrict and inﬂuence it is often required from a
+practical point of view. Additionally practical (e.g. eciency) concerns will
+often dictate the use of some accidental state.
+These observations give some indication of where we can expect to en-
+counter diculties.
+7.2.1 Formal Speciﬁcation Languages
+First of all, we want to consider two problems (one of a theoretical kind,
+the other practical) that arise in connection with the ideal-world formal
+requirements.
+In that section we discussed the need for formal requirements derived
+directly from the informal requirements. We observed that in the ideal
+world we would like to be able to execute the formal requirements without
+ﬁrst having to translate them into some other language.
+The phrase “formal requirements” is basically synonymous with “for-
+mal speciﬁcation”, so what e↵ectively we’re saying would be ideal are exe-
+cutable speciﬁcations. Indeed both the declarative programming paradigms
+discussed above (functional programming and logic programming) have been
+proposed as approaches for executable speciﬁcations.
+Before we consider the problems with executing them, we want to com-
+ment that the way in which the ideal world formal speciﬁcations were derived
+— directly from the users’ informal requirements — was critical. Formal
+speciﬁcations can be derived in various other ways (some of which risk the
+introduction of accidental complexity), and can be of various di↵erent kinds.
+Traditionally formal speciﬁcation has been categorized into two main
+camps:
+Property-based approaches focus (in a declarative manner) on what is
+28
+required rather than how the requirements should be achieved. These
+approaches include the algebraic (equational axiomatic semantics) ap-
+proaches such as Larch and OBJ.
+Model-based (or State-based) approaches construct a potential model
+for the system (often a stateful model) and specify how that model
+must behave. These approaches (which include Z and VDM) can hence
+be used to specify how a stateful, imperative language solution must
+behave to satisfy the requirements. (We discussed the weaknesses of
+stateful imperative languages in section 5).
+The ﬁrst problem that we want to discuss in this section is the more
+theoretical one. Arguments (which focus more on the model-based ap-
+proaches) have been put forward against the concept of executable spec-
+iﬁcations [HJ89]. The main objection is that requiring a speciﬁcation lan-
+guage to be executable can directly restrict its expressiveness (for example
+when specifying requirements for a variable x it may be desirable to assert
+something like ¬9y|f (y, x) which clearly has no direct operational interpre-
+tation).
+In response to this objection, we would say ﬁrstly that in our experience
+a requirement for this kind of expressivity does not seem to be common in
+many problem domains. Secondly it would seem sensible that where such
+speciﬁcations do occur they should be maintained in their natural form
+but supplemented with a separate operational component. Indeed in this
+situation it would not seem too unreasonable to consider the required oper-
+ational component to be accidental in nature (of course the reality is that in
+cases like this the boundary between what is accidental and essential, what
+is reasonable to hope for in an “ideal” world, becomes less clear). Some
+speciﬁcation languages address this issue by having an executable subset.
+Finally, it is the property-based approaches that seem to have the great-
+est similarity to what we have in mind when we talk about executable spec-
+iﬁcations in the ideal world. It certainly is possible to execute algebraic
+speciﬁcations — deriving an operational semantics by choosing a direction
+for each of the equational axioms. 9
+In summary, the ﬁrst problem is that consideration of speciﬁcation lan-
+guages highlights the (theoretically) fuzzy boundary between what is essen-
+tial and what is accidental — speciﬁcally it challenges the validity of our
+deﬁnition of essential (which we identiﬁed closely with requirements from
+the users) by observing that it is possible to specify things which are not
+9 Care must be taken that the resulting reduction rules are conﬂuent and terminating.
+29
+directly executable. For the reasons given above (and in section 6) we think
+that — from the practical point of view — our deﬁnition is still viable,
+import and justiﬁed.
+The second problem is of a more practical nature — namely that even
+when speciﬁcations are directly executable, this can be impractical for e-
+ciency reasons. Our response to this is that whilst it is undoubtedly true,
+we believe that it is very important (for understanding and hence for avoid-
+ing complexity) not to lose the distinction we have deﬁned between what is
+accidental and essential. As a result, this means that we will require some
+accidental components as we shall see in section 7.2.3.
+7.2.2 Ease of Expression
+There is one ﬁnal practical problem that we want to consider — even though
+we believe it is fairly rare in most application domains. In section 7.1.1 we
+argued that immutable, derived data would correspond to accidental state
+and could be omitted (because the logic of the system could always be used
+to derive the data on-demand).
+Whilst this is true, there are occasionally situations where the ideal world
+approach (of having no accidental state, and using on-demand derivation)
+does not give rise to the most natural modelling of the problem.
+One possible situation of this kind is for derived data which is dependent
+upon both a whole series of user inputs over time, and its own previous
+values. In such cases it can be advantageous 10 to maintain the accidental
+state even in the ideal world.
+An example of this would be the derived data representing the position
+state of a computer-controlled opponent in an interactive game — it is at all
+times derivable by a function of both all prior user movements and the initial
+starting positions,11 but this is not the way it is most naturally expressed.
+7.2.3 Required Accidental Complexity
+We have seen two possible reasons why in practice — even with optimal
+language and infrastructure — we may require complexity which strictly is
+accidental. These reasons are:
+Performance making use of accidental state and control can be required
+for eciency — as we saw in the second problem of section 7.2.1.
+10 because it can make the logic easier to express — as we shall see in section 7.3.2
+11 We are implicitly considering time as an additional input.
+30
+Ease of Expression making use of accidental state can be the most nat-
+ural way to express logic in some cases — as we saw in section 7.2.2.
+Of the two, we believe that performance will be the most common.
+It is of course vital to be aware that as soon as we re-introduce this acci-
+dental complexity, we are again becoming exposed to the dangers discussed
+in sections 4.1 and 4.2. Speciﬁcally we can see that if we add in accidental
+state which has to be managed explicitly by the logic of the system, then we
+become at risk of the possibility of the system entering an inconsistent state
+(or “bad state”) due to errors in that explicit logic. This is a very serious
+concern, and is one that we address in our recommendations below.
+7.3 Recommendations
+We believe that — despite the existence of required accidental complexity —
+it is possible to retain most of the simplicity of the ideal world (section 7.1)
+in the real one. We now look at how this might be achievable.
+Our recommendations for dealing with complexity (as exempliﬁed by
+both state and control) can be summed up as:
+• Avoid
+• Separate
+Speciﬁcally the overriding aim must be to avoid state and control where
+they are not absolutely and truly essential.
+The recommendation of avoidance is however tempered by the acknowl-
+edgement that there will sometimes be complexity that either is truly essen-
+tial (section 7.1.1) or, whilst not truly essential, is useful from a practical
+point of view (section 7.2.3). Such complexity must be separated out from
+the rest of the system — and this gives us our second recommendation.
+There is nothing particularly profound in these recommendations, but
+they are worth stating because they are emphatically not the way most
+software is developed today. It is the fact that current established practice
+does not use these as central overriding principles for software development
+that leads directly to the complexity that we see everywhere, and as already
+argued, it is that complexity which leads to the software crisis12.
+In addition to not being profound, the principles behind these recom-
+mendations are not really new. In fact, in a classic 1979 paper Kowalski
+12There is some limited similarity between our goal of “Separate” and the goal of
+separation of concerns as promoted by proponents of Aspect Oriented Programming —
+but as we shall see in section 7.3.2, exactly what is meant by separation is critical.
+31
+(co-inventor of Prolog) argued in exactly this direction [Kow79]. The title
+of his paper was the equation:
+“Algorithm = Logic + Control”
+. . . and this separation that he advocated is close to the heart of what
+we’re recommending.
+7.3.1 Required Accidental Complexity
+In section 7.2.3 we noted two possible reasons for requiring accidental com-
+plexity (even in the presence of optimal language and infrastructure). We
+now consider the most appropriate way of handling each.
+Performance
+We have seen that there are many serious risks which arise from accidental
+complexity — particularly when introduced in an undisciplined manner. To
+mitigate these risks we take two defensive measures.
+The ﬁrst is with regard to the risks of explicit management of accidental
+state (which we have argued is actually the majority of state). The rec-
+ommendation here is that we completely avoid explicit management of the
+accidental state — instead we should restrict ourselves to simply declaring
+what accidental state should be used, and leave it to a completely separate
+infrastructure (on which our system will eventually run) to maintain. This is
+reasonable because the infrastructure can make use of the (separate) system
+logic which speciﬁes how accidental data must be derived.
+By doing this we eliminate any risk of state inconsistency (bugs in the
+infrastructure aside of course). Indeed, as we shall see (in section 7.3.2),
+from the point of view of the logic of the system, we can e↵ectively forget
+that the accidental state even exists. More speciﬁc examples of this approach
+are given in the second half of this paper.
+The other defensive action we take is “Separate”. We examine separa-
+tion after ﬁrst looking at the other possible reason for requiring accidental
+complexity.
+Ease of Expression
+This problem (see section 7.2.2) fundamentally arises when derived (i.e.
+accidental ) state o↵ers the most natural way to express parts of the logic of
+the system.
+32
+Complexity Type Recommendation
+Essential Logic Separate
+Essential Complexity State Separate
+Accidental Useful Complexity State / Control Separate
+Accidental Useless Complexity State / Control Avoid
+Table 2: Types of complexity within a system
+The diculty then arises that this requirement (to use the accidental
+state in a fairly direct manner inside the system logic) clashes with the goal
+of separation that we have just discussed. This very separation is critical
+when it comes to avoiding complexity, so we do not want to sacriﬁce it for
+this (probably fairly rare) situation.
+Instead what we recommend is that, in cases where it really is the only
+natural thing to do, we should pretend that the accidental state is really
+essential state for the purposes of the separation discussed below. One
+straightforward way to do this is to make use of an external component
+which observes the derived data in question and creates the illusion of the
+user typing that same (derived, accidental ) data back in as input data (we
+touch on this issue again in section 9.1.4).
+7.3.2 Separation and the relationship between the components
+In the above we deliberately glossed over exactly what we meant by our sec-
+ond recommendation: “Separate”. This is because it actually encompasses
+two things.
+The ﬁrst thing that we’re doing is to advocate separating out all com-
+plexity of any kind from the pure logic of the system (which — having
+nothing to do with either state or control — we’re not really considering
+part of the complexity). This could be referred to as the logic / state split
+(although of course state is just one aspect of complexity — albeit the main
+one).
+The second is that we’re further dividing the complexity which we do
+retain into accidental and essential.This could be referred to as the accidental
+/ essential split. These two splits can more clearly be seen by considering
+the Table 2. (N.B. We do not consider there to be any essential control).
+The essential bits correspond to the requirements in the ideal world of
+section 7.1 — i.e. we are recommending that the formal requirements adopt
+the logic / state split.
+The top three rows of the table correspond to components which we
+33
+expect to exist in most practical systems (some systems may not actually
+require any essential state, but we include it here for generality). i.e. These
+are the three things which will need to be speciﬁed (in terms of a given
+underlying language and infrastructure) by the development team.
+“Separate” is basically advocating clean distinction between all three of
+these components. It is additionally advocating a split between the state
+and control components of the “Useful” Accidental Complexity — but this
+distinction is less important than the others.
+One implication of this overall structure is that the system (essential +
+accidental but useful) should still function completely correctly if the “acci-
+dental but useful” bits are removed (leaving only the two essential compo-
+nents) — albeit possibly unacceptably slowly. As Kowalski (who — writing
+in a Prolog-context — was not really considering any essential state) says:
+“The logic component determines the meaning . . . whereas the
+control component only a↵ects its eciency”.
+A consequence of separation is that the separately speciﬁed components
+will each be of a very di↵erent nature, and as a result it may be ideal to
+use di↵erent languages for each. These languages would each be oriented
+(i.e. restricted ) to their speciﬁc goal — there is no sense in having control
+speciﬁcation primitives in a language for specifying state. This notion of
+restricting the power of the individual languages is an important one —
+the weaker the language, the more simple it is to reason about. This has
+something in common with the ideas behind “Domain Speciﬁc Languages”
+— one exception being that the domains in question are of a fairly abstract
+nature and combine to form a general-purpose platform.
+The vital importance of separation comes simply from the fact that it is
+separation that allows us to “restrict the power ” of each of the components
+independently. The restricted power of the respective languages with which
+each component is expressed facilitates reasoning about them individually.
+The very fact that the three are separated from each other facilitates reason-
+ing about them as a whole (e.g. you do not have to think about accidental
+state at all when you are working on the essential logic of your system13 ).
+Figure 1 shows the same three expected components of a system in a
+di↵erent way (compare with Table 2). Each box in the diagram corresponds
+to some aspect of the system which will need to be speciﬁed by the devel-
+opment team. Speciﬁcally, it will be necessary to specify what the essential

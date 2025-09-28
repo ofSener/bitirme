@@ -1,0 +1,110 @@
+Programmer Job Interviews: The Hidden Agenda
+Terence Kelly
+
+Coding interviews test programming, problem-solving, and computer science fundamentals; they also probe "soft" issues including communication skill and compatibility with the employer's culture. A vast interview-prep literature describes these overt tests. But employers also stratify candidates using another kind of evaluation that is, by design, not obvious to job seekers. This episode of Drill Bits turns the tables on the process, showing how to create interview questions that stealthily winnow exceptionally insightful coders. Creating such questions is good preparation for interviews, whether you're taking or administering them. More importantly, it hones an instinct that will serve well both on the job market and on the job.
+
+ 
+The Right Stuff
+
+What prized skill do employers appraise covertly? It correlates with other virtues of a top programmer: a nimble mind that readily connects dots, a preference to leverage existing code for new problems, and a penchant for elegance in design and implementation. It springs from impulses common among physicists: abstracting away irrelevant superficial peculiarities, transforming messy practical problems into tidy formal ones, and solving them with the most basic and most general prior knowledge. It's the knack for perceiving familiar principles and math at work where neither is apparent, which in turn unifies the solutions of seemingly unrelated problems.
+
+Engineers with this skill are the sort of people who strive to describe lunar orbits and falling apples with the same simple equations. They're the first to realize that the wheel invented to solve yesterday's transportation problem can, with a twist, solve today's pottery problem. They view the wheel not as the anti-dragging feature of an ox cart but rather as an embodiment of radial symmetry. When the boss demands ceramics with radial symmetry, the right solution is obvious to them.
+Programmer Job Interviews: The Hidden Agenda 	Programmer Job Interviews: The Hidden Agenda
+
+Top tech employers want this keen eye for deep unity, this instinct for versatility. It can be measured and it can be learned. It does not require extraordinary knowledge of any kind. Instead it's about taking full advantage of knowledge that every programmer already has.
+
+Interview questions that gauge the ability to see through disguises must necessarily do so surreptitiously, without mentioning disguises. Such questions can be created by working backward from graceful solutions to plausible practical problems. This is a useful exercise for programmers, even when they're not preparing for the job market. Why? Because solving problems with computers is difficult for the same reason that the natural sciences are difficult: Nature obscures elegant principles behind bewildering façades. By practicing the art of camouflage—crafting realistic practical problems to conceal solutions grounded in bedrock knowledge—you can train yourself to think as nature does. Learning to imitate the real world's mischievous talent for misdirection gives you an edge in all aspects of your career, and it's great fun too.
+
+After reviewing the ground rules for interview questions, we'll construct a question that measures the skill of unmasking elegance. Along the way we'll explain how to use the question in an interview and extract insights from a candidate's replies.
+
+ 
+Questions, Queues, and Quarantines
+
+We can tailor the difficulty of an interview question to the seniority and education of the job candidate by adding or removing frills and giving or withholding tips. In all cases, however, we must follow a handful of guidelines to ensure fairness and to obtain a nuanced appraisal of the candidate's strengths.
+
+We usually shouldn't test arcane or advanced knowledge from outside computer science, but it's fair to expect candidates to recall or reconstruct elementary facts that everyone learns before college. A good question invites a solution that unfolds in stages of insights; candidates who get stuck at one of the stages can be helped along with leading questions or outright hints. A good question gives different kinds of intellects a fair chance to shine. Whimsical cover stories delight some candidates but unnerve others; the interviewer may substitute a practical problem for a fanciful cover story if the story causes trouble. Interviewers must be willing to accept solutions superior to the "right answer" that they had in mind when asking a question. More than once job candidates, thinking on their feet, have bested my preferred solutions to my interview questions. Finally, interviewers must ensure that every candidate has a positive experience. Even poor performers should tell their friends that they had a stimulating interview, not a humiliating one.
+
+ 
+
+To illustrate one way of crafting an interview question, we'll work backward from the key insight behind the expected answer. It's a formula that everyone learns in high school; forgetful people can derive it as needed:
+
+1 + 2 + 3 + ... + n = n (n+1)/2
+
+The left-hand sum is sometimes called the "nth triangular number," denoted Tn. The mathematician Gauss reportedly worked out the right-hand formula as a schoolboy.3
+Programmer Job Interviews: The Hidden Agenda
+1+2+3+4 = 4×5/2 = 10
+
+Now that we have the answer, we find the question by allowing the mind to wander freely, thoughts to associate loosely, and the stream of consciousness to flow.
+
+The sum 1 + ... + n involves consecutive integers, reminiscent of serial numbers assigned to something or other. But is it ever meaningful to add serial numbers together? Well, sometimes it's useful: Given n−1 unique serial numbers ranging from 1 to n, we can easily find the missing number by subtracting from Tn the sum of the given numbers.
+
+Already it feels like it's time for a first-draft interview question. To make the right answer less obvious, it will use two triangular numbers.
+
+"FIFO State Penitentiary incarcerates and releases inmates in strict first-in/first-out order. Inmates wear ID cards assigned on arrival. One day an inmate escapes. All remaining inmates are gathered in the prison yard, where the warden may inspect each. How can the warden efficiently identify the fugitive?" (To drop the prison cover story, ask about identifying missing messages in message-queuing software.)
+
+After asking a few clarifying questions and perhaps getting a nudge from the interviewer, the job candidate should consider the possibility of placing serial numbers on ID cards as the cards are issued. If A is the total number of inmates ever admitted into FIFO State Pen (and thus the highest serial number), and if R is the total number of inmates ever released, the current population P should equal A−R. If instead only P−1 inmates are within the walls, then exactly one is missing and the escapee's serial number must be TA−TR−Σ, where Σ is the sum of the serial numbers that the warden finds in the prison yard.
+
+Using triangular numbers is more space-efficient than working with sets of inmate names. The size of such sets is proportional to the inmate population, P, but the triangular-number method requires only a few counters capable of holding integers up to roughly A2 (sharp candidates will voice concern about overflow in the T formula). In the language of the cover story, a warden who uses triangular numbers can conduct a census in the yard carrying a pocket calculator rather than a bulky list of names. Both methods require O(P) time because they perform constant work for every inmate still incarcerated.
+
+To emphasize the issue of space efficiency we could embellish the cover story by allowing inmates to roam among several areas within the pen—yard, gym, cafeteria, library—and try to minimize the aggregate size of the messages that guards in these areas must send to the warden to determine who's missing. If we embellish the question in this way, we must take care to avoid introducing distributed-systems aspects that overshadow the intended essence of the problem.
+
+Job candidates who overlook the opportunity to assign serial numbers or use triangular numbers may propose reasonable but suboptimal solutions. For example, "populate a hash table with the names of inmates who should be present and remove the names of those who are present; the one name that remains in the hash table is that of the fugitive." This approach requires O(P) time and memory. In the embellished variant of the question, where inmates roam around different areas of the pen, struggling candidates might bog down in devising ways to compress the messages sent by the guards to the warden. To prevent the conversation from veering too far off course, the interviewer can remark that these kinds of solutions don't exploit the FIFO constraint.
+
+Now let's spice up that constraint. A favorite trick of physics exam problems is to provide needlessly specific information; the fastest path to the solution requires generalizing away the gratuitous specifics. Let's apply this strategem to our interview question by replacing the FIFO constraint with a special case: in the lingo of queueing theory, a "service center with constant residence time."
+
+The recent Covid pandemic provides a familiar real-world example of such a service center, which becomes our new cover story:
+
+"Patients at Quarantine Hospital are assigned ID wristbands on arrival, must stay for exactly 47 days, and depart eagerly as soon as permitted. An impatient patient has absconded prematurely. Remaining patients assemble in the main ward, where the director may inspect them. How can the director efficiently identify the escapee?"
+
+As with the earlier prison cover story, we can embellish the hospital story with multiple rooms. As before, job candidates are expected to ask clarifying questions while tackling the new quarantine quiz.
+
+Strong job candidates see through the problem's disguise to its simple essence. They realize that a constant-time quarantine implies FIFO, spot the opportunity to assign serial numbers as patients arrive, leverage the FIFO constraint to apply the triangular number formula, and mention that we can fall back on the naïve space-inefficient solution if there's more than one escapee. Nearly every candidate can connect these dots with help from the interviewer. The amount of help needed measures the prized skill that we're trying to assess.
+
+ 
+Drilling Deeper
+
+Dijkstra argues that mathematical thinking is the best foundation for programming.2 To illustrate his point, he dissects a famous brain teaser often used in interviews. Dijkstra's essay also draws a sharp distinction between programming and software engineering, in Dijkstra's usual acerbic style. Some interviewers hold similar views, so think twice before spontaneously boasting about software-engineering prowess in a programming interview.
+
+ 
+
+    If you carefully read its literature and analyse what its devotees actually do, you will discover that software engineering has accepted as its charter "How to program if you cannot."
+    —Edsger Dijkstra 
+
+ 
+
+Good programming books provide inspiration for both crafting and answering interview questions. My all-time favorite is Bentley's Programming Pearls, a bountiful source of interview questions and timeless wisdom that every coder should read.1 Sedgewick's Algorithms textbooks cover data structures and algorithms in depth and present implementations in several programming languages.11 Kernighan and Pike's The Practice of Programming offers plain-spoken advice and plenty of food for thought for both interviewers and job candidates.8 Knuth's The Art of Computer Programming grounds computer problem-solving in mathematics and is excellent preparation for covert math questions.9
+
+A final word of advice to job seekers: Resist the temptation to memorize interview questions and answers for the wrong reasons. Alert interviewers can spot errant Thespians who pretend to solve problems when they're actually just regurgitating memorized solutions. The proper use for those big encyclopedic interview-prep books is to review computer science fundamentals, learn about the tech interview process, and build confidence by practicing whiteboard coding.
+
+ 
+
+    If you're good at cheating, you don't need to be good at anything else.
+    —Banksy 
+
+
+Bits
+
+Grab the example code tarball at https://queue.acm.org/downloads/2023/Drill_Bits_11_example_code.tar.gz. The example code enables you to compare time and memory requirements across three solutions to the FIFO State Pen problem. The README file highlights aspects of the solutions that are easy to overlook if you stop at merely designing a solution without implementing it in code. It also provides a few additional exercises and tips for how to really impress an interviewer.
+
+ 
+Drills
+
+1. Handle more than one quarantine escapee in the embellished scenario where patients are scattered across several hospital rooms and messages must pass between each room and the hospital's director. Assume that patients don't move during the census. Keep the size of messages proportional to the number of escapees rather than the number of patients present.
+
+2. Kobayashi Maru test: Design an interview question around the Halting Problem or some other famously unsolvable problem. Hint: Think about software that analyzes other software for interesting properties (e.g., malware detectors and static checkers).
+
+3. Craft an interview question around deficiencies in a standard algorithm, e.g., "Identify and eliminate wasted effort in classic textbook breadth-first search".5
+
+4. Design a question to test mastery of the versatility of a powerful and general principle. For an example, see Bentley on Little's Law.1
+
+5. Disguise a well-known formal problem in an important practical problem. For example, clearing a sealed-bid auction is equivalent to solving a generalized knapsack problem.7
+
+6. Algorithm design depends on data structures. Ask candidates to design alternative representations for common data structures under special circumstances. For example, design a compact data structure to represent a fixed static graph that is given explicitly and does not change dynamically.4
+
+7. Test multithreaded coding skill by asking for a highly concurrent "container" such as a linked list.6
+
+8. Find and report coding errors in interview prep books. Remarkably, the code listed in such books hasn't always been tested.10
+
+9. Pick your favorite simple coding problem and solve it from scratch once a year. Observe how your solutions change over time.
+
+ 

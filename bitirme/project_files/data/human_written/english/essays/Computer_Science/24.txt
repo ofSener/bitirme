@@ -1,0 +1,28 @@
+Dear KV,
+non-quietude
+
+I just started my first software development job after graduating and was wondering if software development always involves so much conversation. Our small team of six seems to spend far more time discussing code than actually writing it. Between daily standup meetings (we use scrum in our company) and the need to constantly respond on the company Slack channels, it's hard to get a moment of quiet. Even though I work from home several days a week and live alone, there's rarely a moment peaceful enough to concentrate on writing code, which is my actual job. How do you get the quiet time you need to work on code away from all the noise—virtual or otherwise—that seems to come along with this line of work?
+
+—Seeker of Peace
+
+Dear Seeker,
+
+The short answer would be to delete Slack and everything else used for communication—except perhaps an email client—from all your devices. But, of course, as a new recruit, you rarely have the power to say "No!" to the people with whom you work. And work culture has just gotten louder and more annoying as we've continued to add more distractions that someone—somewhere—seems to believe we need.
+
+KV is old enough to remember a time before ubiquitous cell phones, a world in which email was the predominant form of intra- and interoffice communication, and it was perfectly normal not to read your email for hours in order to concentrate on a task. Of course, back then we also worked in offices where co-workers would readily walk in unannounced to interrupt us. That too, was annoying but could easily be deterred through the clever use of headphones—or, in KV's case, a dead-eye stare.
+
+The communication applications themselves, however, are not at the root of the problem. Before Slack and Discord, there was IRC (Internet Relay Chat), which served the same function, except that you had to use ASCII art to be rude. (And no, I'm not going to explain how; you can look that up on your own.) The problem here, as is so often the case, is people. While there are mechanisms for removing all the people, I understand they are still frowned upon in the workplace.
+
+Scrum and its attendant annoyances arose because people don't trust each other and often do not communicate well. The same might be said for the "everyone on Slack" mentality. Managers and product owners feel they must be kept in the loop on how things are going because that's how they can keep tabs on whether they'll be able to deliver—on time and on budget—whatever it is that you're supposed to be working on.
+
+Of course, having someone watch over you constantly, who has the ability to constantly interrupt to ask, "How's it going?" is like having a six-year-old in the car who repeatedly asks, "Are we there yet?" And yes, the daily standup is very much the work equivalent of "Are we there yet?" It isn't that scrum can't be used well. Like any methodology, it has its uses. Once it starts to be applied with religious fervor, however, it loses its original meaning and becomes nothing more than a Latin litany repeated endlessly by the team to stave off eternal punishment.
+
+Many years ago, KV worked with some researchers who had active badges. These were devices (back before cell phones, if you can imagine) that could be used to send brief messages within a workplace networked for them, as well as to track users within a building. That's so you would know, for example, that Bob happened to be in Alice's office at the moment. We mostly used these things to congregate for lunch. But, as technologists, we also wanted to find out what weird things we could do with these widgets. There were a few papers written about the technology at the time, but the most incisive work on the badges was not about the gadgets or the network protocols themselves but instead about how work cultures might use or abuse the technology (see "Locating systems at work: implications for the development of active badge applications," by R.H.R. Harper, M.G. Lamming, W.M. Newman).
+
+Is it OK to know that Bob happens to be using the toilet just now? What if the system counts how often Carol visits the coffee machine? The most important finding from the study, which will remain important no matter what form this sort of contact technology takes, was that the thing that mattered most was who had the ability to determine the rules. That is, a workplace in which people were required to wear the badge at all times and respond to messages at all hours would be considered a bad place to work, whereas a business where it was considered to be OK to put the badge away somewhere so as to have a bit of uninterrupted time to work or just rest would be considered a good workplace.
+
+This seems simple enough. Yet, as we watch people now dealing both with back-to-the-office policies and this requirement for people to be constantly available for contact, KV is pretty sure no one is paying attention to what was already learned.
+
+As to your original question about whether software development requires conversation, the answer is always yes. That's because, unless you're writing only for yourself, whatever software you build will need to work with what others are building—and, in the absence of communication, the bits won't line up. So, the meta question is: "How much communication is required?"
+
+KV is now of the opinion that we could all do with a lot less interruption and quite a bit less conversation. To solve this problem for yourself requires that you work in a place where saying no to interruptions is acceptable—or even, perish the thought, encouraged!

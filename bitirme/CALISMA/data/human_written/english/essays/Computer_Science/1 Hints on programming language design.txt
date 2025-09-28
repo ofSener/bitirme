@@ -1,0 +1,348 @@
+I would like in this paper to present a philosophy of the design and
+evaluation of programming languages that I have adopted and
+developed over a number of years, namely that the primary purpose of a
+programming language is to help the programmer in the practice of his art. I
+do not wish to deny that there are many other desirable properties of a
+programming language: for example, machine independence, stability of
+specification, use of familiar notations, a large and useful library, existing
+popularity, or sponsorship by a rich and powerful organization. These
+aspects are often dominant in the choice of a programming language by its
+users, but I wish to argue that they ought not to be. I shall therefore express
+myself strongly. I fear that each reader will find some of my points wildly
+controversial; I expect he will find other points that are obvious and even
+boring; I hope that he will find a few points that are new and worth
+pursuing.
+My approach is first to isolate the most difficult aspects of the program-
+mer's task, and state in general terms how a programming-language design
+can assist in meeting these difficulties. I discuss a number of goals, which
+have been followed in the past by language designers, and which I regard as
+comparatively irrelevant or even illusory. I then turn to particular aspects of
+familiar high-level programming languages, and explain why they are in
+some respects much better than machine-code programming, and in certain
+cases worse. Finally, I draw a distinction between language-feature design
+and the design of complete languages.
+If a programming language is regarded as a tool to aid the programmer, it
+should give him the greatest assistance in the most difficult aspects of his
+art, namely program design, documentation, and debugging.
+(1) Program design. The first, and very difficult, aspect of design is
+deciding what the program is to do, and formulating this as a clear, precise,
+and acceptable specification. Often just as difficult is deciding how to do it:
+how to divide a complex task into simpler subtasks, and to specify the purpose of each part, and define clear, precise, and efficient interfaces
+between them. A good programming language should give assistance in
+expressing not only how the program is to run, but what it is intended to
+accomplish; and it should enable this to be expressed at various levels, from
+the overall strategy to the details of coding and data representation. It
+should assist in establishing and enforcing conventions and disciplines that
+will ensure harmonious co-operation of the parts of a large program when
+they are developed separately and finally assembled together.
+(2) Programming documentation. The purpose of program documenta-
+tion is to explain to a human reader the way in which a program works so
+that it can be successfully adapted after it goes into service, to meet the
+changing requirements of its users, or to improve it in the light of increased
+knowledge, or just to remove latent errors and oversights. The view that
+documentation is something that is added to a program after it has been
+commissioned seems to be wrong in principle and counter-productive in
+practice. Instead, documentation must be regarded as an integral part of the
+process of design and coding. A good programming language will encour-
+age and assist the programmer to write clear self-documenting code,
+and even perhaps to develop and display a pleasant style of writing.
+The readability of programs is immeasurably more important than their
+writeability.
+(3) Program debugging. Program debugging can often be the most
+tiresome, expensive, and unpredictable phase of program development,
+particularly at the stage of assembling subprograms written by many
+programmers over a long period. The best way to reduce these problems is
+by successful initial design of the program, and by careful documentation
+during the construction of code. But even the best-designed and best-
+documented programs will contain errors and inadequacies, which the
+computer itself can help to eliminate. A good programming language will
+give maximum assistance in this. Firstly, the notations should be designed to
+reduce as far as possible the scope for coding error; or at least to guarantee
+that such errors can be detected by a compiler, before the program even
+begins to run. Certain programming errors cannot always be detected in this
+way, and must be cheaply detectable at run time; in no case can they be
+allowed to give rise to machine- or implementation-dependent effects, which
+are inexplicable in terms of the language itself. This is a criterion to which I
+give the name security. Of course, the compiler itself must be utterly
+reliable, so that its user has complete confidence that any unexpected effect
+was occasioned by his own program. And the compiler must be compact
+and fast, so that there is no appreciable delay or cost involved in correcting
+a program in source code and resubmitting for another run; and the object
+code too should be fast and efficient, so that extra instructions can be
+inserted even in large and time-consuming programs in order to help detect
+their errors or inefficiencies.
+A necessary condition for the achievement of any of these objectives is
+the utmost simplicity in the design of the language. Without simplicity, even
+the language designer himself cannot evaluate the consequences of his
+design decisions. Without simplicity, the compiler writer cannot achieve
+even reliability, and certainly cannot construct compact, fast, and efficient
+compilers. But the main beneficiary of simplicity is the user of the language.
+In all spheres of human intellectual and practical activity, from carpentry to
+golf, from sculpture to space travel, the true craftsman is the one who
+thoroughly understands his tools. And this applies to programmers too. A
+programmer who fully understands his language can tackle more complex
+tasks, and complete them more quickly and more satisfactorily, than if he
+did not. In fact, a programmer's need for an understanding of his language
+is so great that it is almost impossible to persuade him to change to a new
+one. No matter what the deficiencies of his current language, he has learned
+to live with them; he has learned how to mitigate their effects by discipline
+and documentation, and even to take advantage of them in ways that would
+be impossible in a new and cleaner language which avoids the deficiency.
+It therefore seems especially necessary in the design of a new program-
+ming language, intended to attract programmers away from their current
+high-level language, to pursue the goal of simplicity to an extreme, so that a
+programmer can readily learn and remember all its features, can select the
+best facility for each of his purposes, can fully understand the effects and
+consequences of each decision, and can then concentrate the major part of
+his intellectual effort on understanding his problem and his programs rather
+than his tool.
+A high standard of simplicity is set by machine or assembly code
+programming for a small computer. Such a machine has an extremely
+uniform structure, for example a main store consisting of 2 m words
+numbered consecutively from zero up, a few registers, and a simple syn-
+chronous standard interface for communication with and control of
+peripheral equipment. There is a small range of instructions, each of which
+has a uniform format; and the effect of each instruction is simple, affecting
+at most one register and one location of store or one peripheral. Even more
+important, this effect can be described and understood quite independently
+of every other instruction in the repertoire. And finally, the programmer has
+an immediate feedback on the compactness and efficiency of his code.
+Enthusiasts for high-level languages are often surprised at the complexity of
+the problems that have been tackled with such simple tools.
+On larger modern computers, with complex instruction repertoires and
+even more complex operating systems, it is especially desirable that a
+high-level language design should aim at the simplicity and clear modular
+description of the best hardware designs. But the only widely used
+languages that approach this ideal are FORTRAN, LISP, and A L G O L 60,and a few languages developed from them. I fear that most more modern
+programming languages are getting even more complicated; and it is
+particularly irritating when their proponents claim that future hardware
+designs should be oriented towards the implementation of this complexity.
+The previous two sections have argued that the objective criteria for good
+language design may be summarized in five catch phrases: simplicity,
+security, fast translation, efficient object code, and readability. However
+desirable these may seem, many language designers have adopted alter-
+native principles that belittle the importance of some or all of these criteria,
+perhaps those that their own languages have failed to achieve Some language designers have replaced the objective of simplicity by that of
+modularity, by which they mean that a programmer who cannot understand
+the whole of his language can get by with a limited understanding of only
+part of it. For programs that work as the programmer intended this may be
+feasible; but if his program does not work, and accidentally invokes some
+feature of the language that he does not know, he will get into serious
+trouble. If he is lucky the implementation will detect his mistake, but he will
+not be able to understand the diagnostic message. Otherwise, he is even
+more helpless. If to the complexity of his language is added the complexity
+of its implementation, the complexity of its operating environment, and
+even the complexity of institutional standards for the use of the language, it
+is not surprising that when faced with a complex programming task so many
+programmers are overwhelmed.
+Another replacement of simplicity as an objective has been orthogonality
+of design. An example of orthogonality is the provision of complex
+integers, on the argument that we need reals and integers and complex reals,
+so why not complex integers? In the early days of hardware design, some
+very ingenious but arbitrary features turned up in order codes as a result of
+orthogonal combinations of the function bits of an instruction, on the
+grounds that some clever programmer would find a use for them; and some
+clever programmer always did. Hardware designers have now learned more
+sense; but language designers are clever programmers and have not.
+The principles of modularity, or orthogonality, insofar as they contribute
+to overall simplicity, are an excellent means to an end; but as a substitute for
+simplicity they are very questionable. Since in practice they have proved to
+be a technically more difficult achievement than simplicity, it is foolish to
+adopt them as primary objectives. The objective of security has also been widely ignored; it is believed instead
+that coding errors should be removed by the programmer with the
+assistance of a so-called checkout compiler. But this approach has several
+practical disadvantages. For example, the checkout compiler and the
+standard compiler are often not equally reliable. Even if they are, it is
+impossible to guarantee that they will give the same results, especially on a
+subtly incorrect program; and, when they do not, there is nothing to help
+the programmer find the mistake. For a large and complex program the
+extra inefficiency of the debugging runs may be serious; and even on small
+programs the cost of loading a large debugging system can be high. You
+should always pity the fate of the programmer whose task is so difficult that
+his program will not fit into the computer together with your sophisticated
+debugging package. Finally, it is absurd to make elaborate security checks
+on debugging runs, when no trust is put in the results, and then remove
+them in production runs, when an erroneous result could be expensive or
+disastrous. What would we think of a sailing enthusiast who wears his
+life-jacket when training on dry land but takes it off as soon as he goes to
+sea? Fortunately, with a secure language, the security is equally tight for
+production and for debugging.
+In the early days of high-level languages it was openly stated that speed of
+compilation was of minor importance, because programs would be com-
+piled only once and then executed many times. After a while it was realized
+that the reverse was often true, that a program would be compiled
+frequently while it was being debugged; but instead of constructing a fast
+translator, language designers turned to independent compilation, which
+permits a programmer to avoid recompiling those parts of his program that
+he has not changed since the last time. But this is a poor substitute for fast
+compilation, and has many practical disadvantages. Often it encourages or
+even forces a programmer to split a large program into modules that are too
+small to express properly the structure of his problem. It entails the use of
+wide interfaces and cumbersome and expensive parameter lists at inappro-
+priate places. And even worse, it prevents the compiler from adequately checking the validity of these interfaces. It requires additional file space to
+store bulky intermediate code, in addition to source code, which must, of
+course, never be thrown away. It discourages the programmer from making
+changes to his data structure or representation, since this would involve a
+heavy burden of recompilation. And finally the linkage editor is often
+cumbersome to invoke and expensive to execute. And it is all so unneces-
+sary, if the compiler for a good language can work faster than the linkage
+editor anyway.
+If you want to make a fast compiler even faster, I can suggest three
+techniques, which have all the benefits of independent compilation and
+none of the disadvantages.
+(1) Prescan. The slowest part of a modern fast compiler is the lexical
+scan, which inputs individual characters, assembles them into words or
+numbers, identifies basic symbols, removes spaces, and separates the
+comments. If the source text of the program can be stored in a compact
+form in which this character handling does not have to be repeated,
+compilation time may be halved, with the added advantage that the original
+source program may still be listed (with suitably elegant indentation); and
+so the amount of file storage is reduced by a factor considerably greater
+than two. A similar technique was used by the PACT I assembler for the
+IBM 701.
+(2) Precompile. This is a directive that can be given to the compiler
+after submitting any initial segment of a large program. It causes the
+compiler to make a complete dump of its workspace, including dictionary
+and object code, in a specified user file. When the user wishes to add to his
+program and run it, he directs the compiler to recover the dump and
+proceed. When his additions are adequately tested, a further precompile
+instruction can be given. If the programmer needs to modify a precompiled
+procedure, he can just redeclare it in the block containing his main
+program, and normal ALGOL-like scope rules will do the rest. An
+occasional complete recompilation will consolidate the changes after they
+have been fully tested. The technique of precompilation is effective only on
+single-pass compilers; it was successfully incorporated in the Elliott
+ALGOL programming system.
+(3) Dump. This is an instruction that can be called by the user program
+during execution, and causes a complete binary dump of its code and
+workspace into a named user file. The dump can be restored and restarted at
+the instruction following t h e dump by an instruction to the operating
+system. If all necessary data input and initialization is carried out before the
+dump, the time spent on this as well as recompilation time can be saved.
+This provides a simple and effective way of achieving the F O R T R A N effect
+of block data, and was successfully incorporated in the implementation of
+Elliott ALGOL. The one remaining use of independent compilation is to link a high-level
+language with machine code. But even here independent compilation is the
+wrong technique, involving all the inefficiency of procedure call and all the
+complexity of parameter access at just the point where it hurts most. A far
+better solution is to allow machine code instructions to be inserted in-line
+within a high-level language program, as was done in Elliott ALGOL; or,
+better, provide a macro facility for machine code, as in PL/360.
+Independent compilation is a solution to yesterday's problems; today it
+has grown into a problem in its own right. The wise designer will prefer to
+avoid rather than solve such problems. There is another argument, which is all too prevalent among enthusiastic
+language designers, that efficiency of object code is no longer important;
+that the speed and capacity of computers is increasing and their price is
+coming down; and that the programming-language designer might as well
+take advantage of this. This is an argument that would be quite acceptable if
+used to justify an efficiency loss of ten or twenty percent, or even thirty and
+forty percent. But all too frequently it is used to justify an efficiency loss of
+a factor of two, or ten, or even more; and worse, the overhead is not only in
+time taken but in space occupied by the running program. In no other
+engineering discipline would such avoidable overhead be tolerated, and it
+should not be in programming-language design, for the following reasons:
+(1)
+(2)
+(3)
+(4)
+(5)
+The magnitude of the tasks we wish computers to perform is growing
+faster than the cost-effectiveness of the hardware.
+However cheap and fast a computer is, it will be cheaper and faster to
+use it more efficiently.
+In the future we must hope that hardware designers will pay increasing
+attention to reliability rather than to speed and cost.
+The speed, cost, and reliability of peripheral equipment are not
+improving at the same rate as those of processors.
+If anyone is to be allowed to introduce inefficiency it should be the user
+programmer, not the language designer. The user programmer can take
+advantage of this freedom to write better-structured and clearer pro-
+grams, and should not have to expend extra effort to obscure the
+structure and write less clear programs just to regain the efficiency that
+has been so arrogantly pre-empted by the language designer.
+There is a widespread myth that a language designer can afford to ignore
+machine efficiency, because it can be regained when required by the use of a
+sophisticated optimizing compiler. This is false" there is nothing that the
+good engineer can afford to ignore. The only language that has been
+optimized with general success is FORTRAN, which was very specifically
+designed for that very purpose. But even in FORTRAN, optimization has
+grave disadvantages:
+(1) An optimizing compiler is usually large, slow, unreliable, and late.
+(2) Even with a reliable compiler, there is no guarantee than an optimized
+program will have the same results as a normally compiled one.
+(3) A small change to an optimized program may switch off optimization
+with an upredictable and unacceptable loss of efficiency.
+(4) The most subtle danger is that optimization tends to remove from the
+programmer his fundamental control over and responsibility for the
+quality of his programs.
+The solution to these problems is to produce a language for which a simple
+straightforward 'non-pessimizing' compiler will produce straightforward
+object programs of acceptable compactness and efficiency: similar to those
+produced by a resolutely non-clever (but also non-stupid) machine-code
+programmer. Make sure that the language is sufficiently expressive to enable
+most other optimizations to be made in the language itself; and finally,
+make the language so simple, clear, regular, and free from side-effects that
+a general machine-independent optimizer can simply translate an inefficient
+program into a more efficient one with guaranteed identical effects, and
+expressed in the same source language. The fact that the user can inspect the
+results of optimization in his own language mitigates many of the defects
+listed above. The objective of readability by human beings has sometimes been denied in
+favour of readability by a machine; and sometimes even been denied
+in favour of abbreviation of writing, achieved by a wealth of default
+conventions and implicit assumptions. It is of course possible for a compiler
+or service program to expand the abbreviations, fill in the defaults, and
+make explicit the assumptions. But, in practice, experience shows that it is
+very unlikely that the output of a computer will ever be more readable than
+its input, except in such trivial but important aspects as improved indenta-
+tion. Since in principle programs should be read by others, or re-read by
+their authors, before being submitted to the computer, it would be wise for
+the programming language designer to concentrate on the easier task of
+designing a readable language to begin with.202 E S S A Y S IN C O M P U T I N G S C I E N C E
+13.4 C o m m e n t c o n v e n t i o n s
+If the purpose of a programming language is to assist in the documentation
+of programs, the design of a superb comment convention is obviously our
+most important concern. In low-level programming, the greater part of the
+space on each line is devoted to comment. A comment is always terminated
+by an end-of-line, and starts either in a fixed column or with a special
+symbol allocated for this purpose:
+L D A X [THIS IS A COMMENT
+The introduction of free format into high-level languages prevents the use
+of the former method; but it is surprising that few languages have adopted
+the latter. ALGOL 60 has two comment conventions. One is to enclose the
+text of a comment between the basic word comment and a semicolon:
+comment this is a comment;
+This has several disadvantages over the low-level convention"
+(1) The basic word comment is too long. It occupies space that would be
+better occupied by the text of the comment, and is particularly
+discouraging to short comments.
+(2) The comment can appear only after a begin or a semicolon, although it
+would sometimes be more relevant elsewhere.
+(3) If the semicolon at the end is accidentally omitted, the compiler will
+without warning ignore the next following statement.
+(4) One cannot put program text within a comment, since a comment must
+not contain a semicolon.
+The second comment convention of ALGOL 60 permits a comment
+between an end and the next following semicolon, end, or else. This has
+proved most unfortunate, since omission of a semicolon has frequently led
+to the compiler ignoring the next following statement:
+... end this is a mistake A [i] "= x;
+The FORTRAN comment convention defines as comment the whole of a
+line containing a C in the first column.
+C THIS IS A COMMENT
+Its main disadvantages are that is does not permit comments on the same
+line as the code to which they refer, and that it discourages the use of short
+comments. An unfortunate consequence is that a well-annotated
+FORTRAN program occupies many pages, even though the greater part of
+each page is blank. This in itself makes the program unnecessarily difficult
+to read and understand.
+The comment convention of COBOL suffers from the same disadvan-tages as that of FORTRAN, since it insists that commentary should be in a
+separate paragraph.
+More recently designed languages have introduced special bracketing
+symbols (e.g./* and *[) to enclose comments, which can therefore be placed
+anywhere in the program text where they are relevant:
+]* THIS IS A C O M M E N T */
+But there still remains the awkward problem of omitting or mispunching
+one of the comment brackets. In some languages, this will cause omission of
+statements between two comments; in others it may cause the whole of the
+rest of the program to be ignored. Neither of these disasters are likely to
+occur in low-level programs, where the end-of-line terminates a comment.

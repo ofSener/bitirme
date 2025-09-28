@@ -1,0 +1,306 @@
+Abstract
+Raft is a consensus algorithm for managing a replicated
+log. It produces a result equivalent to (multi-)Paxos, and
+it is as efficient as Paxos, but its structure is different
+from Paxos; this makes Raft more understandable than
+Paxos and also provides a better foundation for build-
+ing practical systems. In order to enhance understandabil-
+ity, Raft separates the key elements of consensus, such as
+leader election, log replication, and safety, and it enforces
+a stronger degree of coherency to reduce the number of
+states that must be considered. Results from a user study
+demonstrate that Raft is easier for students to learn than
+Paxos. Raft also includes a new mechanism for changing
+the cluster membership, which uses overlapping majori-
+ties to guarantee safety.
+1 Introduction
+Consensus algorithms allow a collection of machines
+to work as a coherent group that can survive the fail-
+ures of some of its members. Because of this, they play a
+key role in building reliable large-scale software systems.
+Paxos [13, 14] has dominated the discussion of consen-
+sus algorithms over the last decade: most implementations
+of consensus are based on Paxos or influenced by it, and
+Paxos has become the primary vehicle used to teach stu-
+dents about consensus.
+Unfortunately, Paxos is quite difficult to understand, in
+spite of numerous attempts to make it more approachable.
+Furthermore, its architecture requires complex changes
+to support practical systems. As a result, both system
+builders and students struggle with Paxos.
+After struggling with Paxos ourselves, we set out to
+find a new consensus algorithm that could provide a bet-
+ter foundation for system building and education. Our ap-
+proach was unusual in that our primary goal was under-
+standability: could we define a consensus algorithm for
+practical systems and describe it in a way that is signifi-
+cantly easier to learn than Paxos? Furthermore, we wanted
+the algorithm to facilitate the development of intuitions
+that are essential for system builders. It was important not
+just for the algorithm to work, but for it to be obvious why
+it works.
+The result of this work is a consensus algorithm called
+Raft. In designing Raft we applied specific techniques to
+improve understandability, including decomposition (Raft
+separates leader election, log replication, and safety) and
+state space reduction (relative to Paxos, Raft reduces the
+degree of nondeterminism and the ways servers can be in-
+consistent with each other). A user study with 43 students
+at two universities shows that Raft is significantly easier
+to understand than Paxos: after learning both algorithms,
+33 of these students were able to answer questions about
+Raft better than questions about Paxos.
+Raft is similar in many ways to existing consensus al-
+gorithms (most notably, Oki and Liskov’s Viewstamped
+Replication [27, 20]), but it has several novel features:
+• Strong leader: Raft uses a stronger form of leadership
+than other consensus algorithms. For example, log en-
+tries only flow from the leader to other servers. This
+simplifies the management of the replicated log and
+makes Raft easier to understand.
+• Leader election: Raft uses randomized timers to elect
+leaders. This adds only a small amount of mechanism
+to the heartbeats already required for any consensus al-
+gorithm, while resolving conflicts simply and rapidly.
+• Membership changes: Raft’s mechanism for changing
+the set of servers in the cluster uses a new joint consen-
+sus approach where the majorities of two different con-
+figurations overlap during transitions. This allows the
+cluster to continue operating normally during configu-
+ration changes.
+We believe that Raft is superior to Paxos and other con-
+sensus algorithms, both for educational purposes and as a
+foundation for implementation. It is simpler and more un-
+derstandable than other algorithms; it is described com-
+pletely enough to meet the needs of a practical system;
+it has several open-source implementations and is used
+by several companies; its safety properties have been for-
+mally specified and proven; and its efficiency is compara-
+ble to other algorithms.
+The remainder of the paper introduces the replicated
+state machine problem (Section 2), discusses the strengths
+and weaknesses of Paxos (Section 3), describes our gen-
+eral approach to understandability (Section 4), presents
+the Raft consensus algorithm (Sections 5–7), evaluates
+Raft (Section 8), and discusses related work (Section 9).
+A few elements of the Raft algorithm have been omitted
+here because of space limitations, but they are available in
+an extended technical report [29]. The additional material
+describes how clients interact with the system, and how
+space in the Raft log can be reclaimed.
+2 Replicated state machines
+Consensus algorithms typically arise in the context of
+replicated state machines [33]. In this approach, state ma-
+chines on a collection of servers compute identical copies
+of the same state and can continue operating even if some
+of the servers are down. Replicated state machines are
+used to solve a variety of fault tolerance problems in dis-
+tributed systems. For example, large-scale systems that
+306 2014 USENIX Annual Technical Conference USENIX Association
+Figure 1: Replicated state machine architecture. The con-
+sensus algorithm manages a replicated log containing state
+machine commands from clients. The state machines process
+identical sequences of commands from the logs, so they pro-
+duce the same outputs.
+have a single cluster leader, such as GFS [7], HDFS [34],
+and RAMCloud [30], typically use a separate replicated
+state machine to manage leader election and store config-
+uration information that must survive leader crashes. Ex-
+amples of replicated state machines include Chubby [2]
+and ZooKeeper [9].
+Replicated state machines are typically implemented
+using a replicated log, as shown in Figure 1. Each server
+stores a log containing a series of commands, which its
+state machine executes in order. Each log contains the
+same commands in the same order, so each state ma-
+chine processes the same sequence of commands. Since
+the state machines are deterministic, each computes the
+same state and the same sequence of outputs.
+Keeping the replicated log consistent is the job of the
+consensus algorithm. The consensus module on a server
+receives commands from clients and adds them to its log.
+It communicates with the consensus modules on other
+servers to ensure that every log eventually contains the
+same requests in the same order, even if some servers fail.
+Once commands are properly replicated, each server’s
+state machine processes them in log order, and the out-
+puts are returned to clients. As a result, the servers appear
+to form a single, highly reliable state machine.
+Consensus algorithms for practical systems typically
+have the following properties:
+• They ensure safety (never returning an incorrect result)
+under all non-Byzantine conditions, including network
+delays, partitions, and packet loss, duplication, and re-
+ordering.
+• They are fully functional (available) as long as any ma-
+jority of the servers are operational and can communi-
+cate with each other and with clients. Thus, a typical
+cluster of five servers can tolerate the failure of any two
+servers. Servers are assumed to fail by stopping; they
+may later recover from state on stable storage and re-
+join the cluster.
+• They do not depend on timing to ensure the consistency
+of the logs: faulty clocks and extreme message delays
+can, at worst, cause availability problems.
+• In the common case, a command can complete as soon
+as a majority of the cluster has responded to a single
+round of remote procedure calls; a minority of slow
+servers need not impact overall system performance.
+3 What’s wrong with Paxos?
+Over the last ten years, Leslie Lamport’s Paxos proto-
+col [13] has become almost synonymous with consensus:
+it is the protocol most commonly taught in courses, and
+most implementations of consensus use it as a starting
+point. Paxos first defines a protocol capable of reaching
+agreement on a single decision, such as a single replicated
+log entry. We refer to this subset as single-decree Paxos.
+Paxos then combines multiple instances of this protocol to
+facilitate a series of decisions such as a log (multi-Paxos).
+Paxos ensures both safety and liveness, and it supports
+changes in cluster membership. Its correctness has been
+proven, and it is efficient in the normal case.
+Unfortunately, Paxos has two significant drawbacks.
+The first drawback is that Paxos is exceptionally diffi-
+cult to understand. The full explanation [13] is notori-
+ously opaque; few people succeed in understanding it, and
+only with great effort. As a result, there have been several
+attempts to explain Paxos in simpler terms [14, 18, 19].
+These explanations focus on the single-decree subset, yet
+they are still challenging. In an informal survey of atten-
+dees at NSDI 2012, we found few people who were com-
+fortable with Paxos, even among seasoned researchers.
+We struggled with Paxos ourselves; we were not able to
+understand the complete protocol until after reading sev-
+eral simplified explanations and designing our own alter-
+native protocol, a process that took almost a year.
+We hypothesize that Paxos’ opaqueness derives from
+its choice of the single-decree subset as its foundation.
+Single-decree Paxos is dense and subtle: it is divided into
+two stages that do not have simple intuitive explanations
+and cannot be understood independently. Because of this,
+it is difficult to develop intuitions about why the single-
+decree protocol works. The composition rules for multi-
+Paxos add significant additional complexity and subtlety.
+We believe that the overall problem of reaching consensus
+on multiple decisions (i.e., a log instead of a single entry)
+can be decomposed in other ways that are more direct and
+obvious.
+The second problem with Paxos is that it does not pro-
+vide a good foundation for building practical implemen-
+tations. One reason is that there is no widely agreed-
+upon algorithm for multi-Paxos. Lamport’s descriptions
+are mostly about single-decree Paxos; he sketched possi-
+ble approaches to multi-Paxos, but many details are miss-
+ing. There have been several attempts to flesh out and op-
+timize Paxos, such as [24], [35], and [11], but these differ
+from each other and from Lamport’s sketches. Systems
+such as Chubby [4] have implemented Paxos-like algo-
+rithms, but in most cases their details have not been pub-
+USENIX Association 2014 USENIX Annual Technical Conference 307
+lished.
+Furthermore, the Paxos architecture is a poor one for
+building practical systems; this is another consequence of
+the single-decree decomposition. For example, there is lit-
+tle benefit to choosing a collection of log entries indepen-
+dently and then melding them into a sequential log; this
+just adds complexity. It is simpler and more efficient to
+design a system around a log, where new entries are ap-
+pended sequentially in a constrained order. Another prob-
+lem is that Paxos uses a symmetric peer-to-peer approach
+at its core (though it eventually suggests a weak form of
+leadership as a performance optimization). This makes
+sense in a simplified world where only one decision will
+be made, but few practical systems use this approach. If a
+series of decisions must be made, it is simpler and faster
+to first elect a leader, then have the leader coordinate the
+decisions.
+As a result, practical systems bear little resemblance
+to Paxos. Each implementation begins with Paxos, dis-
+covers the difficulties in implementing it, and then de-
+velops a significantly different architecture. This is time-
+consuming and error-prone, and the difficulties of under-
+standing Paxos exacerbate the problem. Paxos’ formula-
+tion may be a good one for proving theorems about its cor-
+rectness, but real implementations are so different from
+Paxos that the proofs have little value. The following com-
+ment from the Chubby implementers is typical:
+There are significant gaps between the description of
+the Paxos algorithm and the needs of a real-world
+system. . . . the final system will be based on an un-
+proven protocol [4].
+Because of these problems, we concluded that Paxos
+does not provide a good foundation either for system
+building or for education. Given the importance of con-
+sensus in large-scale software systems, we decided to see
+if we could design an alternative consensus algorithm
+with better properties than Paxos. Raft is the result of that
+experiment.
+4 Designing for understandability
+We had several goals in designing Raft: it must provide
+a complete and practical foundation for system building,
+so that it significantly reduces the amount of design work
+required of developers; it must be safe under all conditions
+and available under typical operating conditions; and it
+must be efficient for common operations. But our most
+important goal—and most difficult challenge—was un-
+derstandability. It must be possible for a large audience to
+understand the algorithm comfortably. In addition, it must
+be possible to develop intuitions about the algorithm, so
+that system builders can make the extensions that are in-
+evitable in real-world implementations.
+There were numerous points in the design of Raft
+where we had to choose among alternative approaches.
+In these situations we evaluated the alternatives based on
+understandability: how hard is it to explain each alterna-
+tive (for example, how complex is its state space, and does
+it have subtle implications?), and how easy will it be for a
+reader to completely understand the approach and its im-
+plications?
+We recognize that there is a high degree of subjectiv-
+ity in such analysis; nonetheless, we used two techniques
+that are generally applicable. The first technique is the
+well-known approach of problem decomposition: wher-
+ever possible, we divided problems into separate pieces
+that could be solved, explained, and understood relatively
+independently. For example, in Raft we separated leader
+election, log replication, safety, and membership changes.
+Our second approach was to simplify the state space
+by reducing the number of states to consider, making the
+system more coherent and eliminating nondeterminism
+where possible. Specifically, logs are not allowed to have
+holes, and Raft limits the ways in which logs can become
+inconsistent with each other. Although in most cases we
+tried to eliminate nondeterminism, there are some situ-
+ations where nondeterminism actually improves under-
+standability. In particular, randomized approaches intro-
+duce nondeterminism, but they tend to reduce the state
+space by handling all possible choices in a similar fashion
+(“choose any; it doesn’t matter”). We used randomization
+to simplify the Raft leader election algorithm.
+5 The Raft consensus algorithm
+Raft is an algorithm for managing a replicated log of
+the form described in Section 2. Figure 2 summarizes the
+algorithm in condensed form for reference, and Figure 3
+lists key properties of the algorithm; the elements of these
+figures are discussed piecewise over the rest of this sec-
+tion.
+Raft implements consensus by first electing a distin-
+guished leader, then giving the leader complete responsi-
+bility for managing the replicated log. The leader accepts
+log entries from clients, replicates them on other servers,
+and tells servers when it is safe to apply log entries to
+their state machines. Having a leader simplifies the man-
+agement of the replicated log. For example, the leader can
+decide where to place new entries in the log without con-
+sulting other servers, and data flows in a simple fashion
+from the leader to other servers. A leader can fail or be-
+come disconnected from the other servers, in which case
+a new leader is elected.
+Given the leader approach, Raft decomposes the con-
+sensus problem into three relatively independent subprob-
+lems, which are discussed in the subsections that follow:
+• Leader election: a new leader must be chosen when an
+existing leader fails (Section 5.2).
+• Log replication: the leader must accept log entries
+from clients and replicate them across the cluster, forc-
+ing the other logs to agree with its own (Section 5.3)

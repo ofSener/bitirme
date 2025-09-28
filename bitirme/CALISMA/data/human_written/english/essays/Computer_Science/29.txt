@@ -1,0 +1,770 @@
+So far, this virtual processor implementation contains three protection mechanisms that we can associate
+with our abstractions. For the first, the information being protected is the distinct programs of Fig. 1.
+The guard is represented by the extra piece of hardware that enforces the descriptor restriction. The
+impenetrable wall with a door is the hardware that forces all references to memory through the
+descriptor mechanism. The authority check on a request to access memory is very simple. The
+requesting virtual processor is identified by the base and bound values in the descriptor register, and the
+guard checks that the memory location to which access is requested lies within the indicated area of
+memory.
+The second mechanism protects the contents of the descriptor register. The wall, door, and guard are
+implemented in hardware, as with the first mechanism. An executing program requesting to load the
+descriptor register is identified by the privileged state bit. If this bit is OFF, indicating that the requester
+is a user program, then the guard does not allow the register to be loaded. If this bit is ON, indicating
+that the requester is the supervisor program, then the guard does allow it.
+The third mechanism protects the privileged state bit. It allows an executing program identified by the
+privileged state bit being OFF (a user program) to perform the single operation "turn privileged state bit
+ON and transfer to the supervisor program." An executing program identified by the privileged state bit
+being ON is allowed to turn the bit OFF. This third mechanism is an embryonic form of the
+sophisticated protection mechanisms required to implement protected subsystems. The supervisor
+program is an example of a protected subsystem, of which more will be said later.
+The supervisor program is part of all three protection mechanisms, for it is responsible for maintaining
+the integrity of the identifications manifest in the descriptor register and the privileged state bit. If the
+supervisor does not do its job correctly, virtual processors could become labeled with the wrong base
+and bound values, or user programs could become labeled with a privileged state bit that is ON, The
+supervisor protects itself from the user programs with the same isolation hardware that separates users,
+an example of the "economy of mechanism" design principle.
+With an appropriately sophisticated and careful supervisor program, we now have an example of a
+system that completely isolates its users from one another. Similarly isolated permanent storage can be
+added to such a system by attaching some longterm storage device (e.g., magnetic disk) and developing
+a similar descriptor scheme for its use. Since long-term storage is accessed less frequently than primary
+memory, it is common to implement its descriptor scheme with the supervisor programs rather than
+hardware, but the principle is the same. Data streams to input or output devices can be controlled
+similarly. The combination of a virtual processor, a memory area, some data streams, and an isolated
+region of long-term storage is known as a virtual machine.14
+Long-term storage does, however, force us to face one further issue. Suppose that the virtual machine
+communicates with its user through a typewriter terminal. If a new user approaches a previously unused
+terminal and requests to use a virtual machine, which virtual machine (and, therefore, which set of
+long-term stored information) should he be allowed to use? We may solve this problem outside the
+system, by having the supervisor permanently associate a single virtual machine and its long-term
+storage area with a single terminal. Then, for example, padlocks can control access to the terminal. If, on
+the other hand, a more flexible system is desired, the supervisor program must be prepared to associate
+any terminal with any virtual machine and, as a result, must be able to verify the identity of the user at a
+terminal. Schemes for performing this authentication are the subject of our next example.
+4) Authentication Mechanisms: Our second example is of an authentication mechanism: a system that
+verifies a user’s claimed identity. The mechanics of this authentication mechanism differ from those of
+the protection mechanisms for implementing virtual machines mainly because not all of the components
+of the system are under uniform physical control. In particular, the user himself and the communication
+system connecting his terminal to the computer are components to be viewed with suspicion.
+Conversely, the user needs to verify that he is in communication with the expected computer system and
+the intended virtual machine. Such systems follow our abstract model of a guard who demands a match
+between something he knows and something the requester possesses. The objects being protected by the
+authentication mechanism are the virtual machines. In this case, however, the requester is a computer
+system user rather than an executing program, and because of the lack of physical control over the user
+and the communication system, the security of the computer system must depend on either the secrecy
+or the unforgeability of the user’s identification.
+In time-sharing systems, the most common scheme depends on secrecy. The user begins by typing the
+name of the person he claims to be, and then the system demands that the user type a password,
+presumably known only to that person.
+There are, of course, many possible elaborations and embellishments of this basic strategy. In cases
+where the typing of the password may be observed, passwords may be good for only one use, and the
+user carries a list of passwords, crossing each one off the list as he uses it. Passwords may have an
+expiration date, or usage count, to limit the length of usefulness of a compromised one.
+The list of acceptable passwords is a piece of information that must be carefully guarded by the system.
+In some systems, all passwords are passed through a hard-to-invert transformation15 before being stored,
+an idea suggested by R. Needham [37, p. 129]. When the user types his password, the system transforms
+it also and compares the transformed versions. Since the transform is supposed to be hard to invert (even
+if the transform itself is well known), if the stored version of a password is compromised, it may be very
+difficult to determine what original password is involved. It should be noted, however, that "hardness of
+inversion" is difficult to measure. The attacker of such a system does not need to discern the general
+inversion, only the particular one applying to some transformed password he has available.
+Passwords as a general technique have some notorious defects. The most often mentioned defect lies in
+choice of password--if a person chooses his own password, he may choose something easily guessed by
+someone else who knows his habits. In one recent study of some 300 self-chosen passwords on a typical
+time-sharing system, more than 50 percent were found to be short enough to guess by exhaustion,
+derived from the owner’s name, or something closely associated with the owner, such as his telephone
+number or birth date. For this reason, some systems have programs that generate random sequences of
+letters for use as passwords. They may even require that all passwords be system-generated and changed
+frequently. On the other hand, frequently changed random sequences of letters are hard to memorize, so
+such systems tend to cause users to make written copies of their passwords, inviting compromise. One
+solution to this problem is to provide a generator of "pronounceable" random passwords based on
+digraph or higher order frequency statistics [26] to make memorization easier.
+A second significant defect is that the password must be exposed to be used. In systems where the
+terminal is distant from the computer, the password must be sent through some communication system,
+during which passage a wiretapper may be able to intercept it.
+An alternative approach to secrecy is unforgeability. The user is given a key, or magnetically striped
+plastic card, or some other unique and relatively difficult-to-fabricate object. The terminal has an input
+device that examines the object and transmits its unique identifying code to the computer system, which
+treats the code as a password that need not be kept secret. Proposals have been made for fingerprint
+readers and dynamic signature readers in order to increase the effort required for forgery.
+The primary weakness of such schemes is that the hard-to-fabricate object, after being examined by the
+specialized input device, is reduced to a stream of bits to be transmitted to the computer. Unless the
+terminal, its object reader, and its communication lines to the computer are physically secured against
+tampering, it is relatively easy for an intruder to modify the terminal to transmit any sequence of bits he
+chooses. It may be necessary to make the acceptable bit sequences a secret after all. On the other hand,
+the scheme is convenient, resists casual misuse, and provides a conventional form of accountability
+through the physical objects used as keys.
+A problem common to both the password and the unforgeable object approach is that they are
+"one-way" authentication schemes. They authenticate the user to the computer system, but not vice
+versa. An easy way for an intruder to penetrate a password system, for example, is to intercept all
+communications to and from the terminal and direct them to another computer--one that is under the
+interceptor’s control. This computer can be programmed to "masquerade," that is, to act just like the
+system the caller intended to use, up to the point of requesting him to type his password. After receiving
+the password, the masquerader gracefully terminates the communication with some unsurprising error
+message, and the caller may be unaware that his password has been stolen. The same attack can be used
+on the unforgeable object system as well.
+A more powerful authentication technique is sometimes used to protect against masquerading. Suppose
+that a remote terminal is equipped with enciphering circuitry, such as the LUCIFER system [38], that
+scrambles all signals from that terminal. Such devices normally are designed so that the exact
+encipherment is determined by the value of a key, known as the encryption or transformation key. For
+example, the transformation key may consist of a sequence of 1000 binary digits read from a
+magnetically striped plastic card. In order that a recipient of such an enciphered signal may comprehend
+it, he must have a deciphering circuit primed with an exact copy of the transformation key, or else he
+must cryptanalyze the scrambled stream to try to discover the key. The strategy of
+encipherment/decipherment is usually invoked for the purpose of providing communications security on
+an otherwise unprotected communications system. However, it can simultaneously be used for
+authentication, using the following technique, first published in the unclassified literature by Feistel
+[39]. The user, at a terminal, begins bypassing the enciphering equipment. He types his name. This name
+passes, unenciphered, through the communication system to the computer. The computer looks up the
+name, just as with the password system. Associated with each name, instead of a secret password, is a
+secret transformation key. The computer loads this transformation key into its enciphering mechanism,
+turns it on, and attempts to communicate with the user. Meanwhile, the user has loaded his copy of the
+transformation key into his enciphering mechanism and turned it on. Now, if the keys are identical,
+exchange of some standard hand-shaking sequence will succeed. If they are not identical, the exchange
+will fail, and both the user and the computer system will encounter unintelligible streams of bits. If the
+exchange succeeds, the computer system is certain of the identity of the user, and the user is certain of
+the identity of the computer. The secret used for authentication--the transformation key--has not been
+transmitted through the communication system. If communication fails (because the user is
+unauthorized, the system has been replaced by a masquerader, or an error occurred), each party to the
+transaction has immediate warning of a problem.16
+Relatively complex elaborations of these various strategies have been implemented, differing both in
+economics and in assumptions about the psychology of the prospective user. For example, Branstad [40]
+explored in detail strategies of authentication in multinode computer networks. Such elaborations,
+though fascinating to study and analyze, are diversionary to our main topic of protection mechanisms.
+5) Shared Information: The virtual machines of the earlier section were totally independent, as far as
+information accessibility was concerned. Each user might just as well have his own private computer
+system. With the steadily declining costs of computer manufacture there are few technical reasons not to
+use a private computer. On the other hand, for many applications some sharing of information among
+users is useful, or even essential. For example, there may be a library of commonly used, reliable
+programs. Some users may create new programs that other users would like to use. Users may wish to be
+able to update a common data base, such as a file of airline seat reservations or a collection of programs
+that implement a biomedical statistics system. In all these cases, virtual machines are inadequate,
+because of the total isolation of their users from one another. Before extending the virtual machine
+example any further, let us return to our abstract discussion of guards and walls.
+Implementations of protection mechanisms that permit sharing fall into the two general categories
+described by Wilkes [37]
+a) "List-oriented" implementations, in which the guard holds a list of identifiers of authorized users, and
+the user carries a unique unforgeable identifier that must appear on the guard’s list for access to be
+permitted. A store clerk checking a list of credit customers is an example of a list-oriented
+implementation in practice. The individual might use his driver’s license as a unique unforgeable
+identifier.
+b) "Ticket-oriented" implementations, in which the guard holds the description of a single identifier, and
+each user has a collection of unforgeable identifiers, or tickets,17 corresponding to the objects to which
+he has been authorized access. A locked door that opens with a key is probably the most common
+example of a ticket-oriented mechanism; the guard is implemented as the hardware of the lock, and the
+matching key is the (presumably) unforgeable authorizing identifier.
+Authorization, defined as giving a user access to some object, is different in these two schemes. In a
+list-oriented system, a user is authorized to use an object by having his name placed on the guard’s list
+for that object. In a ticket-oriented system, a user is authorized by giving him a ticket for the object.
+We can also note a crucial mechanical difference between the two kinds of implementations. The
+list-oriented mechanism requires that the guard examine his list at the time access is requested, which
+means that some kind of associative search must accompany the access. On the other hand, the
+ticket-oriented mechanism places on the user the burden of choosing which ticket to present, a task he
+can combine with deciding which information to access. The guard only need compare the presented
+ticket with his own expectation before allowing the physical memory access. Because associative
+matching tends to be either slower or more costly than simple comparison, list-oriented mechanisms are
+not often used in applications where traffic is high. On the other hand, ticket-oriented mechanisms
+typically require considerable technology to control forgery of tickets and to control passing tickets
+around from one user to another. As a rule, most real systems contain both kinds of sharing
+implementations--a list-oriented system at the human interface and a ticket-oriented system in the
+underlying hardware implementation. This kind of arrangement is accomplished by providing, at the
+higher level, a list-oriented guard18 whose only purpose is to hand out temporary tickets which the lower
+level (ticket-oriented) guards will honor. Some added complexity arises from the need to keep
+authorizations, as represented in the two systems, synchronized with each other. Computer protection
+systems differ mostly in the extent to which the architecture of the underlying ticket-oriented system is
+visible to the user.
+Finally, let us consider the degenerate cases of list- and ticket-oriented systems. In a list-oriented system,
+if each guard’s list of authorized users can contain only one entry, we have a "complete isolation" kind
+of protection system, in which no sharing of information among users can take place. Similarly, in a
+ticket-oriented system, if there can be only one ticket for each object in the system, we again have a
+"complete isolation" kind of protection system. Thus the "complete isolation" protection system turns
+out to be a particular degenerate case of both the list-oriented and the ticket-oriented protection
+implementations. These observations are important in examining real systems, which usually consist of
+interacting protection mechanisms, some of which are list-oriented, some of which are ticket-oriented,
+and some of which provide complete isolation and therefore may happen to be implemented as
+degenerate examples of either of the other two, depending on local circumstances.
+We should understand the relationship of a user to these transactions. We are concerned with protection
+of information from programs that are executing. The user is the individual who assumes accountability
+for the actions of an executing program. Inside the computer system, a program is executed by a virtual
+processor, so one or more virtual processors can be identified with the activities directed by the user.19
+In a list-oriented system it is the guard’s business to know whose virtual processor is attempting to make
+an access. The virtual processor has been marked with an unforgeable label identifying the user
+accountable for its actions, and the guard inspects this label when making access decisions. In a
+ticket-oriented system, however, the guard cares only that a virtual processor present the appropriate
+unforgeable ticket when attempting an access. The connection to an accountable user is more diffuse,
+since the guard does not know or care how the virtual processor acquired the tickets. In either case, we
+conclude that in addition to the information inside the impenetrable wall, there are two other things that
+must be protected: the guard’s authorization information, and the association between a user and the
+unforgeable label or set of tickets associated with his virtual processors.
+Since an association with some user is essential for establishing accountability for the actions of a virtual
+processor, it is useful to introduce an abstraction for that accountability--the principal. A principal is, by
+definition, the entity accountable for the activities of a virtual processor.20 In the situations discussed so
+far, the principal corresponds to the user outside the system. However, there are situations in which a
+one-to-one correspondence of individuals with principals is not adequate. For example, a user may be
+accountable for some very valuable information and authorized to use it. On the other hand, on some
+occasion he may wish to use the computer for some purpose unrelated to the valuable information. To
+prevent accidents, he may wish to identify himself with a different principal, one that does not have
+access to the valuable information--following the principle of least privilege. In this case there is a need
+for two different principals corresponding to the same user.
+Similarly, one can envision a data base that is to be modified only if a committee agrees. Thus there
+might be an authorized principal that cannot be used by any single individual; all of the committee
+members must agree upon its use simultaneously.
+Because the principal represents accountability, we shall see later (in the section on dynamic
+authorization of sharing) that authorizing access is done in terms of principals. That is, if one wishes a
+friend to have access to some file, the authorization is done by naming a principal only that friend can
+use.
+For each principal we may identify all the objects in the system which the principal has been authorized
+to use. We will name that set of objects the domain of that principal.
+Summarizing, then, a principal is the unforgeable identifier attached to a virtual processor in a
+list-oriented system. When a user first approaches the computer system, that user must identify the
+principal to be used. Some authentication mechanism, such as a request for a secret password,
+establishes the user’s right to use that principal. The authentication mechanism itself may be either list-
+or ticket-oriented or of the complete isolation type. Then a computation is begun in which all the virtual
+processors of the computation are labeled with the identifier of that principal, which is considered
+accountable for all further actions of these virtual processors. The authentication mechanism has allowed
+the virtual processor to enter the domain of that principal. That description makes apparent the
+importance of the authentication mechanism. Clearly, one must carefully control the conditions under
+which a virtual processor enters a domain.
+Finally, we should note that in a ticket-oriented system there is no mechanical need to associate an
+unforgeable identifier with a virtual processor, since the tickets themselves are presumed unforgeable.
+Nevertheless, a collection of tickets can be considered to be a domain, and therefore correspond to some
+principal, even though there may be no obvious identifier for that principal. Thus accountability in
+ticket-oriented systems can be difficult to pinpoint.
+Now we shall return to our example system and extend it to include sharing. Consider for a moment the
+problem of sharing a library program--say, a mathematical function subroutine. We could place a copy
+of the math routine in the long-term storage area of each virtual machine that had a use for it. This
+scheme, although workable, has several defects. Most obvious, the multiple copies require multiple
+storage spaces. More subtly, the scheme does not respond well to changes. If a newer, better math
+routine is written, upgrading the multiple copies requires effort proportional to the number of users.
+These two observations suggest that one would like to have some scheme to allow different users access
+to a single master copy of the program. The storage space will be smaller and the communication of
+updated versions will be easier.
+In terms of the virtual machine model of our earlier example, we can share a single copy of the math
+routine by adding to the real processor a second descriptor register, as in Fig. 2, placing the math routine
+somewhere in memory by itself and placing a descriptor for it in the second descriptor register.
+Following the previous strategy, we assume that the privileged state bit assures that the supervisor
+program is the only one permitted to load either descriptor register. In addition, some scheme must be
+provided in the architecture of the processor to permit a choice of which descriptor register is to be used
+for each address generated by the processor. A simple scheme would be to let the high-order address bit
+select the descriptor register. Thus, in Fig. 2, all addresses in the lower half of the address range would
+be interpreted relative to descriptor register 1, and addresses in the upper half of the address range would
+be relative to descriptor register 2. An alternate scheme, suggested by Dennis [42], is to add explicitly to
+the format of instruction words a field that selects the descriptor register intended to be used with the
+address in that instruction. The use of descriptors for sharing information is intimately related to the
+addressing architecture of the processor, a relation that can cause considerable confusion. The reason
+why descriptors are of interest for sharing becomes apparent by comparing parts a and b of Fig. 2. When
+program A is in control, it can have access only to itself and the math routine; similarly, when program
+B is in control, it can have access only to itself and the math routine. Since neither program has the
+power to change the descriptor register, sharing of the math routine has been accomplished while
+maintaining isolation of program A from program B.
+The effect of sharing is shown even more graphically in Fig. 3, which is Fig. 2 redrawn with two virtual
+processors, one executing program A and the other executing program B.
+Whether or not there are actually two processors is less important than the existence of the conceptually
+parallel access paths implied by Fig. 3. Every virtual processor of the system may be viewed as having
+its own real processor, capable of access to the memory in parallel with that of every other virtual
+processor. There may be an underlying processor multiplexing facility that distributes a few real
+processors among the many virtual processors, but such a multiplexing facility is essentially unrelated to
+protection. Recall that a virtual processor is not permitted to load its own protection descriptor registers.
+Instead, it must call or trap to the supervisor program S which call or trap causes the privileged state bit
+to go ON and thereby permits the supervisor program to control the extent of sharing among virtual
+processors. The processor multiplexing facility must be prepared to switch the entire state of the real
+processor from one virtual processor to another, including the values of the protection descriptor
+registers.
+Although the basic mechanism to permit information sharing is now in place, a remarkable variety of
+implications that follow from its introduction require further mechanisms. These implications include
+the following.
+1) If virtual processor P1 can overwrite the shared math routine, then it could disrupt the work of virtual
+processor P2.
+2) The shared math routine must be careful about making modifications to itself and about where in
+memory it writes temporary results, since it is to be used by independent computations, perhaps
+simultaneously.
+3) The scheme needs to be expanded and generalized to cover the possibility that more than one
+program or data base is to be shared.
+4) The supervisor needs to be informed about which principals are authorized to use the shared math
+routine (unless it happens to be completely public with no restrictions).
+Let us consider these four implications in order. If the shared area of memory is a procedure, then to
+avoid the possibility that virtual processor P1 will maliciously overwrite it, we can restrict the methods
+of access. Virtual processor P1 needs to retrieve instructions from the area of the shared procedure, and
+may need to read out the values of constants embedded in the program, but it has no need to write into
+any part of the shared procedure. We may accomplish this restriction by extending the descriptor
+registers and the descriptors themselves to include accessing permission, an idea introduced for different
+reasons in the original Burroughs B5000 design [32] . For example, we may add two bits, one
+controlling permission to read and the other permission to write in the storage area defined by each
+descriptor, as in Fig. 4. In virtual processor P1 of Fig. 3, descriptor 1 would have both permissions
+granted, while descriptor 2 would permit only reading of data and execution of instructions.21 An
+alternative scheme would be to attach the permission bits directly to the storage areas containing the
+shared program or data. Such a scheme is less satisfactory because, unlike the descriptors so far
+outlined, permission bits attached to the data would provide identical access to all processors that had a
+descriptor. Although identical access for all users of the shared math routine of Figs. 1-2-3 might be
+acceptable, a data base could not be set up with several users having permission to read but a few also
+having permission to write.
+The second implication of a shared procedure, mentioned before, is that the shared procedure must be
+careful about where it stores temporary results, since it may be used simultaneously by several virtual
+processors. In particular, it should avoid modifying itself. The enforcement of access permission by
+descriptor bits further constrains the situation. To prevent program A from writing into the shared math
+routine, we have also prohibited the shared math routine from writing into itself, since the descriptors do
+not change when, for example, program A transfers control to the math routine.22 The math routine will
+find that it can read but not write into itself, but that it can both read and write into the area of program
+A. Thus program A might allocate an area of its own address range for the math routine to use as
+temporary storage.23
+As for the third implication, the need for expansion, we could generalize our example to permit several
+distinct shared items merely by increasing the number of descriptor registers and informing the
+supervisor which shared objects should be addressable by each virtual processor. However, there are two
+substantially different forms of this generalization--capability systems and access control list systems. In
+terms of the earlier discussion, capability systems are ticket-oriented, while access control list systems
+are list-oriented. Most real systems use a combination of these two forms, the capability system for
+speed and an access control list system for the human interface. Before we can pursue these
+generalizations, and the fourth implication, authorization, more groundwork must be laid.
+In Section II, the development of protection continues with a series of successively more sophisticated
+models. The initial model, of a capability system, explores the use of encapsulated but copyable
+descriptors as tickets to provide a flexible authorization scheme. In this context we establish the general
+rule that communication external to the computer must precede dynamic authorization of sharing. The
+limitations of copyable descriptors--primarily lack of accountability for their use--lead to analysis of
+revocation and the observation that revocation requires indirection. That observation in turn leads to the
+model of access control lists embedded in indirect objects so as to provide detailed control of
+authorization.
+The use of access control lists leads to a discussion of controlling changes to authorizations, there being
+at least two models of control methods which differ in their susceptibility to abuse. Additional control of
+authorization changes is needed when releasing sensitive data to a borrowed program, and this
+additional control implies a nonintuitive constraint on where data may be written by the borrowed
+program. Finally, Section II explores the concept of implementing arbitrary abstractions, such as
+extended types of objects, as programs in separate domains.
+II. DESCRIPTOR-BASED PROTECTION SYSTEMS5) Discretionary and Nondiscretionary Controls: Our discussion of authorization and authority
+structures has so far rested on an unstated assumption: the principal that creates a file or other object in a
+computer system has unquestioned authority to authorize access to it by other principals. In the
+description of the self-control scheme, for example, it was suggested that a newly created object begins
+its existence with one entry in its access control list, giving all permissions to its creator.
+We may characterize this control pattern as discretionary42 implying that the individual user may, at his
+own discretion, determine who is authorized to access the objects he creates. In a variety of situations,
+discretionary control may not be acceptable and must be limited or prohibited. For example, the
+manager of a department developing a new product line may want to "compartmentalize" his
+department’s use of the company computer system to ensure that only those employees with a need to
+know have access to information about the new product. The manager thus desires to apply the principle
+of least privilege. Similarly, the marketing manager may wish to compartmentalize all use of the
+company computer for calculating product prices, since pricing policy may be sensitive. Either manager
+may consider it not acceptable that any individual employee within his department can abridge the
+compartmentalization decision merely by changing an access control list on an object he creates. The
+manager has a need to limit the use of discretionary controls by his employees. Any limits he imposes
+on authorization are controls that are out of the hands of his employees, and are viewed by them as
+nondiscretionary. Similar constraints are imposed in military security applications, in which not only
+isolated compartments are required, but also nested sensitivity levels (e.g., top secret, secret, and
+confidential) that must be modeled in the authorization mechanics of the computer system.
+Nondiscretionary controls may need to be imposed in addition to or instead of discretionary controls.
+For example, the department manager may be prepared to allow his employees to adjust their access
+control lists any way they wish, within the constraint that no one outside the department is ever given
+access. In that case, both nondiscretionary and discretionary controls apply.
+The key reason for interest in nondiscretionary controls is not so much the threat of malicious
+insubordination as the need to safely use complex and sophisticated programs created by suppliers who
+are not under the manager’s control. A contract software house may provide an APL interpreter or a fast
+file sorting program. If the supplied program is to be useful, it must be given access to the data it is to
+manipulate or interpret. But unless the borrowed program has been completely audited, there is no way
+to be sure that it does not misuse the data (for example, by making an illicit copy) or expose the data
+either accidentally or intentionally. One way to prevent this kind of security violation would be to forbid
+the use of borrowed programs, but for most organizations the requirement that all programs be locally
+written (or even thoroughly audited) would be an unbearable economic burden. The alternative is
+confinement of the borrowed program, a term introduced by Lampson [61]. That is, the borrowed
+program should run in a domain containing the necessary data, but should be constrained so that it
+cannot authorize sharing of anything found or created in that domain with other domains.
+Complete elimination of discretionary controls is easy to accomplish. For example, if self-controlling
+access controllers are being used, one could arrange that the initial value for the access control list of all
+newly created objects not give "ACL-mod" permission to the creating principal (under which the
+borrowed program is running). Then the borrowed program could not release information by copying it
+into an object that it creates and then adjusting the access control list on that object. If, in addition, all
+previously existing objects in the domain of the borrowed program do not permit that principal to
+modify the access control list, the borrowed program would have no discretionary control at all and the
+borrower would have complete control. A similar modification to the hierarchical control system can
+also be designed.
+It is harder to arrange for the coexistence of discretionary and nondiscretionary controls.
+Nondiscretionary controls may be implemented, for example, with a second access control list system
+operating in parallel with the first discretionary control system, but using a different authority control
+pattern. Access to an object would be permitted only if both access control list systems agreed. Such an
+approach, using a fully general access control list for nondiscretionary controls, may be more elaborate
+than necessary. The few designs that have appeared so far have taken advantage of a perceived property
+of some applications of nondiscretionary controls: the desired patterns usually are relatively simple, such
+as "divide the activities of this system into six totally isolated compartments." It is then practical to
+provide a simplified access control list system to operate in parallel with the discretionary control
+machinery.
+An interesting requirement for a nondiscretionary control system that implements isolated compartments
+arises whenever a principal is authorized to access two or more compartments simultaneously, and some
+data objects may be labeled as being simultaneously in two or more compartments (e.g., pricing data for
+a new product may be labeled as requiring access to the "pricing policy" compartment as well as the
+"new product line" compartment). In such a case it would seem reasonable that, before permitting
+reading of data from an object, the control mechanics should require that the set of compartments of the
+object being referenced be a subset of the compartments to which the accessor is authorized. However, a
+more stringent interpretation is required for permission to write, if borrowed programs are to be
+confined. Confinement requires that the virtual processor be constrained to write only into objects that
+have a compartment set identical to that of the virtual processor itself. If such a restriction were not
+enforced, a malicious borrowed program could, upon reading data labeled for both the "pricing policy"
+and the "new product line" compartments, make a copy of part of it in a segment labeled only "pricing
+policy," thereby compromising the "new product line’’ compartment boundary. A similar set of
+restrictions on writing can be expressed for sensitivity levels; a complete and systematic analysis in the
+military security context was developed by Weissman [14]. He suggested that the problem be solved by
+automatically labeling any written object with the compartment labels needed to permit writing, a
+strategy he named the "high water mark." As an alternative, the strategy suggested by Bell and LaPadula
+[62] declared that attempts to write into objects with too few compartment labels are errors that cause
+the program to stop.43 Both cases recognize that writing into objects that do not have the necessary
+compartment labels represents potential "declassification" of sensitive information. Declassification
+should occur only after human judgment has been interposed to establish that the particular information
+to be written is not sensitive. Developing a systematic way to interpose such human judgments is a
+research topic.
+Complete confinement of a program in a shared system is very difficult, or perhaps impossible, to
+accomplish, since the program may be able to signal to other users by strategies more subtle than writing
+into shared segments. For example, the program may intentionally vary its paging rate in a way users
+outside the compartment can observe, or it may simply stop, causing its user to go back to the original
+author for help, thereby revealing the fact that it stopped. D. Edwards characterized this problem with
+the phrase "banging on the walls." Lampson [61], Rotenberg [59], and Fenton [64] have explored this
+problem in some depth.
+D. Protecting Objects Other Than Segments
+So far, it has been useful to frame our discussion of protection in terms of protecting segments, which
+basically are arbitrary-sized units of memory with no internal structure. Capabilities and access control
+lists can protect other kinds of objects also. In Fig. 9, access controllers themselves were treated as
+system-implemented objects, and in Fig. 13 they were protected by other access controllers. It is
+appropriate to protect many other kinds of objects provided by the hardware and software of computer
+systems. To protect an object other than a segment, one must first establish what kinds of operations can
+be performed on the object, and then work out an appropriate set of permissions for those operations.
+For a data segment, the separately controllable operations we have used in our examples are those of
+reading and writing the contents.
+For an example of a different kind of system-implemented object, suppose that the processor is
+augmented with instructions that manipulate the contents of a segment as a first-in, first-out queue.
+These instructions might interpret the first few words of the segment as pointers or counters, and the
+remainder as a storage area for items placed in the queue. One might provide two special instructions,
+"enqueue" and "dequeue," which add to and remove from the queue. Typically, both of these operations
+would need to both read and write various parts of the segment being used as a queue.
+As described so far, the enqueue and dequeue instructions would indiscriminately treat any segment as a
+queue, given only that the program issuing the instruction had loaded a capability permitting reading and
+writing the segment. One could not set up a segment so that some users could only enqueue messages,
+and not be able to dequeue--or even directly read--messages left by others. Such a distinction between
+queues and other segments can be made by introducing the concept of type in the protection system.
+Consider, for example, the capability system in Fig. 6. Suppose we add to a capability an extra field,
+which we will name the type field. This field will have the value 1 if the object described by the
+capability is an ordinary segment, and the value 2 if the object is to be considered a queue. The
+protection descriptor registers are also expanded to contain a type field. We add to the processor the
+knowledge of which types are suitable as operands for each instruction. Thus the special instructions for
+manipulating queues require that the operand capability have type field 2, while all other instructions
+require an operand capability with type field 1. Further, the interpretation of the permission bits can be
+different for the queue type and the segment type. For the queue type, one might use the first permission
+bit to control use of the enqueue instruction and the second permission bit for the dequeue instruction.
+Finally, we should extend the "create" operation to permit specification of the type of object being
+created.
+Clearly, one could extend the notion of type beyond segments and queues; any data structure could be
+similarly distinguished and protected from misuse. Further, input and output streams attached to
+interactive terminals, printers, and the like could be considered distinct types with their own repertoire
+of separately permitted operations. The concept of type extension is not restricted to capability systems;
+in an access control list system one could place the type field in the access controller and require that the
+processor present to the memory, along with each operand address, an indication of the type and
+permission bits required for the operation being performed. Table I lists some typical
+system-implemented objects and the kinds of operations one might selectively permit. This table could
+be extended to include other objects that are basically interpreted data structures, such as accounts or
+catalogs.
+TABLE I
+Typical System-Provided Protected Objects
+Object Typical Separately Permittable Operations
+Data segment
+READ data from the segment
+WRITE data into the segment
+Use any capability found in the segment
+Write a capability into the segment
+Access controller
+Read access control list
+Modify names appearing on an access control list
+Modify permissions in access control list entries
+Destroy objects protected by this access controller
+FIFO message queue
+Enqueue a message
+Dequeue a message
+Examine queue contents without dequeueing
+Input/Output
+READ data
+WRITE data
+Issue device-control commands
+Remove recording medium (e.g. magnetic tape
+reel)
+READ data
+WRITE over data
+WRITE data in new area
+Finally, one may wish to extend dynamically the range of objects protected. Such a goal might be
+reached by making the type field large enough to contain an additional unique identifier, and allowing
+for software interpretation of the access to typed objects. This observation brings us to the subject of
+user-programmed controls on sharing and the implementation of protected objects and protected
+subsystems. We shall not attempt to examine this topic in depth, but rather only enough to learn what
+problems are encountered.
+E. Protected Objects and Domains
+Both the capability system and the access control list system allow controlled sharing of the objects
+implemented by the system. Several common patterns of use can be independently controlled, such as
+reading, writing, or running as a program. While it is a great improvement over "all-or-nothing" sharing,
+this sort of controlled sharing has two important limitations.
+The first limitation is that only those access restrictions provided by the standard system facilities can be
+enforced. It is easy to imagine many cases where the standard controls are not sufficient. For example,
+an instructor who maintains his course grade records in a segment on an interactive system may wish to
+allow each student to read his own grades to verify correct recording of each assignment, but not the
+grades of other students, and to allow any student to examine the histogram of the class grades for each
+assignment. Implementing such controls within systems of the sort discussed in the last few sections
+would be awkward, requiring at least the creation of a separate segment for each student and for the
+distributions. If, in addition, the instructor wishes an assistant to enter new grades, but wants to
+guarantee that each grade entered cannot be changed later without the instructor’s specific approval, we
+have a situation that is beyond the ability of the mechanisms so far described.
+The mechanisms described so far cannot handle this situation because the manipulations we wish to
+perform on a grade or a set of grades are not fundamental operations of the base-level system. In
+essence, we wish to dynamically define a new type, the grade record, and provide a set of programs that
+interpretively implement the operations appropriate for this new type.44
+The second limitation concerns users who borrow programs constructed by other users. Execution of a
+borrowed program in the borrower’s domain can present a real danger to the borrower, for the borrowed
+program can exercise all the capabilities in the domain of the borrower. Thus a user must have a certain
+amount of faith in the provider of a program before he executes the program in his own domain.
+The key to removing these limitations is the notion of a protected subsystem. A protected subsystem is a
+collection of program and data segments that is "encapsulated" so that other executing programs cannot
+read or write the program and data segments and cannot disrupt the intended operation of the component
+programs, but can invoke the programs by calling designated entry points. The encapsulated data
+segments are the protected objects. Programs in a protected subsystem can act as caretakers for the
+protected objects and interpretively enforce arbitrarily complex controls on access to them. Programs
+outside the protected subsystem are allowed to manipulate the protected objects only by invoking the
+care taker programs. Algorithms in these caretaker programs may perform any appropriate operation,
+possibly depending on the circumstances of invocation, and may even record each access request in
+some way in some protected objects. For example, the protected subsystem shown in Fig. 14 implements
+the grade keeping system discussed above. Clearly, any access constraints that can be specified in an
+algorithm can be implemented in this fashion. Giving users the ability to construct protected subsystems
+out of their own program and data segments allows users to provide arbitrary controls on sharing.
+If programs inside a protected subsystem can invoke programs in another protected subsystem without
+compromising the security of the first subsystem, then we can plug together multiple protected
+subsystems to perform a computation. We also find a way around the borrowed program problem. The
+normal domain of a user is one example of a protected subsystem. The user arranges for programs
+borrowed from other users to execute outside of this "home" protected subsystem. In this way, the
+borrowed programs can be invoked without giving them access to all the programs and data of the
+borrower. If the borrowed program is malicious or malfunctions, the damage it can do is limited. The
+lending user could also encapsulate the lent program complex in a protected subsystem of its own and
+thus insulate it from the programs of the borrower.45
+The notion of protected subsystems, then, provides mutual protection for multiple program complexes
+cooperating in the same computation and removes two limitations of facilities providing simple
+controlled sharing. It is clear from the description of protected subsystems that each must operate in its
+own domain. Implementing protected subsystems requires mechanisms that allow the association of
+more than one domain with a computation and also requires means for changing from one protection
+domain to another as control passes from one protected subsystem to another. The design must ensure
+that one protected subsystem cannot interfere in any way with the correct operation of another
+subsystem involved in the same computation.
+We note in passing that the supervisor in most computer systems is an example of a protected
+subsystem. If general facilities are provided for supporting user-constructed protected subsystems, then
+these mechanisms can be applied to protect the supervisor from user programs as well. Thus the
+protection mechanisms are protecting their own implementation. The resulting uniformity is consistent
+with the design principle of economy of mechanism.
+In order to implement protected subsystems, then, there must be a way of associating multiple domains
+with a single computation. One way would be to use a separate virtual processor, each with its own
+domain, for each protected subsystem, a notion proposed by Dennis and Van Horn [41] and discussed by
+Lampson [30]. A computation involving multiple protected subsystems would require multiple
+cooperating virtual processors. The invocation of one protected subsystem by another, and the
+communication of any response, would be done using the interprocessor communication facilities of the
+system [67]. An implementation using multiple virtual processors, though conceptually straightforward,
+tends to be awkward and inefficient in practice. Furthermore, it tends to obscure important features of
+the required mechanisms. Unless there is an inherent reason for the protected subsystems in a
+computation to be expressed as asynchronous activities, a single virtual processor implementation seems
+more natural. Such an implementation would require the association of multiple domains with a single
+virtual processor, a strategy proposed by LeClerc [68], [69] and explored in detail by Lampson [19],
+Schroeder [70],Needham [20],Sturgis [17], Jones [71], and Rotenberg [59] . In this case, communication
+among protected subsystems could be via interprocedure call and return operations.
+The essence of changing domains is, in access control list terms, to change principal identifiers; in
+capability terms it is to acquire the set of capabilities of the new domain. In both cases, it is also
+essential that the virtual processor begin execution at some agreed-to starting point in the new domain.
+Let us consider first an access control list implementation. Suppose we extend the possible permissions
+on a segment, as recorded in an access controller, to include ENTER permission, and add one more field
+to an access controller, the domain identifier, which is the principal identifier of the domain to be
+entered. The meaning of ENTER permission on a segment is that a virtual processor having only that
+permission may use (the first address in) that segment only as the target of a GO TO or CALL
+instruction. Further, upon executing a GO TO or CALL instruction, the processor will automatically
+pick up the domain identifier field in the access controller and use it as the principal identifier in
+transactions with the memory system.
+We now have a controlled domain entry facility. A user wishing to provide a protected subsystem can do
+so by setting the access control lists of all objects that are to be internal parts of the system to contain
+one of his own principal identifiers. He also adds to the access control list of the initial procedure of his
+subsystem ENTER permission for any other principals who are allowed to use his protected subsystem.
+In a capability system, a similar addition produces protected subsystems. The permission field of a
+capability is extended to include ENTER permission, and when a capability is used as the target of a GO
+TO or a CALL instruction, control is passed to the procedure in the segment pointed to by the capability.
+Simultaneous with passing control to the procedure, the processor switches on the READ permission bit
+of the capability, thereby making available to the virtual processor a new domain--all those objects that
+can be reached starting from capabilities found in the procedure.
+Two mechanisms introduced earlier can now be seen to be special cases of the general domain entry. In
+the initial discussion of the capability system, we noted that the authentication system starts a new user
+by allowing a virtual processor to enter that user’s domain at a controlled starting point. We could use
+the domain entry mechanism to accomplish this result as follows. A system program is "listening" to all
+currently unused terminals or system ports. When a user walks up to a terminal and attempts to use it,
+the system program creates a new virtual processor and has that processor ENTER the domain named by
+the prospective user. The entry point would be to a program, perhaps supplied by the user himself,
+which authenticates his identity before doing any other computation. Because a protected subsystem has
+been used, the program that monitors the unused terminals does not have access to the data in the
+protected subsystem (in contrast with the system of Fig. 7), a situation in better accord with the principle
+of least privilege. Instead, it has an enter capability for every domain that is intended to be entered from
+a terminal, but that capability leads only to a program that demands authentication.
+We have sketched only the bare essentials of the mechanism required to provide domain switching. The
+full mechanics of a practical system that implements protected objects and subsystems are beyond the
+scope of this tutorial, but it is useful to sketch quickly the considerations those mechanisms must handle.
+1. The principle of "separation of privilege" is basic to the idea that the internal structure of some
+data objects is accessible to virtual processor A, but only when the virtual processor is executing in
+program B. If, for example, the protection system requires possession of two capabilities before it
+allows access to the internal contents of some objects, then the program responsible for
+maintenance of the objects can hold one of the capabilities while the user of the program can hold
+the other. Morris [72] has described an elegant semantics for separation of privilege in which the
+first capability is known as a seal. In terms of the earlier discussion of types, the type field of a
+protected object contains a seal that is unique to the protected subsystem; access to the internal
+structure of an object can be achieved only by presenting the original seal capability as well as the
+capability for the object itself. This idea apparently was suggested by H. Sturgis. The HYDRA and
+CAL systems illustrate two different implementations of this principle.
+2. The switching of protection domains by a virtual processor should be carefully coordinated with
+the mechanisms that provide for dynamic activation records and static (own) variable storage,
+since both the activation records and the static storage of one protection domain must be distinct
+from that of another. (Using a multiple virtual processor implementation provides a neat automatic
+solution to these problems.)
+3. The passing of arguments between domains must be carefully controlled to ensure that the called
+domain will be able to access its arguments without violating its own protection intentions. Calls
+by value represent no special problem, but other forms of argument reference that require access to
+the original argument are harder. One argument that must be especially controlled is the one that
+indicates how to return to the calling domain. Schroeder [70] explored argument passing in depth
+from the access control list point of view, while Jones [71] explored the same topic in the
+capability framework.
+The reader interested in learning about the mechanics of protected objects and subsystems in detail is
+referred to the literature mentioned above and in the Suggestions for Further Reading. This area is in a
+state of rapid development, and several ideas have been tried out experimentally, but there is not yet
+much agreement on which mechanisms are fundamental. For this reason, the subject is best explored by
+case study.
+III. THE STATE OF THE ARTA. Implementations of Protection Mechanisms
+Until quite recently, the protection of computer-stored information has been given relatively low priority
+by both the major computer manufacturers and a majority of their customers. Although research
+time-sharing systems using base and bound registers appeared as early as 1960 and Burroughs marketed
+a descriptor-based system in 1961, those early features were directed more toward preventing accidents
+than toward providing absolute interuser protection. Thus in the design of the IBM System/360, which
+appeared in 1964 [73], the only protection mechanisms were a privileged state and a protection key
+scheme that prevented writing in those blocks of memory allocated to other users. Although the 360
+appears to be the first system in which hardware protection was also applied to the I/O channels, the
+early IBM software used these mechanisms only to the minimum extent necessary to allow accident free
+multiprogramming. Not until 1970 did "fetch protect" (the ability to prevent one user from reading
+primary memory allocated to another user) become a standard feature of the IBM architecture [74].
+Recently, descriptor-based architectures, which can be a basis for the more sophisticated protection
+mechanisms described in Section II, have become common in commercially marketed systems and in
+most manufacturers’ plans for forthcoming product lines. Examples of commercially available
+descriptor-based systems are the IBM System/370 models that support virtual memory, the Univac
+(formerly RCA) System 7, the Honeywell 6180, the Control Data Corporation Star-100, the Burroughs
+B5700/6700, the Hitachi 8800, the Digital Equipment Corporation PDP- 11/45, and the Plessey System
+250. On the other hand, exploitation of such features for controlled sharing of information is still the
+exception rather than the rule. Users with a need for security find that they must improvise or use brute
+force techniques such as complete dedication of a system to a single task at a time [75]. The Department
+of Defense guide for safeguarding classified information stored in computers provides a good example
+of such brute force techniques [76].
+In the decade between 1964 and 1974, several protection architectures were implemented as research
+and development projects, usually starting with a computer that provided only a privileged mode, adding
+minor hardware features and interpreting with software the desired protection architecture. Among these
+were M.l.T.’s CTSS which, in 1961, implemented user authentication with all-or-nothing sharing and, in
+1965, added shared files with permission lists [12]. In 1967, the ADEPT system of the System
+Development Corporation implemented in software on an IBM System/360 a model of the U.S. military
+security system, complete with clearance levels, compartments, need-to-know, and centralized authority
+control [14]. At about the same time, the IBM Cambridge Scientific Center released an operating system
+named CP/67, later marketed under the name VM/370, that used descriptor-based hardware to
+implement virtual System/360 computers using a single System/360 Model 67 [11]. In 1969, the
+University of California (at Berkeley) CAL system implemented a software-interpreted capability
+system on a Control Data 6400 computer [17]. Also in 1969, the Multics system, a joint project of
+M.I.T. and Honeywell, implemented in software and hardware a complete descriptor-based access
+control list system with hierarchical control of authorization on a Honeywell 645 computer system [26],
+[77]. Based on the plans for Multics, the Hitachi Central Research Laboratory implemented a simplified
+descriptor-based system with hardware-implemented ordered domains (rings of protection) on the
+HITAC 5020E computer in 1968 [78]. In 1970, the Berkeley Computer Corporation also implemented
+rings of protection in the BCC 500 computer [19]. In 1973, a hardware version of the idea of rings of
+protection together with automatic argument address validation was implemented for Multics in the
+Honeywell 6180 [63]. At about the same time, the Plessey Corporation announced a telephone switching
+computer system, the Plessey 250 [53], based on a capability architecture.
+Current experimentation with new protection architectures is represented by the CAP system being built
+at Cambridge University [20] and the HYDRA system being built at Carnegie-Mellon University [21] .
+Recent research reports by Schroeder [70], Rotenberg [59], Spier et al. [79], and Redell [54] propose
+new architectures that appear practical to implement.
+B. Current Research Directions
+Experimentation with different protection architectures has been receiving less attention recently.
+Instead, the trend has been to concentrate in the following five areas: 1) certification of the correctness
+of protection system designs and implementations, 2) invulnerability to single faults, 3) constraints on
+use of information after release, 4) encipherment of information with secret keys, and 5) improved
+authentication mechanisms. These five areas are discussed in turn below.
+A research problem attracting much attention today is how to certify the correctness of the design and
+implementation of hardware and software protection mechanisms. There are actually several
+sub-problems in this area.
+a) One must have a precise model of the protection goals of a system against which to measure the
+design and implementation. When the goal is complete isolation of independent users, the model is
+straightforward and the mechanisms of the virtual machine are relatively easy to match with it. When
+controlled sharing of information is desired, however, the model is much less clear and the attempt to
+clarify it generates many unsuspected questions of policy. Even attempts to model the well-documented
+military security system have led to surprisingly complex formulations and have exposed formidable
+implementation problems [14], [62] .
+b) Given a precise model of the protection goals of a system and a working implementation of that
+system, the next challenge is to verify somehow that the presented implementation actually does what it
+claims. Since protection functions are usually a kind of negative specification, testing by sample cases
+provides almost no information. One proposed approach uses proofs of correctness to establish formally
+that a system is implemented correctly. Most work in this area consists of attempts to extend methods of
+proving assertions about programs to cover the constructs typically encountered in operating systems
+[52] .
+c) Most current systems present the user with an intricate interface for specifying his protection needs.
+The result is that the user has trouble figuring out how to make the specification and verifying that he
+requested the right thing. User interfaces that more closely match the mental models people have of
+information protection are needed.
+d) In most operating systems, an unreasonably large quantity of "system" software runs without
+protection constraints. The reasons are many: fancied higher efficiency, historical accident,
+misunderstood design, and inadequate hardware support. The usual result is that the essential
+mechanisms that implement protection are thoroughly tangled with a much larger body of mechanisms,
+making certification impossibly complex. In any case, a minimum set of protected supervisor
+functions--a protected kernel--has not yet been established for a full-scale modern operating system.
+Groups at M.l.T. [80] and at Mitre [81], [82] are working in this area.
+Most modern operating systems are vulnerable in their reaction to hardware failures. Failures that cause
+the system to misbehave are usually easy to detect and, with experience, candidates for automatic
+recovery. Far more serious are failures that result in an undetected disabling of the protection
+mechanisms. Since routine use of the system may not include attempts to access things that should not
+be accessible, failures in access-checking circuitry may go unnoticed indefinitely. There is a challenging
+and probably solvable research problem involved in guaranteeing that protection mechanisms are
+invulnerable in the face of all single hardware failures. Molho [83] explored this topic in the IBM
+System 360/Model 50 computer and made several suggestions for its improvement. Fabry [84] has
+described an experimental "complete isolation" system in which all operating system decisions that
+could affect protection are duplicated by independent hardware and software.
+Another area of research concerns constraining the use to which information may be put after its release
+to an executing program. In Section 1, we described such constraints as a fifth level of desired function.
+For example, one might wish to "tag" a file with a notation that any program reading that file is to be
+restricted forever after from printing output on remote terminals located outside the headquarters
+building.
+For this restriction to be complete, it should propagate with all results created by the program and into
+other files it writes. Information use restrictions such as these are common in legal agreements (as in the
+agreement between a taxpayer and a tax return preparing service) and the problem is to identify
+corresponding mechanisms for computer systems that could help enforce (or detect violations of) such
+agreements. Rotenberg explored this topic in depth [59] and proposed a "privacy restriction processor"
+to aid enforcement.
+A potentially powerful technique for protecting information is to encipher it using a key known only to
+authorized accessors of the information. (Thus encipherment is basically a ticket-oriented system.) One
+research problem is how to communicate the keys to authorized users. If this communication is done
+inside the computer system, schemes for protecting the keys must be devised. Strategies for securing
+multinode computer communication networks using encipherment are a topic of current research;
+Branstad has summarized the state of the art [40] . Another research problem is development of
+encipherment techniques (sometimes called privacy transformations) for random access to data. Most
+well-understood enciphering techniques operate sequentially on long bit streams (as found in
+point-to-point communications, for example). Techniques for enciphering and deciphering small,
+randomly selected groups of bits such as a single word or byte of a file have been proposed, but finding
+simple and fast techniques that also require much effort to cryptanalyze (that is, with high work factors)
+is still a subject for research. A block enciphering system based on a scheme suggested by Feistel was
+developed at the IBM T. J. Watson Research Laboratory by Smith, Notz, and Osseck [38]. One special
+difficulty in this area is that research in encipherment encounters the practice of military classification.
+Since World War II, only three papers with significant contributions have appeared in the open literature
+[27], [39], [85]; other papers have only updated, reexamined, or rearranged concepts published many
+years earlier.
+Finally, spurred by the need for better credit and check cashing authentication, considerable research and
+development effort is going into better authentication mechanisms. Many of these strategies are based
+on attempts to measure some combination of personal attributes, such as the dynamics of a handwritten
+signature or the rhythm of keyboard typing. Others are directed toward developing machine-readable
+identification cards that are hard to duplicate.
+Work in progress is not well represented by published literature. The reader interested in further
+information on some of the current research projects mentioned may find useful the proceedings of two
+panel sessions at the 1974 National Computer Conference [86], [87], a recent workshop [88], and a
+survey paper [89].
+C. Concluding Remarks
+In reviewing the extent to which protection mechanisms are systematically understood (which is not a
+large extent) and the current state of the art, one cannot help but draw a parallel between current
+protection inventions and the first mass produced computers of the 1950’s. At that time, by virtue of
+experience and strongly developed intuition, designers had confidence that the architectures being
+designed were complete enough to be useful. And it turned out that they were. Even so, it was quickly
+established that matching a problem statement to the architecture--programming--was a major effort
+whose magnitude was quite sensitive to the exact architecture. In a parallel way, matching a set of
+protection goals to a particular protection architecture by setting the bits and locations of access control
+lists or capabilities or by devising protected subsystems is a matter of programming the architecture.
+Following the parallel, it is not surprising that users of the current first crop of protection mechanisms
+have found them relatively clumsy to program and not especially well matched to the users’ image of
+the problem to be solved, even though the mechanisms may be sufficient. As in the case of all
+programming systems, it will be necessary for protection systems to be used and analyzed and for their
+users to propose different, better views of the necessary and sufficient semantics to support information
+protection

@@ -1,0 +1,2954 @@
+{
+  "summary": {
+    "ai_count": 30,
+    "human_count": 30,
+    "ai_avg_complexity": 0.3521787480091003,
+    "human_avg_complexity": 0.3874739556136421
+  },
+  "detailed_results": {
+    "ai": [
+      {
+        "filename": "Algorithm_Design_and_Analysis.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 14059,
+          "word_count": 1772,
+          "sentence_count": 145,
+          "avg_word_length": 6.910270880361174,
+          "avg_sentence_length": 12.220689655172414,
+          "unique_words": 947,
+          "lexical_diversity": 0.5344243792325056
+        },
+        "compression": {
+          "original_size": 14067,
+          "compressions": {
+            "lzma": {
+              "size": 5312,
+              "ratio": 0.37762138337954076,
+              "reduction": 62.23786166204592
+            },
+            "bz2": {
+              "size": 5029,
+              "ratio": 0.35750337669723464,
+              "reduction": 64.24966233027654
+            },
+            "gzip": {
+              "size": 5407,
+              "ratio": 0.38437477784886614,
+              "reduction": 61.56252221511338
+            },
+            "zlib": {
+              "size": 5395,
+              "ratio": 0.3835217174948461,
+              "reduction": 61.64782825051539
+            },
+            "zstd": {
+              "size": 5209,
+              "ratio": 0.37029928200753537,
+              "reduction": 62.97007179924646
+            },
+            "brotli": {
+              "size": 4232,
+              "ratio": 0.3008459515177365,
+              "reduction": 69.91540484822634
+            }
+          }
+        },
+        "avg_complexity": 0.3623610814909599
+      },
+      {
+        "filename": "Artificial_Intelligence_and_Ethics.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 18857,
+          "word_count": 2679,
+          "sentence_count": 128,
+          "avg_word_length": 6.022023142963793,
+          "avg_sentence_length": 20.9296875,
+          "unique_words": 1140,
+          "lexical_diversity": 0.425531914893617
+        },
+        "compression": {
+          "original_size": 18865,
+          "compressions": {
+            "lzma": {
+              "size": 6984,
+              "ratio": 0.3702093824542804,
+              "reduction": 62.97906175457195
+            },
+            "bz2": {
+              "size": 6440,
+              "ratio": 0.34137291280148424,
+              "reduction": 65.86270871985158
+            },
+            "gzip": {
+              "size": 7216,
+              "ratio": 0.3825072886297376,
+              "reduction": 61.74927113702624
+            },
+            "zlib": {
+              "size": 7204,
+              "ratio": 0.38187119003445535,
+              "reduction": 61.81288099655446
+            },
+            "zstd": {
+              "size": 6888,
+              "ratio": 0.36512059369202227,
+              "reduction": 63.487940630797766
+            },
+            "brotli": {
+              "size": 5493,
+              "ratio": 0.2911741319904585,
+              "reduction": 70.88258680095414
+            }
+          }
+        },
+        "avg_complexity": 0.3553759166004064
+      },
+      {
+        "filename": "Artificial_Intelligence_Complete_Analysis.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 80020,
+          "word_count": 10181,
+          "sentence_count": 903,
+          "avg_word_length": 6.838228071898635,
+          "avg_sentence_length": 11.274640088593577,
+          "unique_words": 3672,
+          "lexical_diversity": 0.3606718397014046
+        },
+        "compression": {
+          "original_size": 80040,
+          "compressions": {
+            "lzma": {
+              "size": 24876,
+              "ratio": 0.31079460269865067,
+              "reduction": 68.92053973013493
+            },
+            "bz2": {
+              "size": 22796,
+              "ratio": 0.28480759620189905,
+              "reduction": 71.5192403798101
+            },
+            "gzip": {
+              "size": 27037,
+              "ratio": 0.3377936031984008,
+              "reduction": 66.22063968015992
+            },
+            "zlib": {
+              "size": 27025,
+              "ratio": 0.33764367816091956,
+              "reduction": 66.23563218390804
+            },
+            "zstd": {
+              "size": 25013,
+              "ratio": 0.3125062468765617,
+              "reduction": 68.74937531234383
+            },
+            "brotli": {
+              "size": 22109,
+              "ratio": 0.2762243878060969,
+              "reduction": 72.3775612193903
+            }
+          }
+        },
+        "avg_complexity": 0.3099616858237548
+      },
+      {
+        "filename": "Artificial_Neural_Networks.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 15300,
+          "word_count": 1887,
+          "sentence_count": 158,
+          "avg_word_length": 7.084790673025967,
+          "avg_sentence_length": 11.943037974683545,
+          "unique_words": 1055,
+          "lexical_diversity": 0.5590885002649708
+        },
+        "compression": {
+          "original_size": 15300,
+          "compressions": {
+            "lzma": {
+              "size": 5828,
+              "ratio": 0.3809150326797386,
+              "reduction": 61.908496732026144
+            },
+            "bz2": {
+              "size": 5412,
+              "ratio": 0.3537254901960784,
+              "reduction": 64.62745098039215
+            },
+            "gzip": {
+              "size": 5955,
+              "ratio": 0.3892156862745098,
+              "reduction": 61.078431372549026
+            },
+            "zlib": {
+              "size": 5943,
+              "ratio": 0.3884313725490196,
+              "reduction": 61.15686274509804
+            },
+            "zstd": {
+              "size": 5718,
+              "ratio": 0.3737254901960784,
+              "reduction": 62.627450980392155
+            },
+            "brotli": {
+              "size": 4644,
+              "ratio": 0.3035294117647059,
+              "reduction": 69.64705882352942
+            }
+          }
+        },
+        "avg_complexity": 0.36492374727668847
+      },
+      {
+        "filename": "Blockchain_Technology.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 25057,
+          "word_count": 3275,
+          "sentence_count": 156,
+          "avg_word_length": 6.633587786259542,
+          "avg_sentence_length": 20.993589743589745,
+          "unique_words": 1328,
+          "lexical_diversity": 0.40549618320610686
+        },
+        "compression": {
+          "original_size": 25067,
+          "compressions": {
+            "lzma": {
+              "size": 8348,
+              "ratio": 0.3330274863366179,
+              "reduction": 66.69725136633822
+            },
+            "bz2": {
+              "size": 7762,
+              "ratio": 0.3096501376311485,
+              "reduction": 69.03498623688516
+            },
+            "gzip": {
+              "size": 8722,
+              "ratio": 0.347947500698129,
+              "reduction": 65.20524993018711
+            },
+            "zlib": {
+              "size": 8710,
+              "ratio": 0.3474687836597918,
+              "reduction": 65.25312163402081
+            },
+            "zstd": {
+              "size": 8290,
+              "ratio": 0.3307136873179878,
+              "reduction": 66.92863126820122
+            },
+            "brotli": {
+              "size": 6759,
+              "ratio": 0.26963737184345954,
+              "reduction": 73.03626281565406
+            }
+          }
+        },
+        "avg_complexity": 0.32307416124785576
+      },
+      {
+        "filename": "Cloud_Computing_Revolution.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 23935,
+          "word_count": 3076,
+          "sentence_count": 143,
+          "avg_word_length": 6.763003901170351,
+          "avg_sentence_length": 21.51048951048951,
+          "unique_words": 1242,
+          "lexical_diversity": 0.40377113133940185
+        },
+        "compression": {
+          "original_size": 23963,
+          "compressions": {
+            "lzma": {
+              "size": 7892,
+              "ratio": 0.3293410674790302,
+              "reduction": 67.06589325209697
+            },
+            "bz2": {
+              "size": 7368,
+              "ratio": 0.307474022451279,
+              "reduction": 69.25259775487208
+            },
+            "gzip": {
+              "size": 8206,
+              "ratio": 0.3424446020948963,
+              "reduction": 65.75553979051037
+            },
+            "zlib": {
+              "size": 8194,
+              "ratio": 0.34194383007136003,
+              "reduction": 65.805616992864
+            },
+            "zstd": {
+              "size": 7819,
+              "ratio": 0.3262947043358511,
+              "reduction": 67.37052956641489
+            },
+            "brotli": {
+              "size": 6345,
+              "ratio": 0.26478320744481076,
+              "reduction": 73.52167925551892
+            }
+          }
+        },
+        "avg_complexity": 0.31871357231287123
+      },
+      {
+        "filename": "Compiler_Design_and_Implementation.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 13421,
+          "word_count": 1744,
+          "sentence_count": 101,
+          "avg_word_length": 6.674885321100917,
+          "avg_sentence_length": 17.26732673267327,
+          "unique_words": 887,
+          "lexical_diversity": 0.5086009174311926
+        },
+        "compression": {
+          "original_size": 13431,
+          "compressions": {
+            "lzma": {
+              "size": 4936,
+              "ratio": 0.36750800387164023,
+              "reduction": 63.24919961283597
+            },
+            "bz2": {
+              "size": 4629,
+              "ratio": 0.34465043555952646,
+              "reduction": 65.53495644404735
+            },
+            "gzip": {
+              "size": 5051,
+              "ratio": 0.37607028516119423,
+              "reduction": 62.39297148388058
+            },
+            "zlib": {
+              "size": 5039,
+              "ratio": 0.3751768297222843,
+              "reduction": 62.48231702777157
+            },
+            "zstd": {
+              "size": 4828,
+              "ratio": 0.3594669049214504,
+              "reduction": 64.05330950785496
+            },
+            "brotli": {
+              "size": 3862,
+              "ratio": 0.28754374208919664,
+              "reduction": 71.24562579108033
+            }
+          }
+        },
+        "avg_complexity": 0.35173603355421534
+      },
+      {
+        "filename": "Computer_Graphics_and_Visualization.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 12784,
+          "word_count": 1627,
+          "sentence_count": 98,
+          "avg_word_length": 6.834665027658267,
+          "avg_sentence_length": 16.602040816326532,
+          "unique_words": 904,
+          "lexical_diversity": 0.5556238475722188
+        },
+        "compression": {
+          "original_size": 12784,
+          "compressions": {
+            "lzma": {
+              "size": 4988,
+              "ratio": 0.3901752190237797,
+              "reduction": 60.98247809762203
+            },
+            "bz2": {
+              "size": 4604,
+              "ratio": 0.36013767209011266,
+              "reduction": 63.98623279098874
+            },
+            "gzip": {
+              "size": 5082,
+              "ratio": 0.39752816020025034,
+              "reduction": 60.24718397997497
+            },
+            "zlib": {
+              "size": 5070,
+              "ratio": 0.3965894868585732,
+              "reduction": 60.34105131414268
+            },
+            "zstd": {
+              "size": 4882,
+              "ratio": 0.381883604505632,
+              "reduction": 61.811639549436805
+            },
+            "brotli": {
+              "size": 3930,
+              "ratio": 0.30741551939924905,
+              "reduction": 69.2584480600751
+            }
+          }
+        },
+        "avg_complexity": 0.3722882770129328
+      },
+      {
+        "filename": "Computer_Networks_and_Protocols.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 12596,
+          "word_count": 1587,
+          "sentence_count": 88,
+          "avg_word_length": 6.914303717706364,
+          "avg_sentence_length": 18.03409090909091,
+          "unique_words": 857,
+          "lexical_diversity": 0.5400126023944549
+        },
+        "compression": {
+          "original_size": 12602,
+          "compressions": {
+            "lzma": {
+              "size": 4896,
+              "ratio": 0.3885097603554991,
+              "reduction": 61.14902396445009
+            },
+            "bz2": {
+              "size": 4598,
+              "ratio": 0.36486272020314237,
+              "reduction": 63.51372797968576
+            },
+            "gzip": {
+              "size": 4987,
+              "ratio": 0.39573083637517853,
+              "reduction": 60.42691636248214
+            },
+            "zlib": {
+              "size": 4975,
+              "ratio": 0.39477860657038566,
+              "reduction": 60.52213934296143
+            },
+            "zstd": {
+              "size": 4838,
+              "ratio": 0.38390731629900016,
+              "reduction": 61.60926837009999
+            },
+            "brotli": {
+              "size": 3790,
+              "ratio": 0.3007459133470878,
+              "reduction": 69.92540866529123
+            }
+          }
+        },
+        "avg_complexity": 0.37142252552504895
+      },
+      {
+        "filename": "Computer_Vision.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 13772,
+          "word_count": 1769,
+          "sentence_count": 105,
+          "avg_word_length": 6.762577727529678,
+          "avg_sentence_length": 16.847619047619048,
+          "unique_words": 953,
+          "lexical_diversity": 0.5387224420576597
+        },
+        "compression": {
+          "original_size": 13772,
+          "compressions": {
+            "lzma": {
+              "size": 5368,
+              "ratio": 0.38977635782747605,
+              "reduction": 61.0223642172524
+            },
+            "bz2": {
+              "size": 5056,
+              "ratio": 0.36712169619517865,
+              "reduction": 63.287830380482134
+            },
+            "gzip": {
+              "size": 5486,
+              "ratio": 0.3983444670345629,
+              "reduction": 60.16555329654372
+            },
+            "zlib": {
+              "size": 5474,
+              "ratio": 0.3974731338948591,
+              "reduction": 60.25268661051408
+            },
+            "zstd": {
+              "size": 5283,
+              "ratio": 0.3836044147545745,
+              "reduction": 61.63955852454255
+            },
+            "brotli": {
+              "size": 4196,
+              "ratio": 0.3046761545164101,
+              "reduction": 69.53238454835899
+            }
+          }
+        },
+        "avg_complexity": 0.37349937070384354
+      },
+      {
+        "filename": "Cybersecurity_in_Modern_Era.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 20534,
+          "word_count": 2662,
+          "sentence_count": 122,
+          "avg_word_length": 6.696093163035312,
+          "avg_sentence_length": 21.81967213114754,
+          "unique_words": 1229,
+          "lexical_diversity": 0.46168294515401953
+        },
+        "compression": {
+          "original_size": 20542,
+          "compressions": {
+            "lzma": {
+              "size": 7460,
+              "ratio": 0.36315840716580666,
+              "reduction": 63.684159283419326
+            },
+            "bz2": {
+              "size": 6926,
+              "ratio": 0.3371628857949567,
+              "reduction": 66.28371142050433
+            },
+            "gzip": {
+              "size": 7731,
+              "ratio": 0.37635089085775486,
+              "reduction": 62.36491091422452
+            },
+            "zlib": {
+              "size": 7719,
+              "ratio": 0.37576672183818516,
+              "reduction": 62.423327816181484
+            },
+            "zstd": {
+              "size": 7373,
+              "ratio": 0.35892318177392657,
+              "reduction": 64.10768182260735
+            },
+            "brotli": {
+              "size": 5872,
+              "ratio": 0.28585337357608803,
+              "reduction": 71.4146626423912
+            }
+          }
+        },
+        "avg_complexity": 0.34953591016778635
+      },
+      {
+        "filename": "Database_Management_Systems.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 12931,
+          "word_count": 1672,
+          "sentence_count": 100,
+          "avg_word_length": 6.7105263157894735,
+          "avg_sentence_length": 16.72,
+          "unique_words": 855,
+          "lexical_diversity": 0.5113636363636364
+        },
+        "compression": {
+          "original_size": 12939,
+          "compressions": {
+            "lzma": {
+              "size": 4948,
+              "ratio": 0.3824097689156813,
+              "reduction": 61.75902310843186
+            },
+            "bz2": {
+              "size": 4646,
+              "ratio": 0.35906947986706855,
+              "reduction": 64.09305201329315
+            },
+            "gzip": {
+              "size": 5041,
+              "ratio": 0.3895973413710488,
+              "reduction": 61.040265862895126
+            },
+            "zlib": {
+              "size": 5029,
+              "ratio": 0.38866991266713036,
+              "reduction": 61.133008733286964
+            },
+            "zstd": {
+              "size": 4860,
+              "ratio": 0.3756086250869464,
+              "reduction": 62.43913749130536
+            },
+            "brotli": {
+              "size": 3855,
+              "ratio": 0.2979364711337816,
+              "reduction": 70.20635288662184
+            }
+          }
+        },
+        "avg_complexity": 0.36554859984027616
+      },
+      {
+        "filename": "Data_Science_and_Big_Data.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 25170,
+          "word_count": 3294,
+          "sentence_count": 156,
+          "avg_word_length": 6.623254401942926,
+          "avg_sentence_length": 21.115384615384617,
+          "unique_words": 1437,
+          "lexical_diversity": 0.43624772313296906
+        },
+        "compression": {
+          "original_size": 25200,
+          "compressions": {
+            "lzma": {
+              "size": 8744,
+              "ratio": 0.346984126984127,
+              "reduction": 65.3015873015873
+            },
+            "bz2": {
+              "size": 8132,
+              "ratio": 0.3226984126984127,
+              "reduction": 67.73015873015873
+            },
+            "gzip": {
+              "size": 9129,
+              "ratio": 0.3622619047619048,
+              "reduction": 63.77380952380952
+            },
+            "zlib": {
+              "size": 9117,
+              "ratio": 0.36178571428571427,
+              "reduction": 63.82142857142858
+            },
+            "zstd": {
+              "size": 8688,
+              "ratio": 0.34476190476190477,
+              "reduction": 65.52380952380952
+            },
+            "brotli": {
+              "size": 7051,
+              "ratio": 0.27980158730158733,
+              "reduction": 72.01984126984127
+            }
+          }
+        },
+        "avg_complexity": 0.33638227513227514
+      },
+      {
+        "filename": "Data_Structures.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 15056,
+          "word_count": 1865,
+          "sentence_count": 150,
+          "avg_word_length": 7.049329758713137,
+          "avg_sentence_length": 12.433333333333334,
+          "unique_words": 972,
+          "lexical_diversity": 0.5211796246648793
+        },
+        "compression": {
+          "original_size": 15057,
+          "compressions": {
+            "lzma": {
+              "size": 5544,
+              "ratio": 0.3682008368200837,
+              "reduction": 63.179916317991626
+            },
+            "bz2": {
+              "size": 5193,
+              "ratio": 0.3448894202032277,
+              "reduction": 65.51105797967722
+            },
+            "gzip": {
+              "size": 5651,
+              "ratio": 0.3753071661021452,
+              "reduction": 62.46928338978548
+            },
+            "zlib": {
+              "size": 5639,
+              "ratio": 0.3745101945938766,
+              "reduction": 62.54898054061234
+            },
+            "zstd": {
+              "size": 5447,
+              "ratio": 0.36175865046157935,
+              "reduction": 63.82413495384207
+            },
+            "brotli": {
+              "size": 4517,
+              "ratio": 0.2999933585707644,
+              "reduction": 70.00066414292357
+            }
+          }
+        },
+        "avg_complexity": 0.35410993779194616
+      },
+      {
+        "filename": "Distributed_Systems.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 11901,
+          "word_count": 1510,
+          "sentence_count": 78,
+          "avg_word_length": 6.860264900662251,
+          "avg_sentence_length": 19.358974358974358,
+          "unique_words": 758,
+          "lexical_diversity": 0.5019867549668874
+        },
+        "compression": {
+          "original_size": 11909,
+          "compressions": {
+            "lzma": {
+              "size": 4432,
+              "ratio": 0.3721555126375011,
+              "reduction": 62.784448736249885
+            },
+            "bz2": {
+              "size": 4150,
+              "ratio": 0.3484759425644471,
+              "reduction": 65.15240574355529
+            },
+            "gzip": {
+              "size": 4499,
+              "ratio": 0.3777815097825174,
+              "reduction": 62.221849021748255
+            },
+            "zlib": {
+              "size": 4487,
+              "ratio": 0.376773868502813,
+              "reduction": 62.3226131497187
+            },
+            "zstd": {
+              "size": 4318,
+              "ratio": 0.362582920480309,
+              "reduction": 63.7417079519691
+            },
+            "brotli": {
+              "size": 3409,
+              "ratio": 0.2862540935426988,
+              "reduction": 71.37459064573012
+            }
+          }
+        },
+        "avg_complexity": 0.35400397458504773
+      },
+      {
+        "filename": "Future_of_Programming_Languages.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 26679,
+          "word_count": 3493,
+          "sentence_count": 159,
+          "avg_word_length": 6.617807042656742,
+          "avg_sentence_length": 21.968553459119498,
+          "unique_words": 1282,
+          "lexical_diversity": 0.3670197537933009
+        },
+        "compression": {
+          "original_size": 26689,
+          "compressions": {
+            "lzma": {
+              "size": 8660,
+              "ratio": 0.3244782494660722,
+              "reduction": 67.55217505339279
+            },
+            "bz2": {
+              "size": 8010,
+              "ratio": 0.3001236464461014,
+              "reduction": 69.98763535538986
+            },
+            "gzip": {
+              "size": 9058,
+              "ratio": 0.33939076023830045,
+              "reduction": 66.06092397616996
+            },
+            "zlib": {
+              "size": 9046,
+              "ratio": 0.33894113679793175,
+              "reduction": 66.10588632020682
+            },
+            "zstd": {
+              "size": 8585,
+              "ratio": 0.32166810296376785,
+              "reduction": 67.83318970362322
+            },
+            "brotli": {
+              "size": 7132,
+              "ratio": 0.2672261980591255,
+              "reduction": 73.27738019408744
+            }
+          }
+        },
+        "avg_complexity": 0.31530468232854986
+      },
+      {
+        "filename": "Internet_of_Things.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 30319,
+          "word_count": 4060,
+          "sentence_count": 189,
+          "avg_word_length": 6.45024630541872,
+          "avg_sentence_length": 21.48148148148148,
+          "unique_words": 1578,
+          "lexical_diversity": 0.38866995073891625
+        },
+        "compression": {
+          "original_size": 30327,
+          "compressions": {
+            "lzma": {
+              "size": 10148,
+              "ratio": 0.3346193161209483,
+              "reduction": 66.53806838790517
+            },
+            "bz2": {
+              "size": 9417,
+              "ratio": 0.3105153823325749,
+              "reduction": 68.94846176674251
+            },
+            "gzip": {
+              "size": 10686,
+              "ratio": 0.35235928380650905,
+              "reduction": 64.7640716193491
+            },
+            "zlib": {
+              "size": 10674,
+              "ratio": 0.3519635967949352,
+              "reduction": 64.80364032050647
+            },
+            "zstd": {
+              "size": 10107,
+              "ratio": 0.333267385498071,
+              "reduction": 66.6732614501929
+            },
+            "brotli": {
+              "size": 8376,
+              "ratio": 0.27618953407854385,
+              "reduction": 72.38104659214561
+            }
+          }
+        },
+        "avg_complexity": 0.3264857497719304
+      },
+      {
+        "filename": "Machine_Learning_Applications.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 22160,
+          "word_count": 2898,
+          "sentence_count": 127,
+          "avg_word_length": 6.629054520358868,
+          "avg_sentence_length": 22.818897637795274,
+          "unique_words": 1261,
+          "lexical_diversity": 0.43512767425810905
+        },
+        "compression": {
+          "original_size": 22160,
+          "compressions": {
+            "lzma": {
+              "size": 7556,
+              "ratio": 0.3409747292418773,
+              "reduction": 65.90252707581227
+            },
+            "bz2": {
+              "size": 6977,
+              "ratio": 0.3148465703971119,
+              "reduction": 68.5153429602888
+            },
+            "gzip": {
+              "size": 7830,
+              "ratio": 0.35333935018050544,
+              "reduction": 64.66606498194946
+            },
+            "zlib": {
+              "size": 7818,
+              "ratio": 0.35279783393501807,
+              "reduction": 64.7202166064982
+            },
+            "zstd": {
+              "size": 7444,
+              "ratio": 0.3359205776173285,
+              "reduction": 66.40794223826715
+            },
+            "brotli": {
+              "size": 6003,
+              "ratio": 0.27089350180505417,
+              "reduction": 72.91064981949458
+            }
+          }
+        },
+        "avg_complexity": 0.3281287605294826
+      },
+      {
+        "filename": "Mobile_Application_Development.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 14518,
+          "word_count": 1805,
+          "sentence_count": 154,
+          "avg_word_length": 7.022160664819944,
+          "avg_sentence_length": 11.720779220779221,
+          "unique_words": 1024,
+          "lexical_diversity": 0.5673130193905818
+        },
+        "compression": {
+          "original_size": 14518,
+          "compressions": {
+            "lzma": {
+              "size": 5676,
+              "ratio": 0.3909629425540708,
+              "reduction": 60.90370574459292
+            },
+            "bz2": {
+              "size": 5346,
+              "ratio": 0.36823253891720625,
+              "reduction": 63.17674610827937
+            },
+            "gzip": {
+              "size": 5795,
+              "ratio": 0.39915966386554624,
+              "reduction": 60.08403361344538
+            },
+            "zlib": {
+              "size": 5783,
+              "ratio": 0.3983331037332966,
+              "reduction": 60.16668962667033
+            },
+            "zstd": {
+              "size": 5565,
+              "ratio": 0.3833172613307618,
+              "reduction": 61.66827386692382
+            },
+            "brotli": {
+              "size": 4418,
+              "ratio": 0.30431188868990217,
+              "reduction": 69.5688111310098
+            }
+          }
+        },
+        "avg_complexity": 0.374052899848464
+      },
+      {
+        "filename": "Natural_Language_Processing.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 14546,
+          "word_count": 1843,
+          "sentence_count": 108,
+          "avg_word_length": 6.870862723819859,
+          "avg_sentence_length": 17.064814814814813,
+          "unique_words": 1000,
+          "lexical_diversity": 0.5425935973955507
+        },
+        "compression": {
+          "original_size": 14550,
+          "compressions": {
+            "lzma": {
+              "size": 5572,
+              "ratio": 0.3829553264604811,
+              "reduction": 61.7044673539519
+            },
+            "bz2": {
+              "size": 5193,
+              "ratio": 0.35690721649484536,
+              "reduction": 64.30927835051547
+            },
+            "gzip": {
+              "size": 5684,
+              "ratio": 0.39065292096219933,
+              "reduction": 60.93470790378006
+            },
+            "zlib": {
+              "size": 5672,
+              "ratio": 0.3898281786941581,
+              "reduction": 61.01718213058419
+            },
+            "zstd": {
+              "size": 5475,
+              "ratio": 0.37628865979381443,
+              "reduction": 62.371134020618555
+            },
+            "brotli": {
+              "size": 4353,
+              "ratio": 0.29917525773195874,
+              "reduction": 70.08247422680412
+            }
+          }
+        },
+        "avg_complexity": 0.3659679266895762
+      },
+      {
+        "filename": "Operating_Systems_Architecture.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 11422,
+          "word_count": 1478,
+          "sentence_count": 80,
+          "avg_word_length": 6.7083897158322054,
+          "avg_sentence_length": 18.475,
+          "unique_words": 722,
+          "lexical_diversity": 0.4884979702300406
+        },
+        "compression": {
+          "original_size": 11422,
+          "compressions": {
+            "lzma": {
+              "size": 4264,
+              "ratio": 0.3733146559271581,
+              "reduction": 62.66853440728419
+            },
+            "bz2": {
+              "size": 3977,
+              "ratio": 0.34818770793206094,
+              "reduction": 65.1812292067939
+            },
+            "gzip": {
+              "size": 4304,
+              "ratio": 0.37681666958501137,
+              "reduction": 62.31833304149886
+            },
+            "zlib": {
+              "size": 4292,
+              "ratio": 0.3757660654876554,
+              "reduction": 62.42339345123447
+            },
+            "zstd": {
+              "size": 4146,
+              "ratio": 0.36298371563649096,
+              "reduction": 63.7016284363509
+            },
+            "brotli": {
+              "size": 3265,
+              "ratio": 0.2858518648222728,
+              "reduction": 71.41481351777273
+            }
+          }
+        },
+        "avg_complexity": 0.3538201132317749
+      },
+      {
+        "filename": "Parallel_Computing.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 12711,
+          "word_count": 1596,
+          "sentence_count": 98,
+          "avg_word_length": 6.93984962406015,
+          "avg_sentence_length": 16.285714285714285,
+          "unique_words": 812,
+          "lexical_diversity": 0.5087719298245614
+        },
+        "compression": {
+          "original_size": 12711,
+          "compressions": {
+            "lzma": {
+              "size": 4712,
+              "ratio": 0.37070254110612855,
+              "reduction": 62.92974588938714
+            },
+            "bz2": {
+              "size": 4382,
+              "ratio": 0.34474077570608136,
+              "reduction": 65.52592242939185
+            },
+            "gzip": {
+              "size": 4778,
+              "ratio": 0.375894894186138,
+              "reduction": 62.410510581386205
+            },
+            "zlib": {
+              "size": 4766,
+              "ratio": 0.37495082998977264,
+              "reduction": 62.50491700102274
+            },
+            "zstd": {
+              "size": 4610,
+              "ratio": 0.36267799543702306,
+              "reduction": 63.7322004562977
+            },
+            "brotli": {
+              "size": 3749,
+              "ratio": 0.294941389347809,
+              "reduction": 70.5058610652191
+            }
+          }
+        },
+        "avg_complexity": 0.35398473762882543
+      },
+      {
+        "filename": "philosophical_time.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 1233,
+          "word_count": 176,
+          "sentence_count": 11,
+          "avg_word_length": 6.005681818181818,
+          "avg_sentence_length": 16.0,
+          "unique_words": 129,
+          "lexical_diversity": 0.7329545454545454
+        },
+        "compression": {
+          "original_size": 1235,
+          "compressions": {
+            "lzma": {
+              "size": 752,
+              "ratio": 0.6089068825910932,
+              "reduction": 39.10931174089068
+            },
+            "bz2": {
+              "size": 665,
+              "ratio": 0.5384615384615384,
+              "reduction": 46.15384615384615
+            },
+            "gzip": {
+              "size": 648,
+              "ratio": 0.5246963562753036,
+              "reduction": 47.530364372469634
+            },
+            "zlib": {
+              "size": 636,
+              "ratio": 0.5149797570850202,
+              "reduction": 48.50202429149798
+            },
+            "zstd": {
+              "size": 643,
+              "ratio": 0.5206477732793522,
+              "reduction": 47.93522267206478
+            },
+            "brotli": {
+              "size": 451,
+              "ratio": 0.3651821862348178,
+              "reduction": 63.48178137651822
+            }
+          }
+        },
+        "avg_complexity": 0.5121457489878543
+      },
+      {
+        "filename": "Quantum_Computing.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 23487,
+          "word_count": 3150,
+          "sentence_count": 156,
+          "avg_word_length": 6.439365079365079,
+          "avg_sentence_length": 20.192307692307693,
+          "unique_words": 1212,
+          "lexical_diversity": 0.38476190476190475
+        },
+        "compression": {
+          "original_size": 23509,
+          "compressions": {
+            "lzma": {
+              "size": 7768,
+              "ratio": 0.33042664511463693,
+              "reduction": 66.9573354885363
+            },
+            "bz2": {
+              "size": 7231,
+              "ratio": 0.30758432940575947,
+              "reduction": 69.24156705942406
+            },
+            "gzip": {
+              "size": 8064,
+              "ratio": 0.34301756774001446,
+              "reduction": 65.69824322599855
+            },
+            "zlib": {
+              "size": 8052,
+              "ratio": 0.34250712493087754,
+              "reduction": 65.74928750691225
+            },
+            "zstd": {
+              "size": 7668,
+              "ratio": 0.3261729550384959,
+              "reduction": 67.38270449615041
+            },
+            "brotli": {
+              "size": 6193,
+              "ratio": 0.2634310264154154,
+              "reduction": 73.65689735845847
+            }
+          }
+        },
+        "avg_complexity": 0.3188566081075333
+      },
+      {
+        "filename": "Quantum_Computing_Extended.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 55622,
+          "word_count": 6726,
+          "sentence_count": 445,
+          "avg_word_length": 7.251858459708593,
+          "avg_sentence_length": 15.114606741573034,
+          "unique_words": 2460,
+          "lexical_diversity": 0.36574487065120426
+        },
+        "compression": {
+          "original_size": 55667,
+          "compressions": {
+            "lzma": {
+              "size": 16816,
+              "ratio": 0.3020820234609374,
+              "reduction": 69.79179765390626
+            },
+            "bz2": {
+              "size": 15401,
+              "ratio": 0.2766630139939282,
+              "reduction": 72.33369860060719
+            },
+            "gzip": {
+              "size": 18036,
+              "ratio": 0.3239980598918569,
+              "reduction": 67.6001940108143
+            },
+            "zlib": {
+              "size": 18024,
+              "ratio": 0.3237824923204053,
+              "reduction": 67.62175076795947
+            },
+            "zstd": {
+              "size": 16888,
+              "ratio": 0.30337542888964736,
+              "reduction": 69.66245711103527
+            },
+            "brotli": {
+              "size": 14590,
+              "ratio": 0.26209423895665296,
+              "reduction": 73.7905761043347
+            }
+          }
+        },
+        "avg_complexity": 0.298665876252238
+      },
+      {
+        "filename": "Robotics_and_Automation.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 16435,
+          "word_count": 2019,
+          "sentence_count": 183,
+          "avg_word_length": 7.116889549281822,
+          "avg_sentence_length": 11.032786885245901,
+          "unique_words": 1110,
+          "lexical_diversity": 0.549777117384844
+        },
+        "compression": {
+          "original_size": 16435,
+          "compressions": {
+            "lzma": {
+              "size": 6188,
+              "ratio": 0.37651353818071187,
+              "reduction": 62.348646181928814
+            },
+            "bz2": {
+              "size": 5817,
+              "ratio": 0.3539397627015516,
+              "reduction": 64.60602372984484
+            },
+            "gzip": {
+              "size": 6352,
+              "ratio": 0.3864922421661089,
+              "reduction": 61.35077578338911
+            },
+            "zlib": {
+              "size": 6340,
+              "ratio": 0.3857620930940067,
+              "reduction": 61.42379069059933
+            },
+            "zstd": {
+              "size": 6080,
+              "ratio": 0.3699421965317919,
+              "reduction": 63.005780346820806
+            },
+            "brotli": {
+              "size": 4899,
+              "ratio": 0.29808335868573166,
+              "reduction": 70.19166413142683
+            }
+          }
+        },
+        "avg_complexity": 0.36178886522665044
+      },
+      {
+        "filename": "Software_Development_Methodologies.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 26087,
+          "word_count": 3362,
+          "sentence_count": 174,
+          "avg_word_length": 6.740035693039857,
+          "avg_sentence_length": 19.32183908045977,
+          "unique_words": 1437,
+          "lexical_diversity": 0.4274241522903034
+        },
+        "compression": {
+          "original_size": 26111,
+          "compressions": {
+            "lzma": {
+              "size": 8932,
+              "ratio": 0.34207805139596337,
+              "reduction": 65.79219486040367
+            },
+            "bz2": {
+              "size": 8221,
+              "ratio": 0.31484814828999275,
+              "reduction": 68.51518517100072
+            },
+            "gzip": {
+              "size": 9302,
+              "ratio": 0.35624832446095517,
+              "reduction": 64.37516755390449
+            },
+            "zlib": {
+              "size": 9290,
+              "ratio": 0.3557887480372257,
+              "reduction": 64.42112519627743
+            },
+            "zstd": {
+              "size": 8882,
+              "ratio": 0.34016314963042393,
+              "reduction": 65.98368503695761
+            },
+            "brotli": {
+              "size": 7272,
+              "ratio": 0.27850331278005436,
+              "reduction": 72.14966872199456
+            }
+          }
+        },
+        "avg_complexity": 0.3312716224324359
+      },
+      {
+        "filename": "Software_Testing_and_Quality_Assurance.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 14469,
+          "word_count": 1815,
+          "sentence_count": 144,
+          "avg_word_length": 6.950413223140496,
+          "avg_sentence_length": 12.604166666666666,
+          "unique_words": 944,
+          "lexical_diversity": 0.5201101928374655
+        },
+        "compression": {
+          "original_size": 14469,
+          "compressions": {
+            "lzma": {
+              "size": 5396,
+              "ratio": 0.37293524085976915,
+              "reduction": 62.70647591402309
+            },
+            "bz2": {
+              "size": 5040,
+              "ratio": 0.3483309143686502,
+              "reduction": 65.16690856313498
+            },
+            "gzip": {
+              "size": 5501,
+              "ratio": 0.380192134909116,
+              "reduction": 61.980786509088404
+            },
+            "zlib": {
+              "size": 5489,
+              "ratio": 0.3793627755891907,
+              "reduction": 62.06372244108094
+            },
+            "zstd": {
+              "size": 5280,
+              "ratio": 0.36491810076715736,
+              "reduction": 63.50818992328426
+            },
+            "brotli": {
+              "size": 4167,
+              "ratio": 0.28799502384408043,
+              "reduction": 71.20049761559196
+            }
+          }
+        },
+        "avg_complexity": 0.3556223650563273
+      },
+      {
+        "filename": "Virtual_and_Augmented_Reality.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 41133,
+          "word_count": 5377,
+          "sentence_count": 355,
+          "avg_word_length": 6.631578947368421,
+          "avg_sentence_length": 15.146478873239436,
+          "unique_words": 2253,
+          "lexical_diversity": 0.41900688116049845
+        },
+        "compression": {
+          "original_size": 41154,
+          "compressions": {
+            "lzma": {
+              "size": 14072,
+              "ratio": 0.34193517033581183,
+              "reduction": 65.80648296641883
+            },
+            "bz2": {
+              "size": 13060,
+              "ratio": 0.31734460805753995,
+              "reduction": 68.265539194246
+            },
+            "gzip": {
+              "size": 14897,
+              "ratio": 0.3619818243670117,
+              "reduction": 63.80181756329883
+            },
+            "zlib": {
+              "size": 14885,
+              "ratio": 0.36169023667201244,
+              "reduction": 63.83097633279875
+            },
+            "zstd": {
+              "size": 14131,
+              "ratio": 0.3433688098362249,
+              "reduction": 65.66311901637751
+            },
+            "brotli": {
+              "size": 11928,
+              "ratio": 0.2898381688292754,
+              "reduction": 71.01618311707246
+            }
+          }
+        },
+        "avg_complexity": 0.3360264696829794
+      },
+      {
+        "filename": "Web_Technologies_Evolution.txt",
+        "source": "AI",
+        "metrics": {
+          "char_count": 14282,
+          "word_count": 1778,
+          "sentence_count": 164,
+          "avg_word_length": 7.0078740157480315,
+          "avg_sentence_length": 10.841463414634147,
+          "unique_words": 981,
+          "lexical_diversity": 0.5517435320584927
+        },
+        "compression": {
+          "original_size": 14282,
+          "compressions": {
+            "lzma": {
+              "size": 5532,
+              "ratio": 0.3873407085842319,
+              "reduction": 61.265929141576805
+            },
+            "bz2": {
+              "size": 5163,
+              "ratio": 0.3615039910376698,
+              "reduction": 63.849600896233014
+            },
+            "gzip": {
+              "size": 5634,
+              "ratio": 0.39448256546702143,
+              "reduction": 60.55174345329786
+            },
+            "zlib": {
+              "size": 5622,
+              "ratio": 0.39364234701022266,
+              "reduction": 60.63576529897774
+            },
+            "zstd": {
+              "size": 5447,
+              "ratio": 0.3813891611819073,
+              "reduction": 61.861083881809265
+            },
+            "brotli": {
+              "size": 4334,
+              "ratio": 0.3034588993138216,
+              "reduction": 69.65411006861784
+            }
+          }
+        },
+        "avg_complexity": 0.3703029454324791
+      }
+    ],
+    "human": [
+      {
+        "filename": "1 Hints on programming language design.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 24127,
+          "word_count": 3985,
+          "sentence_count": 151,
+          "avg_word_length": 5.054705144291091,
+          "avg_sentence_length": 26.39072847682119,
+          "unique_words": 1331,
+          "lexical_diversity": 0.3340025094102886
+        },
+        "compression": {
+          "original_size": 24127,
+          "compressions": {
+            "lzma": {
+              "size": 8908,
+              "ratio": 0.36921291499150327,
+              "reduction": 63.078708500849665
+            },
+            "bz2": {
+              "size": 8243,
+              "ratio": 0.34165043312471505,
+              "reduction": 65.8349566875285
+            },
+            "gzip": {
+              "size": 9251,
+              "ratio": 0.3834293530070046,
+              "reduction": 61.657064699299546
+            },
+            "zlib": {
+              "size": 9239,
+              "ratio": 0.3829319849131678,
+              "reduction": 61.70680150868322
+            },
+            "zstd": {
+              "size": 8820,
+              "ratio": 0.36556554897003357,
+              "reduction": 63.44344510299664
+            },
+            "brotli": {
+              "size": 7312,
+              "ratio": 0.3030629585112115,
+              "reduction": 69.69370414887885
+            }
+          }
+        },
+        "avg_complexity": 0.35764219891960597
+      },
+      {
+        "filename": "10 Ben Moseley & Peter Marks \u2013 \u201cOut of the Tar Pit.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 36781,
+          "word_count": 6019,
+          "sentence_count": 315,
+          "avg_word_length": 5.110981890679515,
+          "avg_sentence_length": 19.107936507936508,
+          "unique_words": 1744,
+          "lexical_diversity": 0.2897491277620867
+        },
+        "compression": {
+          "original_size": 37296,
+          "compressions": {
+            "lzma": {
+              "size": 12768,
+              "ratio": 0.34234234234234234,
+              "reduction": 65.76576576576576
+            },
+            "bz2": {
+              "size": 11797,
+              "ratio": 0.3163073788073788,
+              "reduction": 68.36926211926212
+            },
+            "gzip": {
+              "size": 13469,
+              "ratio": 0.36113792363792363,
+              "reduction": 63.88620763620764
+            },
+            "zlib": {
+              "size": 13457,
+              "ratio": 0.3608161733161733,
+              "reduction": 63.91838266838267
+            },
+            "zstd": {
+              "size": 12798,
+              "ratio": 0.34314671814671815,
+              "reduction": 65.68532818532819
+            },
+            "brotli": {
+              "size": 10942,
+              "ratio": 0.2933826683826684,
+              "reduction": 70.66173316173317
+            }
+          }
+        },
+        "avg_complexity": 0.33618886743886744
+      },
+      {
+        "filename": "11 Ulrich Drepper \u2013 \u201cWhat Every Programmer Should Know About Memory\u201d.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 38629,
+          "word_count": 6719,
+          "sentence_count": 432,
+          "avg_word_length": 4.749367465396636,
+          "avg_sentence_length": 15.55324074074074,
+          "unique_words": 2032,
+          "lexical_diversity": 0.3024259562434886
+        },
+        "compression": {
+          "original_size": 38842,
+          "compressions": {
+            "lzma": {
+              "size": 14096,
+              "ratio": 0.36290613253694454,
+              "reduction": 63.709386746305555
+            },
+            "bz2": {
+              "size": 13182,
+              "ratio": 0.3393749034550229,
+              "reduction": 66.06250965449772
+            },
+            "gzip": {
+              "size": 14894,
+              "ratio": 0.38345090366098555,
+              "reduction": 61.65490963390145
+            },
+            "zlib": {
+              "size": 14882,
+              "ratio": 0.3831419597343082,
+              "reduction": 61.68580402656918
+            },
+            "zstd": {
+              "size": 14222,
+              "ratio": 0.3661500437670563,
+              "reduction": 63.38499562329437
+            },
+            "brotli": {
+              "size": 12197,
+              "ratio": 0.31401575614026056,
+              "reduction": 68.59842438597394
+            }
+          }
+        },
+        "avg_complexity": 0.358173283215763
+      },
+      {
+        "filename": "12 ACM Queue \u2013 \u201cSoftware and the Concurrency Revolution.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 31798,
+          "word_count": 4693,
+          "sentence_count": 235,
+          "avg_word_length": 5.7596420200298315,
+          "avg_sentence_length": 19.970212765957445,
+          "unique_words": 1630,
+          "lexical_diversity": 0.3473258043895163
+        },
+        "compression": {
+          "original_size": 31911,
+          "compressions": {
+            "lzma": {
+              "size": 10960,
+              "ratio": 0.3434552348719877,
+              "reduction": 65.65447651280122
+            },
+            "bz2": {
+              "size": 10137,
+              "ratio": 0.3176647551001222,
+              "reduction": 68.23352448998779
+            },
+            "gzip": {
+              "size": 11600,
+              "ratio": 0.36351101501049793,
+              "reduction": 63.64889849895021
+            },
+            "zlib": {
+              "size": 11588,
+              "ratio": 0.3631349691329009,
+              "reduction": 63.68650308670991
+            },
+            "zstd": {
+              "size": 11005,
+              "ratio": 0.34486540691297674,
+              "reduction": 65.51345930870232
+            },
+            "brotli": {
+              "size": 9179,
+              "ratio": 0.28764375920528973,
+              "reduction": 71.23562407947102
+            }
+          }
+        },
+        "avg_complexity": 0.33671252337229585
+      },
+      {
+        "filename": "13 ACM Queue \u2013 \u201cProgrammer Job InterviewsThe Hidden Agenda. .txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 14635,
+          "word_count": 2249,
+          "sentence_count": 138,
+          "avg_word_length": 5.469097376611828,
+          "avg_sentence_length": 16.297101449275363,
+          "unique_words": 1105,
+          "lexical_diversity": 0.4913294797687861
+        },
+        "compression": {
+          "original_size": 14688,
+          "compressions": {
+            "lzma": {
+              "size": 6148,
+              "ratio": 0.4185729847494553,
+              "reduction": 58.14270152505448
+            },
+            "bz2": {
+              "size": 5816,
+              "ratio": 0.3959694989106754,
+              "reduction": 60.403050108932455
+            },
+            "gzip": {
+              "size": 6301,
+              "ratio": 0.428989651416122,
+              "reduction": 57.1010348583878
+            },
+            "zlib": {
+              "size": 6289,
+              "ratio": 0.4281726579520697,
+              "reduction": 57.18273420479303
+            },
+            "zstd": {
+              "size": 6075,
+              "ratio": 0.41360294117647056,
+              "reduction": 58.63970588235294
+            },
+            "brotli": {
+              "size": 4901,
+              "ratio": 0.33367374727668847,
+              "reduction": 66.63262527233115
+            }
+          }
+        },
+        "avg_complexity": 0.40316358024691357
+      },
+      {
+        "filename": "14 Online Ethics Center \u2013 \u201cTeaching Ethics Across the Engineering Curriculum.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 39262,
+          "word_count": 6442,
+          "sentence_count": 329,
+          "avg_word_length": 5.076684259546725,
+          "avg_sentence_length": 19.580547112462007,
+          "unique_words": 1884,
+          "lexical_diversity": 0.2924557590810307
+        },
+        "compression": {
+          "original_size": 39268,
+          "compressions": {
+            "lzma": {
+              "size": 13096,
+              "ratio": 0.3335031068554548,
+              "reduction": 66.64968931445452
+            },
+            "bz2": {
+              "size": 12093,
+              "ratio": 0.30796068045227665,
+              "reduction": 69.20393195477233
+            },
+            "gzip": {
+              "size": 13786,
+              "ratio": 0.35107466639502904,
+              "reduction": 64.8925333604971
+            },
+            "zlib": {
+              "size": 13774,
+              "ratio": 0.35076907405521035,
+              "reduction": 64.92309259447897
+            },
+            "zstd": {
+              "size": 13081,
+              "ratio": 0.3331211164306815,
+              "reduction": 66.68788835693185
+            },
+            "brotli": {
+              "size": 11221,
+              "ratio": 0.2857543037587858,
+              "reduction": 71.42456962412143
+            }
+          }
+        },
+        "avg_complexity": 0.327030491324573
+      },
+      {
+        "filename": "15 Online Ethics Center \u2013 \u201cTeaching Ethics Across the Engineering Curriculum.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 9486,
+          "word_count": 1679,
+          "sentence_count": 85,
+          "avg_word_length": 4.63787969029184,
+          "avg_sentence_length": 19.75294117647059,
+          "unique_words": 702,
+          "lexical_diversity": 0.418106015485408
+        },
+        "compression": {
+          "original_size": 9520,
+          "compressions": {
+            "lzma": {
+              "size": 4080,
+              "ratio": 0.42857142857142855,
+              "reduction": 57.14285714285714
+            },
+            "bz2": {
+              "size": 3781,
+              "ratio": 0.39716386554621846,
+              "reduction": 60.28361344537816
+            },
+            "gzip": {
+              "size": 4096,
+              "ratio": 0.43025210084033616,
+              "reduction": 56.97478991596638
+            },
+            "zlib": {
+              "size": 4084,
+              "ratio": 0.42899159663865544,
+              "reduction": 57.10084033613445
+            },
+            "zstd": {
+              "size": 3957,
+              "ratio": 0.4156512605042017,
+              "reduction": 58.434873949579824
+            },
+            "brotli": {
+              "size": 3165,
+              "ratio": 0.3324579831932773,
+              "reduction": 66.75420168067228
+            }
+          }
+        },
+        "avg_complexity": 0.40551470588235294
+      },
+      {
+        "filename": "16 Communicating sequential processes.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 15630,
+          "word_count": 2503,
+          "sentence_count": 136,
+          "avg_word_length": 5.244906112664802,
+          "avg_sentence_length": 18.404411764705884,
+          "unique_words": 1001,
+          "lexical_diversity": 0.3999200958849381
+        },
+        "compression": {
+          "original_size": 15630,
+          "compressions": {
+            "lzma": {
+              "size": 6072,
+              "ratio": 0.38848368522072935,
+              "reduction": 61.15163147792706
+            },
+            "bz2": {
+              "size": 5791,
+              "ratio": 0.3705054382597569,
+              "reduction": 62.94945617402431
+            },
+            "gzip": {
+              "size": 6236,
+              "ratio": 0.3989763275751759,
+              "reduction": 60.102367242482416
+            },
+            "zlib": {
+              "size": 6224,
+              "ratio": 0.3982085732565579,
+              "reduction": 60.17914267434421
+            },
+            "zstd": {
+              "size": 6012,
+              "ratio": 0.38464491362763914,
+              "reduction": 61.53550863723609
+            },
+            "brotli": {
+              "size": 4838,
+              "ratio": 0.30953294945617404,
+              "reduction": 69.0467050543826
+            }
+          }
+        },
+        "avg_complexity": 0.37505864789933885
+      },
+      {
+        "filename": "17 Parallel programming an axiomatic approach.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 10784,
+          "word_count": 1832,
+          "sentence_count": 75,
+          "avg_word_length": 4.887008733624454,
+          "avg_sentence_length": 24.426666666666666,
+          "unique_words": 678,
+          "lexical_diversity": 0.3700873362445415
+        },
+        "compression": {
+          "original_size": 10784,
+          "compressions": {
+            "lzma": {
+              "size": 4256,
+              "ratio": 0.39465875370919884,
+              "reduction": 60.534124629080125
+            },
+            "bz2": {
+              "size": 4021,
+              "ratio": 0.37286721068249257,
+              "reduction": 62.713278931750736
+            },
+            "gzip": {
+              "size": 4297,
+              "ratio": 0.3984606824925816,
+              "reduction": 60.15393175074184
+            },
+            "zlib": {
+              "size": 4285,
+              "ratio": 0.3973479228486647,
+              "reduction": 60.26520771513353
+            },
+            "zstd": {
+              "size": 4144,
+              "ratio": 0.38427299703264095,
+              "reduction": 61.5727002967359
+            },
+            "brotli": {
+              "size": 3304,
+              "ratio": 0.306379821958457,
+              "reduction": 69.36201780415429
+            }
+          }
+        },
+        "avg_complexity": 0.3756645647873393
+      },
+      {
+        "filename": "18 IEEE Spectrum \u2013 \u201cTechnology 2013 as Predicted in 1962 and 1988.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 5749,
+          "word_count": 939,
+          "sentence_count": 38,
+          "avg_word_length": 5.107561235356762,
+          "avg_sentence_length": 24.710526315789473,
+          "unique_words": 508,
+          "lexical_diversity": 0.5410010649627263
+        },
+        "compression": {
+          "original_size": 5839,
+          "compressions": {
+            "lzma": {
+              "size": 2840,
+              "ratio": 0.4863846549066621,
+              "reduction": 51.36153450933379
+            },
+            "bz2": {
+              "size": 2706,
+              "ratio": 0.4634355197807844,
+              "reduction": 53.656448021921555
+            },
+            "gzip": {
+              "size": 2781,
+              "ratio": 0.47628018496317864,
+              "reduction": 52.37198150368214
+            },
+            "zlib": {
+              "size": 2769,
+              "ratio": 0.47422503853399556,
+              "reduction": 52.577496146600446
+            },
+            "zstd": {
+              "size": 2714,
+              "ratio": 0.4648056174002398,
+              "reduction": 53.51943825997603
+            },
+            "brotli": {
+              "size": 1973,
+              "ratio": 0.3379003253981846,
+              "reduction": 66.20996746018155
+            }
+          }
+        },
+        "avg_complexity": 0.4505052234971742
+      },
+      {
+        "filename": "19.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 12427,
+          "word_count": 2167,
+          "sentence_count": 100,
+          "avg_word_length": 4.715274573142594,
+          "avg_sentence_length": 21.67,
+          "unique_words": 868,
+          "lexical_diversity": 0.40055376095985235
+        },
+        "compression": {
+          "original_size": 12575,
+          "compressions": {
+            "lzma": {
+              "size": 5092,
+              "ratio": 0.40493041749502984,
+              "reduction": 59.50695825049701
+            },
+            "bz2": {
+              "size": 4813,
+              "ratio": 0.38274353876739564,
+              "reduction": 61.72564612326043
+            },
+            "gzip": {
+              "size": 5165,
+              "ratio": 0.4107355864811133,
+              "reduction": 58.92644135188867
+            },
+            "zlib": {
+              "size": 5153,
+              "ratio": 0.40978131212723656,
+              "reduction": 59.02186878727635
+            },
+            "zstd": {
+              "size": 4983,
+              "ratio": 0.3962624254473161,
+              "reduction": 60.37375745526838
+            },
+            "brotli": {
+              "size": 4126,
+              "ratio": 0.3281113320079523,
+              "reduction": 67.18886679920477
+            }
+          }
+        },
+        "avg_complexity": 0.3887607687210073
+      },
+      {
+        "filename": "2 Computer and Information Ethics.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 53127,
+          "word_count": 8077,
+          "sentence_count": 333,
+          "avg_word_length": 5.549709050389996,
+          "avg_sentence_length": 24.255255255255257,
+          "unique_words": 2527,
+          "lexical_diversity": 0.31286368701250467
+        },
+        "compression": {
+          "original_size": 53921,
+          "compressions": {
+            "lzma": {
+              "size": 17284,
+              "ratio": 0.32054301663544815,
+              "reduction": 67.94569833645518
+            },
+            "bz2": {
+              "size": 16030,
+              "ratio": 0.297286771387771,
+              "reduction": 70.27132286122291
+            },
+            "gzip": {
+              "size": 18407,
+              "ratio": 0.3413697817176981,
+              "reduction": 65.86302182823019
+            },
+            "zlib": {
+              "size": 18395,
+              "ratio": 0.34114723391628493,
+              "reduction": 65.88527660837151
+            },
+            "zstd": {
+              "size": 17409,
+              "ratio": 0.3228612229001688,
+              "reduction": 67.71387770998312
+            },
+            "brotli": {
+              "size": 14731,
+              "ratio": 0.27319597188479444,
+              "reduction": 72.68040281152055
+            }
+          }
+        },
+        "avg_complexity": 0.3160673330736942
+      },
+      {
+        "filename": "20.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 6086,
+          "word_count": 1017,
+          "sentence_count": 55,
+          "avg_word_length": 4.945919370698132,
+          "avg_sentence_length": 18.490909090909092,
+          "unique_words": 536,
+          "lexical_diversity": 0.5270403146509341
+        },
+        "compression": {
+          "original_size": 6190,
+          "compressions": {
+            "lzma": {
+              "size": 2828,
+              "ratio": 0.4568659127625202,
+              "reduction": 54.31340872374798
+            },
+            "bz2": {
+              "size": 2686,
+              "ratio": 0.4339256865912762,
+              "reduction": 56.60743134087238
+            },
+            "gzip": {
+              "size": 2789,
+              "ratio": 0.4505654281098546,
+              "reduction": 54.943457189014545
+            },
+            "zlib": {
+              "size": 2777,
+              "ratio": 0.44862681744749594,
+              "reduction": 55.13731825525041
+            },
+            "zstd": {
+              "size": 2721,
+              "ratio": 0.43957996768982227,
+              "reduction": 56.04200323101778
+            },
+            "brotli": {
+              "size": 2174,
+              "ratio": 0.3512116316639742,
+              "reduction": 64.87883683360258
+            }
+          }
+        },
+        "avg_complexity": 0.4301292407108239
+      },
+      {
+        "filename": "21.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 10583,
+          "word_count": 1787,
+          "sentence_count": 102,
+          "avg_word_length": 4.8712926692781195,
+          "avg_sentence_length": 17.519607843137255,
+          "unique_words": 882,
+          "lexical_diversity": 0.493564633463906
+        },
+        "compression": {
+          "original_size": 10583,
+          "compressions": {
+            "lzma": {
+              "size": 4792,
+              "ratio": 0.45280166304450536,
+              "reduction": 54.71983369554947
+            },
+            "bz2": {
+              "size": 4552,
+              "ratio": 0.43012378342624963,
+              "reduction": 56.98762165737503
+            },
+            "gzip": {
+              "size": 4848,
+              "ratio": 0.458093168288765,
+              "reduction": 54.190683171123496
+            },
+            "zlib": {
+              "size": 4836,
+              "ratio": 0.4569592743078522,
+              "reduction": 54.30407256921478
+            },
+            "zstd": {
+              "size": 4691,
+              "ratio": 0.4432580553718227,
+              "reduction": 55.67419446281773
+            },
+            "brotli": {
+              "size": 3731,
+              "ratio": 0.35254653689879994,
+              "reduction": 64.74534631012001
+            }
+          }
+        },
+        "avg_complexity": 0.4322970802229992
+      },
+      {
+        "filename": "22.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 3103,
+          "word_count": 507,
+          "sentence_count": 33,
+          "avg_word_length": 5.011834319526627,
+          "avg_sentence_length": 15.363636363636363,
+          "unique_words": 305,
+          "lexical_diversity": 0.6015779092702169
+        },
+        "compression": {
+          "original_size": 3171,
+          "compressions": {
+            "lzma": {
+              "size": 1572,
+              "ratio": 0.4957426679280984,
+              "reduction": 50.42573320719016
+            },
+            "bz2": {
+              "size": 1477,
+              "ratio": 0.46578366445916114,
+              "reduction": 53.42163355408389
+            },
+            "gzip": {
+              "size": 1469,
+              "ratio": 0.4632608010091454,
+              "reduction": 53.673919899085455
+            },
+            "zlib": {
+              "size": 1457,
+              "ratio": 0.45947650583412175,
+              "reduction": 54.05234941658783
+            },
+            "zstd": {
+              "size": 1456,
+              "ratio": 0.45916114790286977,
+              "reduction": 54.083885209713024
+            },
+            "brotli": {
+              "size": 1092,
+              "ratio": 0.3443708609271523,
+              "reduction": 65.56291390728477
+            }
+          }
+        },
+        "avg_complexity": 0.4479659413434248
+      },
+      {
+        "filename": "23.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 1025,
+          "word_count": 164,
+          "sentence_count": 12,
+          "avg_word_length": 5.219512195121951,
+          "avg_sentence_length": 13.666666666666666,
+          "unique_words": 124,
+          "lexical_diversity": 0.7560975609756098
+        },
+        "compression": {
+          "original_size": 1037,
+          "compressions": {
+            "lzma": {
+              "size": 696,
+              "ratio": 0.6711668273866924,
+              "reduction": 32.88331726133076
+            },
+            "bz2": {
+              "size": 608,
+              "ratio": 0.5863066538090647,
+              "reduction": 41.369334619093536
+            },
+            "gzip": {
+              "size": 585,
+              "ratio": 0.5641272902603665,
+              "reduction": 43.587270973963356
+            },
+            "zlib": {
+              "size": 573,
+              "ratio": 0.5525554484088717,
+              "reduction": 44.74445515911283
+            },
+            "zstd": {
+              "size": 591,
+              "ratio": 0.5699132111861138,
+              "reduction": 43.00867888138862
+            },
+            "brotli": {
+              "size": 431,
+              "ratio": 0.4156219864995178,
+              "reduction": 58.43780135004821
+            }
+          }
+        },
+        "avg_complexity": 0.5599485695917712
+      },
+      {
+        "filename": "24.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 5596,
+          "word_count": 969,
+          "sentence_count": 50,
+          "avg_word_length": 4.762641898864809,
+          "avg_sentence_length": 19.38,
+          "unique_words": 496,
+          "lexical_diversity": 0.5118679050567595
+        },
+        "compression": {
+          "original_size": 5620,
+          "compressions": {
+            "lzma": {
+              "size": 2720,
+              "ratio": 0.48398576512455516,
+              "reduction": 51.60142348754449
+            },
+            "bz2": {
+              "size": 2507,
+              "ratio": 0.44608540925266904,
+              "reduction": 55.3914590747331
+            },
+            "gzip": {
+              "size": 2653,
+              "ratio": 0.47206405693950176,
+              "reduction": 52.79359430604982
+            },
+            "zlib": {
+              "size": 2641,
+              "ratio": 0.4699288256227758,
+              "reduction": 53.007117437722414
+            },
+            "zstd": {
+              "size": 2583,
+              "ratio": 0.45960854092526693,
+              "reduction": 54.039145907473305
+            },
+            "brotli": {
+              "size": 2024,
+              "ratio": 0.3601423487544484,
+              "reduction": 63.98576512455516
+            }
+          }
+        },
+        "avg_complexity": 0.44863582443653616
+      },
+      {
+        "filename": "25.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 5324,
+          "word_count": 907,
+          "sentence_count": 43,
+          "avg_word_length": 4.785005512679162,
+          "avg_sentence_length": 21.093023255813954,
+          "unique_words": 476,
+          "lexical_diversity": 0.5248070562293274
+        },
+        "compression": {
+          "original_size": 5384,
+          "compressions": {
+            "lzma": {
+              "size": 2528,
+              "ratio": 0.46953937592867756,
+              "reduction": 53.04606240713225
+            },
+            "bz2": {
+              "size": 2400,
+              "ratio": 0.4457652303120357,
+              "reduction": 55.423476968796436
+            },
+            "gzip": {
+              "size": 2478,
+              "ratio": 0.4602526002971768,
+              "reduction": 53.97473997028233
+            },
+            "zlib": {
+              "size": 2466,
+              "ratio": 0.4580237741456166,
+              "reduction": 54.197622585438346
+            },
+            "zstd": {
+              "size": 2425,
+              "ratio": 0.45040861812778604,
+              "reduction": 54.9591381872214
+            },
+            "brotli": {
+              "size": 1862,
+              "ratio": 0.34583952451708766,
+              "reduction": 65.41604754829123
+            }
+          }
+        },
+        "avg_complexity": 0.4383048538880634
+      },
+      {
+        "filename": "26.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 8633,
+          "word_count": 1416,
+          "sentence_count": 108,
+          "avg_word_length": 5.07274011299435,
+          "avg_sentence_length": 13.11111111111111,
+          "unique_words": 791,
+          "lexical_diversity": 0.5586158192090396
+        },
+        "compression": {
+          "original_size": 8737,
+          "compressions": {
+            "lzma": {
+              "size": 4096,
+              "ratio": 0.4688108046240128,
+              "reduction": 53.11891953759872
+            },
+            "bz2": {
+              "size": 3797,
+              "ratio": 0.43458853153256266,
+              "reduction": 56.54114684674374
+            },
+            "gzip": {
+              "size": 4089,
+              "ratio": 0.4680096142840792,
+              "reduction": 53.19903857159207
+            },
+            "zlib": {
+              "size": 4077,
+              "ratio": 0.4666361451299073,
+              "reduction": 53.336385487009274
+            },
+            "zstd": {
+              "size": 3977,
+              "ratio": 0.45519056884514136,
+              "reduction": 54.48094311548586
+            },
+            "brotli": {
+              "size": 3217,
+              "ratio": 0.36820418908092023,
+              "reduction": 63.17958109190798
+            }
+          }
+        },
+        "avg_complexity": 0.4435733089161039
+      },
+      {
+        "filename": "27.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 17499,
+          "word_count": 3122,
+          "sentence_count": 194,
+          "avg_word_length": 4.5874439461883405,
+          "avg_sentence_length": 16.09278350515464,
+          "unique_words": 1119,
+          "lexical_diversity": 0.3584240871236387
+        },
+        "compression": {
+          "original_size": 17499,
+          "compressions": {
+            "lzma": {
+              "size": 6880,
+              "ratio": 0.39316532373278473,
+              "reduction": 60.68346762672152
+            },
+            "bz2": {
+              "size": 6367,
+              "ratio": 0.3638493628207326,
+              "reduction": 63.61506371792673
+            },
+            "gzip": {
+              "size": 7085,
+              "ratio": 0.4048802788730785,
+              "reduction": 59.51197211269215
+            },
+            "zlib": {
+              "size": 7073,
+              "ratio": 0.4041945254014515,
+              "reduction": 59.58054745985485
+            },
+            "zstd": {
+              "size": 6789,
+              "ratio": 0.387965026572947,
+              "reduction": 61.20349734270529
+            },
+            "brotli": {
+              "size": 5664,
+              "ratio": 0.3236756386079205,
+              "reduction": 67.63243613920795
+            }
+          }
+        },
+        "avg_complexity": 0.3796216926681525
+      },
+      {
+        "filename": "28.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 16294,
+          "word_count": 2586,
+          "sentence_count": 122,
+          "avg_word_length": 5.30123743232792,
+          "avg_sentence_length": 21.19672131147541,
+          "unique_words": 1002,
+          "lexical_diversity": 0.3874709976798144
+        },
+        "compression": {
+          "original_size": 16342,
+          "compressions": {
+            "lzma": {
+              "size": 6160,
+              "ratio": 0.3769428466527965,
+              "reduction": 62.30571533472036
+            },
+            "bz2": {
+              "size": 5741,
+              "ratio": 0.35130339003793903,
+              "reduction": 64.86966099620611
+            },
+            "gzip": {
+              "size": 6323,
+              "ratio": 0.38691714600416105,
+              "reduction": 61.308285399583895
+            },
+            "zlib": {
+              "size": 6311,
+              "ratio": 0.38618284175743484,
+              "reduction": 61.38171582425651
+            },
+            "zstd": {
+              "size": 6099,
+              "ratio": 0.3732101333986048,
+              "reduction": 62.678986660139515
+            },
+            "brotli": {
+              "size": 4912,
+              "ratio": 0.3005752049932689,
+              "reduction": 69.94247950067312
+            }
+          }
+        },
+        "avg_complexity": 0.36252192714070086
+      },
+      {
+        "filename": "29.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 71332,
+          "word_count": 11180,
+          "sentence_count": 509,
+          "avg_word_length": 5.3804114490161,
+          "avg_sentence_length": 21.964636542239685,
+          "unique_words": 2668,
+          "lexical_diversity": 0.23864042933810375
+        },
+        "compression": {
+          "original_size": 71376,
+          "compressions": {
+            "lzma": {
+              "size": 22000,
+              "ratio": 0.3082268549652544,
+              "reduction": 69.17731450347455
+            },
+            "bz2": {
+              "size": 20164,
+              "ratio": 0.282503922887245,
+              "reduction": 71.7496077112755
+            },
+            "gzip": {
+              "size": 23833,
+              "ratio": 0.3339077561084959,
+              "reduction": 66.60922438915041
+            },
+            "zlib": {
+              "size": 23821,
+              "ratio": 0.3337396323694239,
+              "reduction": 66.62603676305761
+            },
+            "zstd": {
+              "size": 22218,
+              "ratio": 0.31128110289172833,
+              "reduction": 68.87188971082716
+            },
+            "brotli": {
+              "size": 19273,
+              "ratio": 0.2700207352611522,
+              "reduction": 72.99792647388477
+            }
+          }
+        },
+        "avg_complexity": 0.30661333408054997
+      },
+      {
+        "filename": "3 Reflections on Trusting Trust.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 9612,
+          "word_count": 1776,
+          "sentence_count": 125,
+          "avg_word_length": 4.412725225225225,
+          "avg_sentence_length": 14.208,
+          "unique_words": 784,
+          "lexical_diversity": 0.44144144144144143
+        },
+        "compression": {
+          "original_size": 9622,
+          "compressions": {
+            "lzma": {
+              "size": 4332,
+              "ratio": 0.45021824984410724,
+              "reduction": 54.97817501558928
+            },
+            "bz2": {
+              "size": 4157,
+              "ratio": 0.4320307628351694,
+              "reduction": 56.796923716483064
+            },
+            "gzip": {
+              "size": 4341,
+              "ratio": 0.45115360631885265,
+              "reduction": 54.88463936811474
+            },
+            "zlib": {
+              "size": 4329,
+              "ratio": 0.44990646435252546,
+              "reduction": 55.00935356474746
+            },
+            "zstd": {
+              "size": 4227,
+              "ratio": 0.4393057576387445,
+              "reduction": 56.069424236125556
+            },
+            "brotli": {
+              "size": 3483,
+              "ratio": 0.3619829557264602,
+              "reduction": 63.801704427353975
+            }
+          }
+        },
+        "avg_complexity": 0.4307662994526432
+      },
+      {
+        "filename": "30.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 22236,
+          "word_count": 3661,
+          "sentence_count": 248,
+          "avg_word_length": 5.0737503414367655,
+          "avg_sentence_length": 14.762096774193548,
+          "unique_words": 1264,
+          "lexical_diversity": 0.345260857689156
+        },
+        "compression": {
+          "original_size": 22318,
+          "compressions": {
+            "lzma": {
+              "size": 8040,
+              "ratio": 0.36024733399050096,
+              "reduction": 63.9752666009499
+            },
+            "bz2": {
+              "size": 7720,
+              "ratio": 0.3459091316426203,
+              "reduction": 65.40908683573797
+            },
+            "gzip": {
+              "size": 8372,
+              "ratio": 0.3751232189264271,
+              "reduction": 62.48767810735729
+            },
+            "zlib": {
+              "size": 8360,
+              "ratio": 0.3745855363383816,
+              "reduction": 62.541446366161836
+            },
+            "zstd": {
+              "size": 8049,
+              "ratio": 0.3606505959315351,
+              "reduction": 63.934940406846486
+            },
+            "brotli": {
+              "size": 6749,
+              "ratio": 0.30240164889327,
+              "reduction": 69.75983511067301
+            }
+          }
+        },
+        "avg_complexity": 0.3531529109537892
+      },
+      {
+        "filename": "4 No Silver Bullet Essence and Accidents of Software Engineering.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 25443,
+          "word_count": 4035,
+          "sentence_count": 225,
+          "avg_word_length": 5.305824039653036,
+          "avg_sentence_length": 17.933333333333334,
+          "unique_words": 1607,
+          "lexical_diversity": 0.3982651796778191
+        },
+        "compression": {
+          "original_size": 25462,
+          "compressions": {
+            "lzma": {
+              "size": 9980,
+              "ratio": 0.39195664126934254,
+              "reduction": 60.80433587306575
+            },
+            "bz2": {
+              "size": 9352,
+              "ratio": 0.3672924357866625,
+              "reduction": 63.27075642133375
+            },
+            "gzip": {
+              "size": 10399,
+              "ratio": 0.4084125363286466,
+              "reduction": 59.158746367135336
+            },
+            "zlib": {
+              "size": 10387,
+              "ratio": 0.40794124577802215,
+              "reduction": 59.205875422197785
+            },
+            "zstd": {
+              "size": 9923,
+              "ratio": 0.3897180111538764,
+              "reduction": 61.02819888461236
+            },
+            "brotli": {
+              "size": 8153,
+              "ratio": 0.3202026549367685,
+              "reduction": 67.97973450632315
+            }
+          }
+        },
+        "avg_complexity": 0.3809205875422198
+      },
+      {
+        "filename": "5 Saltzer, Reed & Clark \u2013 \u201cEnd-to-End Arguments in System Design.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 32948,
+          "word_count": 5151,
+          "sentence_count": 212,
+          "avg_word_length": 5.3966220151426905,
+          "avg_sentence_length": 24.297169811320753,
+          "unique_words": 1541,
+          "lexical_diversity": 0.29916521063871093
+        },
+        "compression": {
+          "original_size": 32972,
+          "compressions": {
+            "lzma": {
+              "size": 11124,
+              "ratio": 0.33737716850661165,
+              "reduction": 66.26228314933884
+            },
+            "bz2": {
+              "size": 10254,
+              "ratio": 0.3109911440009705,
+              "reduction": 68.90088559990295
+            },
+            "gzip": {
+              "size": 11673,
+              "ratio": 0.3540276598325852,
+              "reduction": 64.59723401674148
+            },
+            "zlib": {
+              "size": 11661,
+              "ratio": 0.35366371466699015,
+              "reduction": 64.63362853330099
+            },
+            "zstd": {
+              "size": 11107,
+              "ratio": 0.3368615795220187,
+              "reduction": 66.31384204779813
+            },
+            "brotli": {
+              "size": 9291,
+              "ratio": 0.2817845444619677,
+              "reduction": 71.82154555380322
+            }
+          }
+        },
+        "avg_complexity": 0.32911763516519066
+      },
+      {
+        "filename": "6 The Computer for the 21st Century .txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 33088,
+          "word_count": 5425,
+          "sentence_count": 265,
+          "avg_word_length": 5.099354838709678,
+          "avg_sentence_length": 20.471698113207548,
+          "unique_words": 2061,
+          "lexical_diversity": 0.3799078341013825
+        },
+        "compression": {
+          "original_size": 33088,
+          "compressions": {
+            "lzma": {
+              "size": 13016,
+              "ratio": 0.3933752417794971,
+              "reduction": 60.66247582205029
+            },
+            "bz2": {
+              "size": 12109,
+              "ratio": 0.3659634912959381,
+              "reduction": 63.40365087040619
+            },
+            "gzip": {
+              "size": 13632,
+              "ratio": 0.4119922630560928,
+              "reduction": 58.80077369439072
+            },
+            "zlib": {
+              "size": 13620,
+              "ratio": 0.4116295938104449,
+              "reduction": 58.83704061895551
+            },
+            "zstd": {
+              "size": 12991,
+              "ratio": 0.39261968085106386,
+              "reduction": 60.73803191489362
+            },
+            "brotli": {
+              "size": 10866,
+              "ratio": 0.328397001934236,
+              "reduction": 67.1602998065764
+            }
+          }
+        },
+        "avg_complexity": 0.38399621212121215
+      },
+      {
+        "filename": "7 Saltzer & Schroeder \u2013 \u201cThe Protection of Information in Computer Systems.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 25704,
+          "word_count": 4027,
+          "sentence_count": 213,
+          "avg_word_length": 5.383163645393593,
+          "avg_sentence_length": 18.906103286384976,
+          "unique_words": 1356,
+          "lexical_diversity": 0.33672709212813506
+        },
+        "compression": {
+          "original_size": 25738,
+          "compressions": {
+            "lzma": {
+              "size": 9068,
+              "ratio": 0.35231952754681795,
+              "reduction": 64.7680472453182
+            },
+            "bz2": {
+              "size": 8452,
+              "ratio": 0.3283860439816614,
+              "reduction": 67.16139560183386
+            },
+            "gzip": {
+              "size": 9475,
+              "ratio": 0.36813272204522496,
+              "reduction": 63.1867277954775
+            },
+            "zlib": {
+              "size": 9463,
+              "ratio": 0.3676664853523972,
+              "reduction": 63.233351464760275
+            },
+            "zstd": {
+              "size": 9051,
+              "ratio": 0.351659025565312,
+              "reduction": 64.83409744346879
+            },
+            "brotli": {
+              "size": 7244,
+              "ratio": 0.28145155023700363,
+              "reduction": 71.85484497629963
+            }
+          }
+        },
+        "avg_complexity": 0.34160255912140286
+      },
+      {
+        "filename": "8 Edsger W. Dijkstra \u2013 \u201cGo To Statement Considered Harmful.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 17353,
+          "word_count": 3126,
+          "sentence_count": 120,
+          "avg_word_length": 4.55150351887396,
+          "avg_sentence_length": 26.05,
+          "unique_words": 1000,
+          "lexical_diversity": 0.3198976327575176
+        },
+        "compression": {
+          "original_size": 17470,
+          "compressions": {
+            "lzma": {
+              "size": 6392,
+              "ratio": 0.36588437321121925,
+              "reduction": 63.41156267887808
+            },
+            "bz2": {
+              "size": 6119,
+              "ratio": 0.3502575844304522,
+              "reduction": 64.97424155695478
+            },
+            "gzip": {
+              "size": 6558,
+              "ratio": 0.3753863766456783,
+              "reduction": 62.46136233543217
+            },
+            "zlib": {
+              "size": 6546,
+              "ratio": 0.3746994848311391,
+              "reduction": 62.53005151688609
+            },
+            "zstd": {
+              "size": 6329,
+              "ratio": 0.36227819118488835,
+              "reduction": 63.77218088151116
+            },
+            "brotli": {
+              "size": 5326,
+              "ratio": 0.3048654836863194,
+              "reduction": 69.51345163136806
+            }
+          }
+        },
+        "avg_complexity": 0.35556191566494944
+      },
+      {
+        "filename": "9 Jeffrey Dean & Luiz Andr\u00e9 Barroso \u2013 \u201cThe Tail at Scale.txt",
+        "source": "Human",
+        "metrics": {
+          "char_count": 26056,
+          "word_count": 3998,
+          "sentence_count": 152,
+          "avg_word_length": 5.517508754377189,
+          "avg_sentence_length": 26.30263157894737,
+          "unique_words": 1571,
+          "lexical_diversity": 0.3929464732366183
+        },
+        "compression": {
+          "original_size": 26112,
+          "compressions": {
+            "lzma": {
+              "size": 9828,
+              "ratio": 0.37637867647058826,
+              "reduction": 62.36213235294117
+            },
+            "bz2": {
+              "size": 9246,
+              "ratio": 0.35409007352941174,
+              "reduction": 64.59099264705883
+            },
+            "gzip": {
+              "size": 10284,
+              "ratio": 0.3938419117647059,
+              "reduction": 60.61580882352941
+            },
+            "zlib": {
+              "size": 10272,
+              "ratio": 0.39338235294117646,
+              "reduction": 60.66176470588236
+            },
+            "zstd": {
+              "size": 9829,
+              "ratio": 0.3764169730392157,
+              "reduction": 62.358302696078425
+            },
+            "brotli": {
+              "size": 8354,
+              "ratio": 0.3199295343137255,
+              "reduction": 68.00704656862744
+            }
+          }
+        },
+        "avg_complexity": 0.36900658700980393
+      }
+    ]
+  }
+}

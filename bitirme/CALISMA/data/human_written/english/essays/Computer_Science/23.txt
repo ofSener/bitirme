@@ -1,0 +1,9 @@
+
+
+Simplicity isn’t easy to achieve, and John Maeda’s short book, The Laws of Simplicity, provokes a lot of thought on the topic.
+
+Programmers swim in a sea of unending complexity. We get so used to complexity as an ambient norm that we begin, consciously or unconsciously, projecting it into our work. Simplicity is tough in any field, but in ours, we exacerbate the problem. Impossibly complex applications are the default deliverable for new programmers. Only seasoned software development veterans are capable of producing applications that are easy to understand and troubleshoot. Simplicity isn’t achievable as a passive goal; it’s a force that must be actively applied.
+
+You can read most of the book online via John’s excellent blog, including abbreviated versions of the ten laws of simplicity. One of my favorite sections is about the evolution of the iPod’s controls.
+
+Keep it Simple, Stupid. If only it was that easy. It feels more like back-breaking work to keep things from inevitably devolving into complexity.

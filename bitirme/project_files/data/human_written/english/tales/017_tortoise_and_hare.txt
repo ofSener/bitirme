@@ -1,0 +1,1 @@
+A Hare mocks a Tortoise for being slow. They race, with the Hare taking a nap midway. The Tortoise continues steadily and wins.

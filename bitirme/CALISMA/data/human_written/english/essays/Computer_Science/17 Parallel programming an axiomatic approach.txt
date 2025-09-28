@@ -1,0 +1,172 @@
+previous paper (Hoare [22]) summarizes the objectives and criteria
+for the design of a parallel p r o g r a m m i n g feature for a high-level
+p r o g r a m m i n g language. It gives an axiomatic p r o o f rule which is suitable
+for disjoint and competing processes, but seems to be inadequate for
+co-operating processes. Its proposal of the 'conditional critical region' also
+seems to be inferior to the more structured concept of the class (Chapter 8)
+or monitor (Hoare ([42]); Brinch Hansen 1973). This paper introduces a
+slightly stronger proof rule, suitable for co-operating and even communi-
+cating processes. It suggests that the declaration is a better way of dealing
+with competition than the resource.
+15.2 Concepts and notations
+We shall use the notation ([22])
+Q, IkQ2
+to denote a parallel program consisting of two processes Qi and Q2 which
+are intended to be executed 'in parallel'. The program Q1 ]1 Q2 is defined to
+terminate only if and when both Q~ and Q2 have terminated.
+The notation
+P { Q } R
+asserts that if a propositional formula P is true of the program variables
+before starting execution of the program statement Q, then the proposi-
+tional formula R will be true on termination of Q, if it ever terminates. If
+not, P{QJ R is vacuously true.
+The notation
+Q1 c_ Q2
+asserts that the program statements Q1 and Q2 have identical effects under
+all circumstances on all program variables, provided that Q~ terminates.
+The notation Q~ -= Q2 means Q1 c_ Q2 A Q2 c_ Q1, i.e., if either of them
+terminates, so does the other, and then they have identical effects. The
+theory and logic of the c_ relation are taken from Scott (1970).
+The notation
+AB
+C
+denotes a proof rule which permits the deduction of C whenever theorems
+of the form A and B have been deduced.
+The notations for assignment (x:= e) and composition of statements
+(Q~; Q2) have the same meaning as in ALGOL 60, but side-effects of
+function evaluation are excluded.
+As examples of proof rules whose validity follows fairly directly from
+We will use the word process to denote a part of a program intended to be
+executed in parallel with some other part; and use the phrase parallel
+program to denote a program which contains or consists of two or more
+processes. In this paper we will talk in terms of only two processes;
+however, all results generalize readily to more than two Disjoint processes
+Our initial method of investigation will be to enquire under what circum-
+stances the execution of the parallel program Q1 I] QE can be guaranteed to
+be equivalent to the sequential program Q1; Q2. Preferably these circum-
+stances should be checkable by a purely syntactic method, so that the checks
+can be carried out by a compiler for a high-level language.
+The most obvious case where parallel and serial execution are equivalent
+is when two processes operate on disjoint data spaces, in the same way as
+jobs submitted by separate users to a multiprogramming system. Within a
+single program, it is permissible to allow each process to access values of
+common data, provided none of them update them. In order to ensure that
+this can be checked at compile time, it is necessary to design a language with
+the decent property that the set of variables subject to change in any part
+of the program is determinable merely by scanning that part. Of course,
+assignment to a component of a structured variable must be regarded as
+changing the whole variable, and variables assigned in conditionals are
+regarded as changed, whether that branch of the conditional is executed or
+not.
+Given a suitable syntactic definition of disjointness, we can formulate the
+proof rule for parallel programs in the same way as that for sequential ones:We shall now explore a number of reasons why the rule of disjointness may
+be found unacceptably restrictive, and show in each case how the restriction
+can be safely overcome.
+One important reason may be that the two processes each require
+occasional access to some limited resource such as a line printer or an
+on-line device for communication with the programmer or user. In fact,
+even main store for temporary working variables may be a limited resource,
+since each word of main store can be allocated as local workspace to only
+one process at a time, but may be re-allocated (when that process has
+finished with it) to some other process that needs it.
+The normal mechanism in a sequential programming language for
+making a temporary claim on storage during execution of a block of
+program is the declaration. One of the great advantages of the declaration is
+that the scope of use of a variable is made manifest to the reader and writer;
+and furthermore, the compiler can make a compile-time check that the
+variable is never used at a time when it is not allocated. This suggests that
+the declaration would be a very suitable notation by which a parallel process
+may express the acquisition and relinquishment of other resources, such as
+line printers. After all, a line printer may be regarded as a data structure
+(largely implemented in hardware) on which certain operations (e.g. print a
+line) are defined to be available to the programmer. More accurately, the
+concept of a line printer may be regarded as a type or class of variable, new
+instances of which can be 'created' (i.e. claimed) and named by means ofdeclaration, e.g., using the notation of Pascal (Wirth 1971c):
+begin managementreport: lineprinter; ....
+The individual operations on this variable may be denoted by the notations
+of Chapter 8:
+managementreport, output ( itemline ) ;
+which is called from within the block in which the m a n a g e m e n t r e p o r t is
+declared, and which has the effect of outputting the value of itemline to the
+line printer allocated to managementreport.
+This proposal has a number of related advantages:
+(1)
+(2)
+(3)
+(4)
+(5)
+The normal scope rules ensure that no programmer will use a resource
+without claiming it,
+or forget to release it when he has finished with it.
+The same proof rule for declarations (given in Hoare [17]) may be used
+for parallel processes.
+The programmer may abstract from the number of items of resource
+actually available.
+If the implementer has available several disjoint items of a resource (e.g.
+two line printers), they may be allocated simultaneously to several
+processes within the same program.
+These last three advantages are not achieved by the proposal in [22],
+There are also two disadvantages"
+(1) Resource constraints may cause deadlock, which an implementation
+should try to avoid by compile-time and]or run-time techniques ([22],
+Dijkstra 1968b). This proposal gives no means by which a programmer
+can assist in this.
+(2) The scope rules for blocks ensure that resources are released in exactly
+the reverse order to that in which they are acquired. It is sometimes
+possible to secure greater efficiency by relaxing this constraint.
+Both these disadvantages may reduce the amount of parallelism achiev-
+able in circumstances where the demand on resources is close to the limit of
+their availability. But of course they can never affect the logical correctness
+of the programs.
+It is noteworthy that the validity of sharing a resource between two
+processes, provided that they are not using it at the same time, also depends
+on the principle of commutativity of units of action. In this case, the entire
+block within which a resource is claimed and used must be regarded as a
+single unit of action, and must not be interleaved with execution of any
+other block to which the same resource is allocated. The programmer
+presumably does not mind which of these two blocks is executed first; forexample, he does not mind which of the two files is output first on the line
+printer, because he is interested in them only after they have been separated
+by the operator. Thus as far as he is concerned, the two blocks commute as
+units of action; of course, he could not tolerate arbitrary interleaving of
+lines from the two files.
+15.5 Co-operating processes
+Hitherto, parallel programming has been confined to disjoint and compet-
+ing processes, which can be guaranteed by a compile-time check to operate
+on disjoint data spaces. The reason for insisting on disjointness is that this
+is an easy way for the compiler to check that the units of action of each
+process will commute. In the next two sections we shall investigate the
+effects of relaxing this restriction, at the cost of placing upon the program-
+mer the responsibility of proving that the units of action commute.
+Processes which update one or more c o m m o n variables by commutative
+operations are said to co-operate.
+One consequence of the commutativity requirement is that neither
+process can access the value of the shared variable, because this value will in
+general depend on whether it is taken before or after updating by the other
+process. Furthermore, updating of a shared variable must be regarded as a
+single unit of action, which occurs either wholly before or wholly after any
+other such updating. For these reasons, the use of normal assignment for
+updating a variable seems a bit misleading, and it seems better to introduce
+the kind of notation used in Hoare ([30]), This paper explores the conditions under which the introduction of
+parallelism (concurrency) in a program does not increase the complexity
+of the program, as judged by the ease of proving its correctness. These
+conditions are formulated as syntactic rules, which can in principle be
+enforced by compile-time checks. The basis rule is that of disjointness,
+which states that any nonlocal variable updated by any parallel process
+must not be accessed by any other parallel process. Under this condition,
+the effect of a parallel program is the same as if its constituent processes had
+been executed sequentially; the proof rule is therefore also the same.
+The remainder of the paper examines the conditions under which the
+strict rule of disjointness can be relaxed. Three cases are distinguished:
+(1) Competing processes, which require exclusive use of some global
+resource during certain phases of their execution.
+(2) Co-operating processes, each of which makes its contribution to the
+construction of some final desired result.
+(3) Communicating processes, which transmit information to each other at
+intermediate stages in their progress.
+For competing processes, it is suggested that an ALGOL 60 style of
+declaration provides a suitable notation and proof rule. For co-operating
+processes it is shown that their correctness depends on a proof of the
+commutativity of the updating operations on the shared data; and for
+communicating processes it is shown that a weaker form of commutativity
+(semicommutativity) is required. These last two conditions cannot be
+checked at compile time
